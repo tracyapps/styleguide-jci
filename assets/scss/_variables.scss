@@ -1,0 +1,83 @@
+// define color options
+$green: #66c200;
+$teal: #26a69a;
+$light-blue: #00c2f5;
+$blue : #00b5e4;
+$dark-blue: #0075b6;
+$grey-blue: #225564;
+$grape: #8d1394;
+$purple: #673ab7;
+$pink: #db0a8d;
+$yellow: #f0cb45;
+$orange: #F5A623;
+
+$transparent-purple: rgba( $purple, 0.05 );
+$transparent-blue: rgba( $teal , 0.05 );
+$highlight: rgba( saturate( lighten( $yellow, 15 ), 1.2 ), 0.25 );
+
+$white: #fff;
+$offwhite: #f4f5f8;
+$light-grey: #d3d4d9;
+$medium-grey: darken( $light-grey, 30 );
+$dark: #343447;
+
+// theme colors
+$primary_color: $purple;
+$primary_color_text: $white;
+$secondary_color: $grey-blue;
+$active_state_color: $yellow;
+
+$default_link_color: $blue;
+$default_link_color_hover: $dark-blue;
+$secondary_link_color: $orange;
+$secondary_link_color_hover: darken( $orange, 10 );
+
+$table_even_background: $white;
+$table_odd_background: $transparent-purple;
+
+$light_theme_background: $offwhite;
+$light_theme_text: $dark;
+
+$dark_theme_background: $dark;
+$dark_theme_text: $white;
+
+// category colors
+$color_dashboard: $purple;
+$color_configuration: $green;
+$color_tools: $teal;
+$color_help_and_support: $light-blue;
+$color_service_health: $grape;
+$color_applications: $orange;
+
+// measurements
+$left_side_nav_width_open: 230px;
+$left_side_nav_width_closed: calc( #{$left_side_nav_width_open} - (#{$left_side_nav_width_open} * 0.75) );
+
+$button_border: none;
+$button_font_size: 1rem;
+$button_line_height: 1.1;
+$button_padding: 0.55em 1.1em 0.45em 1.1em;
+$button_radius: 2px;
+
+// fonts
+$font_body_text: 'Poppins', sans-serif;
+$font_body_text_weight: 300;
+$font_basefont_size: 14px;
+$font_default_line_height: 1.4;
+
+$h1_font_size: $font_basefont_size * 1.7;
+$h2_font_size: $font_basefont_size * 1.4;
+$h3_font_size: $font_basefont_size * 1.5;
+$h4_font_size: $font_basefont_size * 1.4;
+$h5_font_size: $font_basefont_size * 1.2;
+$h6_font_size: $font_basefont_size * 1.1;
+
+// measurements specific for prototype. not for prod
+$breadcrumb_height: 2.1rem;
+$fixednav_height: 2.8rem;
+$navbar_height: calc( #{$fixednav_height} + 1rem );
+$sectionheader_height: 5rem;
+$tableheader_height: 3.2rem;
+$tablefooter_height: 2rem;
+$pagefooter_height: 3rem;
+
