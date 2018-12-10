@@ -1,0 +1,217 @@
+//
+// Variables
+//
+// 01. Colors
+// 02. Grid and layout
+// 03. Font sizes & typography
+// 04. Decorative details
+// 05. Form layout options
+
+// ---------------- 01. Colors
+
+// Colors used:
+$green: #66c200;
+$teal: #26a69a;
+$light-blue: #00c2f5;
+$blue : #00b5e4;
+$dark-blue: #0075b6;
+$grey-blue: #225564;
+$grape: #8d1394;
+$purple: #673ab7;
+$pink: #db0a8d;
+$yellow: #f0cb45;
+$orange: #F5A623;
+
+
+$transparent-purple: rgba( $purple, 0.05 );
+$transparent-blue: rgba( $teal , 0.05 );
+$highlight: rgba( saturate( lighten( $yellow, 15 ), 1.2 ), 0.25 );
+
+
+$purple-text: #46248E;
+$orange-text: #E76500;
+$blue-text: #4A90E2;
+$green-text: #417505;
+
+$white: #fff;
+$offwhite: #f4f5f8;
+$light-grey: #d3d4d9;
+$medium-grey: darken( $light-grey, 30 );
+$dark: #343447;
+
+
+
+// Define branding
+$primary-color:            	$purple;
+$secondary-color:          	$yellow;
+$default-background-color: 	$offwhite;
+$default-text-color:       	$dark;
+$default-link-color:       	$blue;
+$default-link-color-hover: 	$dark-blue;
+$inverse-background-color: 	$dark;
+$inverse-text-color:       	$white;
+$inverse-link-color:       	$light-blue;
+$inverse-link-color-hover: 	$offwhite;
+$header-background-color: 	rgba( $white, 0.5 );
+$footer-background-color:  	$white;
+$footer-text-color:			$dark;
+$footer-link-color:			$blue;
+$footer-link-color-hover: 	$dark-blue;
+
+// Define elements
+
+// Primary / Default button:
+$button-background-color:       $light-blue;
+$button-background-color-hover: transparent;
+$button-text-color:             $dark;
+$button-text-color-hover:       $dark;
+$default-button-padding:        1rem 2rem;
+
+// theme colors
+$primary_color: $purple;
+$primary_color_text: $white;
+$secondary_color: $grey-blue;
+$active_state_color: $yellow;
+
+$default_link_color: $blue;
+$default_link_color_hover: $dark-blue;
+$secondary_link_color: $orange;
+$secondary_link_color_hover: darken( $orange, 10 );
+
+$table_even_background: $white;
+$table_odd_background: $transparent-purple;
+
+$light_theme_background: $offwhite;
+$light_theme_text: $dark;
+
+$dark_theme_background: $dark;
+$dark_theme_text: $white;
+
+// category colors
+$color_dashboard: $purple;
+$color_configuration: $green;
+$color_tools: $teal;
+$color_help_and_support: $light-blue;
+$color_service_health: $grape;
+$color_applications: $orange;
+
+// measurements
+$left_side_nav_width_open: 230px;
+$left_side_nav_width_closed: calc( #{$left_side_nav_width_open} - (#{$left_side_nav_width_open} * 0.75) );
+
+$button_border: none;
+$button_font_size: 1rem;
+$button_line_height: 1.1;
+$button_padding: 0.55em 1.1em 0.45em 1.1em;
+$button_radius: 2px;
+
+
+
+
+
+// ---------------- 02. Grid, layout & breakpoints
+
+// Layout & grid
+$max-page-width: 1150px; // use class "container" around your content for this to work.
+$page-padding:   15rem; // use class "container" around your content for this to work.
+$mobile-page-padding: 2rem; // smaller padding for the container on mobile
+$gutter-width:   30px;   // used in sections
+$sticky-footer:  true;   // change to "false" to remove and footer will just follow the content size.
+$golden-large:	63.8%;
+
+// Breakpoints
+// (concept borrowed from http://tapps.us/breakpoint-article )
+
+// Define breakpoints
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+$breakpoint-x-large: 1800px;
+
+// Breakpoint groupings by devices (used by the mixins in _utilities)
+$phone:                max-width $breakpoint-small;
+$phone-landscape:      ($breakpoint-small $breakpoint-medium) (orientation landscape);
+$tablet:               $breakpoint-small $breakpoint-large;
+$tablet-landscape:     ($breakpoint-medium $breakpoint-large) (orientation landscape);
+$tablet-portrait:      ($breakpoint-small $breakpoint-medium) (orientation portrait);
+$desktop:              $breakpoint-large;
+$large-desktop:        $breakpoint-x-large;
+
+$tablet-portrait-down: max-width $breakpoint-medium;
+$tablet-landscape-up:  $breakpoint-medium;
+
+
+// ---------------- 03. Font sizes & typography
+
+//
+// Font Variables
+// fonts
+$font_body_text: 'Poppins', sans-serif;
+$font_body_text_weight: 300;
+
+$header-font: $font_body_text;
+$body-font: $font_body_text;
+
+// The font size set on the root html element.
+$font_basefont_size: 14px;
+
+// The base line height determines the basic unit of vertical rhythm.
+$font_default_line_height: 1.4;
+
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em, rem.
+$base-unit: 'rem';
+
+// The font sizes for h1-h6.
+$h1_font_size: $font_basefont_size * 1.7;
+$h2_font_size: $font_basefont_size * 1.4;
+$h3_font_size: $font_basefont_size * 1.5;
+$h4_font_size: $font_basefont_size * 1.4;
+$h5_font_size: $font_basefont_size * 1.2;
+$h6_font_size: $font_basefont_size * 1.1;
+
+
+// ---------------- 04. Decorative details
+
+$border-radius: 4px;
+$button-transition-speed: 400ms;
+
+
+// measurements specific for prototype. not for prod
+$breadcrumb_height: 2.1rem;
+$fixednav_height: 2.8rem;
+$navbar_height: calc( #{$fixednav_height} + 1rem );
+$sectionheader_height: 5rem;
+$tableheader_height: 3.2rem;
+$tablefooter_height: 2rem;
+$pagefooter_height: 3rem;
+
+
+// ---------------- 05. Form layout options
+
+$label-color: $dark;
+$label-font-size: 1.8rem;
+
+$input-padding-y: 1.2rem;
+$input-padding-x: 1.2rem;
+
+$input-border-color: #ccc;
+$input-bg-color: #f6f6f6;
+$input-color: #333;
+
+$input-focus-border-color: #bbb;
+$input-focus-bg-color: $white;
+$input-focus-color: $dark;
+
+$input-error-color: #f00;
+$input-required-color: #f00;
+$input-accent-color: #09f;
+
+$gf-input-margin-y: 2.2rem;
+$gf-input-margin-x: 2rem;
+$gf-multi-input-margin-y: 0.8rem;
+
+$gf-primary-label-margin: 0.6rem;
+$gf-secondary-label-margin: 0.4rem;
+
+$gf-input-min-width: 18rem;
