@@ -1,0 +1,9 @@
+- name: Overview
+  href: xref:eventOverview.md
+
+- name: Get Events
+  href: xref:getEvents.md
+- name: Get Event by EventId
+  href: xref:getEventById.md
+
+

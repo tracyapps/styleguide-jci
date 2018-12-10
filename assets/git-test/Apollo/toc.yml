@@ -1,0 +1,44 @@
+- name: Get Transaction Status
+  href: xref:getStatusApollo.md
+
+- name: Schema Registry
+  href: schema/toc.yml
+
+- name: Device
+  href: device/toc.yml
+
+- name: Timeseries
+  href: timeseries/toc.yml
+
+#- name: Collections
+#  href: collections/toc.yml
+
+- name: ER Service
+  href: erservice/toc.yml
+
+- name: Event Service
+  href: event/toc.yml
+
+- name: Graph
+  href: graph/toc.yml
+
+#- name: GraphQL
+#  href: graphQL/toc.yml
+
+- name: Ontology
+  href: ontology/toc.yml
+
+- name: Status
+  href: status/toc.yml
+
+- name: Files
+  href: files/toc.yml
+
+- name: Change Feed
+  href: changefeed/toc.yml
+  
+- name: Messaging Service
+  href: msgService/toc.yml
+
+#- name: Audit
+#  href: audit/toc.yml

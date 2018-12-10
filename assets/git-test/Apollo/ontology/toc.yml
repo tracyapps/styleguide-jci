@@ -1,0 +1,10 @@
+- name: Overview
+  href: xref:ontologyOverview.md
+- name: Get All Relations of a Specific RelationshipType
+  href: getAllRelationsSpecificRelationshipType.md 
+- name: Get Ontology Object by EntityType
+  href: xref:getOntologyObjectByEntityType.md 
+- name: Post All EntityTypes (Async)
+  href: xref:postAllEntityTypesAsync.md
+- name: Post All RelationshipTypes (Async)
+  href: xref:postAllRelationshipTypesAsync.md

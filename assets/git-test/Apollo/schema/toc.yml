@@ -1,0 +1,61 @@
+- name: Overview
+  href: xref:schemaOverview.md
+
+- name: Create a new schema
+  href: xref:createSchema.md
+- name: Get schema by Id
+  href: xref:getSchemaById.md
+- name: Get schema by Id and Version
+  href: xref:getSchemaByIDAndVer.md
+- name: Get schema by collection id
+  href: xref:getSchemaByCollection.md
+- name: Get schema by state
+  href: xref:getSchemaByState.md
+- name: Get All schema
+  href: xref:getAllSchema.md
+- name: Get All schema titles
+  href: xref:getAllSchemaTitles.md
+- name: Get schema by collection id and tag
+  href: xref:getSchemaByCollectionAndTag.md
+- name: Create Schema Collection
+  href: apolloCreateSchemaCollection.md
+- name: Get list of collection id
+  href: xref:getListOfCollectionId.md
+- name: Delete a schema collection
+  href: apolloDeleteSchemaCollection.md  
+- name: Validate object against schema
+  href: xref:validateSchema.md
+- name: Publish schema
+  href: xref:publishSchema.md
+- name: Get all schema versions
+  href: xref:getSchemaAllVer.md
+- name: Create Hierarchy
+  href: apolloCreateHierarchy.md
+- name: Get Hierarchy
+  href: xref:getHierarchy.md
+- name: Get Count of Schemas Per Collection Id
+  href: xref:getCountOfSchemaPerCollection.md
+- name: Get Metadata
+  href: xref:getMetadata.md
+- name: Get System Data
+  href: xref:getSystemdata.md
+- name: Invalidate Cache
+  href: xref:invalidateCache.md
+- name: Delete Schema
+  href: xref:deleteSchema.md
+- name: Get Rules for Entity
+  href: xref:getRulesForEntity.md
+- name: Get Rules for Relationship
+  href: xref:getRulesForRelationship.md
+- name: Validate Ontology   
+  href: xref:validateOntology.md
+- name: Create Sample Object for Latest Version
+  href: xref:apolloCreateSample.md
+- name: Create Sample Objects for specific Version
+  href: xref:apolloCreateSampleSpecific.md
+- name: Get Sample Object for Latest Version
+  href: xref:apolloGetSampleLatest.md
+- name: Get Sample Objects for specific Version
+  href: xref:apolloGetSampleSpecific.md
+- name: Sync schemas with Schema API release versions
+  href: xref:syncSchema.md

@@ -1,0 +1,12 @@
+- name: Get Status
+  href: xref:getStatusby_logs.md
+- name: Get Status by Transaction ID
+  href: xref:getStatusby_transactionId.md
+- name: Get Status by Correlation ID
+  href: xref:getStatusby_correlationID.md
+- name: Get Status by ERCollection ID
+  href: xref:getStatusby_ercollectionId.md
+- name: Get Status by Entity ID
+  href: xref:getStatusby_entityId.md
+- name: Get Status by Relationship ID
+  href: xref:getStatusby_relationshipId.md
