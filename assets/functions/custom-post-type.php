@@ -141,6 +141,35 @@ register_taxonomy( 'theme',
 
 
 /**
+ * custom Tax: endpoint (hierarchical)
+ */
+
+register_taxonomy( 'endpoint',
+	array( 'api_doc' ),
+	/* if you change the name of register_post_type( 'custom_type', then you have to change this */
+	array(
+		'hierarchical' => true,
+		/* if this is false, it acts like tags */
+		'labels' => array(
+			'name' => __( 'Endpoint', 'start' ),
+			'singular_name' => __( 'Endpoint', 'start' ),
+			'search_items' => __( 'Search', 'start' ),
+			'all_items' => __( 'All Endpoints', 'start' ),
+			'parent_item' => __( 'Parent Endpoint', 'start' ),
+			'parent_item_colon' => __( 'Parent Endpoint:', 'start' ),
+			'edit_item' => __( 'Edit Endpoint', 'start' ),
+			'update_item' => __( 'Update Endpoint', 'start' ),
+			'add_new_item' => __( 'Add New Endpoint', 'start' ),
+			'new_item_name' => __( 'New Endpoint', 'start' )
+		),
+		'show_admin_column' => true,
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'endpoint' ),
+	)
+);
+
+/**
  * Modify the post edit screen's title field placeholder
  */
 function start_change_component_post_type_title_text( $title ) {

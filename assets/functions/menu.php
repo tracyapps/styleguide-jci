@@ -4,13 +4,15 @@ register_nav_menus(
 	array(
 		'main-nav' => __( 'The Main Menu', 'start' ),
 		// Main nav in header
+		'style-side-nav' => __( 'The Styleguide Side Menu', 'start' ),
+		// Side nav for style pages
 		'footer-links' => __( 'Footer Links', 'start' )
 		// Secondary nav in footer
 	)
 );
 
 // The Top Menu
-function start_side_nav() {
+function start_top_nav() {
 	wp_nav_menu( array(
 		'container' => false,
 		// Remove nav container
@@ -19,6 +21,25 @@ function start_side_nav() {
 		//'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-close-on-click-inside="false">%3$s</ul>',
 		'items_wrap'	=> '%3$s',
 		'theme_location' => 'main-nav',
+		// Where it's located in the theme
+		'depth' => 5,
+		// Limit the depth of the nav
+		'fallback_cb' => false,
+		// Fallback function (see below)
+		//'walker' => new Sidebar_Menu_Walker()
+	) );
+}
+
+// The Top Menu
+function start_side_nav() {
+	wp_nav_menu( array(
+		'container' => false,
+		// Remove nav container
+		//'menu_class' => 'vertical medium-horizontal menu',
+		// Adding custom nav class
+		//'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-close-on-click-inside="false">%3$s</ul>',
+		'items_wrap'	=> '%3$s',
+		'theme_location' => 'style-side-nav',
 		// Where it's located in the theme
 		'depth' => 5,
 		// Limit the depth of the nav

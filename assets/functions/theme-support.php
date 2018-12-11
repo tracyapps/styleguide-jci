@@ -27,23 +27,23 @@ function start_theme_support() {
 	// Adding post format support
 	add_theme_support( 'post-formats',
 		array(
-			'aside',
+			//'aside',
 			// title less blurb
-			'gallery',
+			//'gallery',
 			// gallery of images
-			'link',
+			//'link',
 			// quick link to other site
-			'image',
+			//'image',
 			// an image
-			'quote',
+			//'quote',
 			// a quick quote
-			'status',
+			//'status',
 			// a Facebook like status update
-			'video',
+			//'video',
 			// video
-			'audio',
+			//'audio',
 			// audio
-			'chat'
+			//'chat'
 			// chat transcript
 		)
 	);

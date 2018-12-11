@@ -14,14 +14,10 @@
 <body <?php body_class( 'styleguide_specific' ); ?>>
 <header class="page-header" role="menubar">
 
-	<nav>
+	<nav class="documentation-sections">
 		<div class="nav-wrapper">
-			<ul class="left">
-				<li>Styleguide: <strong><?php start_get_the_archive_title(); ?></strong></li>
-			</ul>
-
-			<ul class="right">
-				<li><a>Digital Vault</a></li>
+			<ul>
+				<?php start_top_nav(); ?>
 			</ul>
 		</div>
 	</nav>
