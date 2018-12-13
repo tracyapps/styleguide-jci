@@ -10,6 +10,7 @@ require_once( get_template_directory() . '/assets/functions/enqueue-scripts.php'
 
 // Register custom menus and menu walkers
 require_once( get_template_directory() . '/assets/functions/menu.php' );
+require_once( get_template_directory() . '/assets/functions/Class-BootstrapWalker.php' );
 
 // Register sidebars/widget areas
 require_once( get_template_directory() . '/assets/functions/sidebar.php' );
@@ -60,4 +61,4 @@ require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 require_once(get_template_directory().'/assets/functions/shortcodes.php');
 
 // Markdown rendering
-require_once(get_template_directory().'/assets/functions/markdown-parser.php');
+//require_once(get_template_directory().'/assets/functions/markdown-parser.php');

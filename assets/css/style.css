@@ -1643,6 +1643,44 @@ header.grid-header {
       padding: 0.5rem 1rem;
       list-style: none; }
 
+.styleguide nav.documentation-sections {
+  display: -ms-flexbox;
+  display: flex;
+  background: #50525d;
+  padding: 0 1rem; }
+  .styleguide nav.documentation-sections ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .styleguide nav.documentation-sections ul li {
+      display: inline-block; }
+  .styleguide nav.documentation-sections a {
+    padding: 0.25rem 1rem;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    background: #50525d;
+    color: rgba(255, 255, 255, 0.75);
+    transition: all 250ms ease-in-out;
+    margin-top: 0.25rem;
+    display: block; }
+    .styleguide nav.documentation-sections a:hover {
+      background: #fff;
+      color: #50525d; }
+
+.styleguide .api_doc-template-default nav.documentation-sections .menu-item-object-api_doc a,
+.styleguide .api_doc-template-default nav.documentation-sections .menu-item-object-api_doc a:hover,
+.styleguide .post-type-archive-api_doc nav.documentation-sections .menu-item-object-api_doc a,
+.styleguide .post-type-archive-api_doc nav.documentation-sections .menu-item-object-api_doc a:hover {
+  background: #fff;
+  color: #50525d; }
+
+.styleguide .component-template-default nav.documentation-sections .menu-item-object-component a,
+.styleguide .component-template-default nav.documentation-sections .menu-item-object-component a:hover,
+.styleguide .post-type-archive-component nav.documentation-sections .menu-item-object-component a,
+.styleguide .post-type-archive-component nav.documentation-sections .menu-item-object-component a:hover {
+  background: #fff;
+  color: #50525d; }
+
 .styleguide .styleguide_section_header {
   margin-top: 3rem;
   display: -ms-flexbox;
@@ -1700,12 +1738,79 @@ header.grid-header {
       .styleguide .styleguide_sidenav ul a:hover {
         background: rgba(0, 194, 245, 0.1);
         border-bottom: 1px solid #00c2f5; }
-    .styleguide .styleguide_sidenav ul .current-menu-item a,
-    .styleguide .styleguide_sidenav ul .current-menu-item a:hover {
-      background: rgba(0, 194, 245, 0.1);
-      background: linear-gradient(to bottom, rgba(0, 194, 245, 0.1) 0%, rgba(0, 194, 245, 0.1) 94%, #00b5e4 94%);
-      border-bottom: 1px solid #00b5e4;
-      color: #0075b6; }
+    .styleguide .styleguide_sidenav ul .current-menu-item > a,
+    .styleguide .styleguide_sidenav ul .current-menu-item > a:hover,
+    .styleguide .styleguide_sidenav ul .current-menu-item > span.nav_item_text_wrap a,
+    .styleguide .styleguide_sidenav ul .current-menu-item > span.nav_item_text_wrap a:hover,
+    .styleguide .styleguide_sidenav ul .current_page_item > a,
+    .styleguide .styleguide_sidenav ul .current_page_item > a:hover,
+    .styleguide .styleguide_sidenav ul .current_page_item > span.nav_item_text_wrap a,
+    .styleguide .styleguide_sidenav ul .current_page_item > span.nav_item_text_wrap a:hover {
+      background: #0075b6;
+      background: linear-gradient(to bottom, #0075b6 0%, #0075b6 94%, #00c2f5 94%);
+      border-bottom: 1px solid #00c2f5;
+      border-top: 1px solid #0075b6;
+      color: #fff; }
+  .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children.current_page_item {
+    background: rgba(0, 194, 245, 0.05);
+    border-bottom: 1px solid #00b5e4; }
+    .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children.current_page_item > span.nav_item_text_wrap a,
+    .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children.current_page_item > span.nav_item_text_wrap a:hover {
+      background: #0075b6;
+      background: linear-gradient(to bottom, #0075b6 0%, #0075b6 94%, #00c2f5 94%);
+      border-bottom: 1px solid transparent;
+      color: #fff; }
+  .styleguide .styleguide_sidenav ul.page-tree li.current_page_parent {
+    background: rgba(0, 194, 245, 0.15);
+    border-bottom: 1px solid #00b5e4; }
+  .styleguide .styleguide_sidenav ul.page-tree li.current_page_ancestor:not(.current_page_parent) {
+    border-bottom: 2px solid #00b5e4; }
+    .styleguide .styleguide_sidenav ul.page-tree li.current_page_ancestor:not(.current_page_parent) > a {
+      font-weight: bold; }
+  .styleguide .styleguide_sidenav ul.page-tree span.nav_item_text_wrap {
+    display: block; }
+    .styleguide .styleguide_sidenav ul.page-tree span.nav_item_text_wrap .open_close {
+      display: none;
+      height: 0;
+      width: 0; }
+  .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap {
+    overflow: hidden;
+    position: relative; }
+    .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap a {
+      padding-right: 25px; }
+    .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap .open_close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 25px;
+      min-height: 100%;
+      border: 1px solid rgba(211, 212, 217, 0.3);
+      line-height: 2;
+      cursor: pointer;
+      transition: all 200ms ease-in-out; }
+      .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap .open_close:hover {
+        background: rgba(0, 194, 245, 0.25); }
+      .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap .open_close svg {
+        width: 30%;
+        margin-left: 10px; }
+  .styleguide .styleguide_sidenav ul.page-tree ul.children {
+    border-left: 5px solid #00b5e4;
+    margin-left: 1rem;
+    background: #fff; }
+    .styleguide .styleguide_sidenav ul.page-tree ul.children a {
+      padding: 0.25rem 0.75rem 0.25rem 1rem; }
+    .styleguide .styleguide_sidenav ul.page-tree ul.children ul.children {
+      border-left: 5px solid #0075b6; }
+      .styleguide .styleguide_sidenav ul.page-tree ul.children ul.children a {
+        padding: 0.15rem 0.75rem 0.15rem 1rem;
+        font-size: 90%; }
+      .styleguide .styleguide_sidenav ul.page-tree ul.children ul.children ul.children {
+        border-left: 5px solid #818492; }
+
+.styleguide #accordion_search_bar_container {
+  margin-bottom: 1rem; }
 
 .styleguide main.site-content {
   padding: 2rem;

@@ -85,9 +85,22 @@
 		</div>
 
 	</div>
-	<ul class="page-sidenav">
+	<div id="accordion_search_bar_container">
+		<input type="search"
+			   id="accordion_search_bar"
+			   placeholder="Search"/>
+	</div>
+	<ul class="page-tree panel-group" id="accordion">
 
-		<?php echo do_shortcode('[posts_table]'); ?>
+		<?php
+		wp_list_pages( array(
+				'title_li'		=> '',
+				'child_of'		=> 0,
+				'post_type'		=> 'api_doc',
+				'depth'			=> 0,
+				'walker'		=> new Start_Page_Tree_Nav_Walker(),
+		) );
+		?>
 
 	</ul>
 </nav>

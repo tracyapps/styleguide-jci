@@ -15,11 +15,9 @@
 <header class="page-header" role="menubar">
 
 	<nav class="documentation-sections">
-		<div class="nav-wrapper">
-			<ul>
-				<?php start_top_nav(); ?>
-			</ul>
-		</div>
+		<ul>
+			<?php start_top_nav(); ?>
+		</ul>
 	</nav>
 
 </header>

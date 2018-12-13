@@ -68,6 +68,17 @@ class Sidebar_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
+class Page_Tree_Menu_Walker extends Walker_Nav_Menu {
+	function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 ) {
+		$output .= sprintf(
+			"\n<li><a data-toggle='collapse' href='%s'%s> <span>%s</span></a></li>\n",
+			$item->url,
+			( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+			$item->title
+		);
+	}
+}
+
 
 // The Footer Menu
 function start_footer_links() {

@@ -136,21 +136,19 @@ function has_children() {
 	endif;
 }
 
-function start_display_child_pages() {
+function start_display_page_tree( $postType = 'page' ) {
 	global $post;
-
 
 	$all_the_children = get_pages(
 		array(
-			'post_type'		=> 'page',
-			'child_of'		=> $post->ID,
-			'parent'		=> $post->ID,
+			'post_type'		=> $postType,
+			'child_of'		=> 0,
 			'sort_column'	=> 'menu_order'
 
 		)
 	);
 
-	$output ='<section class="page-children-grid">';
+	$output ='<section class="page-tree">';
 
 	foreach( $all_the_children as $one_child ) :
 		//$featured_image = wp_get_attachment_image_url( get_post_thumbnail_id( $one_child->ID ), array( 800, 550 ) );
@@ -185,8 +183,6 @@ function start_display_child_pages() {
 
 function start_display_child_pages_with_options() {
 	global $post;
-
-
 
 	$all_the_children = get_pages(
 		array(

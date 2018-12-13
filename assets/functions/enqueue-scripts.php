@@ -11,7 +11,10 @@ function site_scripts() {
 	wp_enqueue_script( 'codemirror-mode-css', get_template_directory_uri() . '/assets/js/vendor/codemirror/mode/css/css.js', array(), '', false );
 	// materalize js
 	wp_enqueue_script( 'materialize-js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array(), '', true );
-	//wp_enqueue_script( 'materialze-customnav-js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/83206/materialize_sidenav_modified.js', array(), '', true );
+	// bootstrap js
+	wp_enqueue_script( 'bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ), '', true );
+	// toggle menu state js
+	wp_enqueue_script( 'pagetree-toggle-cookies-js', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array( 'jquery' ), '', true );
 	// our theme stylesheet
 	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
 
