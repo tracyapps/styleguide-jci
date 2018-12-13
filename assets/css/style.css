@@ -1794,7 +1794,10 @@ header.grid-header {
         background: rgba(0, 194, 245, 0.25); }
       .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap .open_close svg {
         width: 30%;
-        margin-left: 10px; }
+        margin-left: 10px;
+        transition: transform 200ms ease-in-out; }
+      .styleguide .styleguide_sidenav ul.page-tree li.page_item_has_children > span.nav_item_text_wrap .open_close.closed svg {
+        transform: rotate(-90deg); }
   .styleguide .styleguide_sidenav ul.page-tree ul.children {
     border-left: 5px solid #00b5e4;
     margin-left: 1rem;

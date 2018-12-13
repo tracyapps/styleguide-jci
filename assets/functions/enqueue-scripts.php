@@ -4,7 +4,7 @@ function site_scripts() {
 
 	// Adding scripts file in the footer
 	// fontawesome
-	wp_enqueue_script( 'fontawesome-js', get_template_directory_uri() . '/node_modules/@fortawesome/fontawesome-pro/js/all.js', array(), '', true );
+	wp_enqueue_script( 'fontawesome-js', get_template_directory_uri() . '/fontawesome/@fortawesome/fontawesome-pro/js/all.js', array(), '', true );
 	//  codemirror JS
 	wp_enqueue_script( 'codemirror-js', get_template_directory_uri() . '/assets/js/vendor/codemirror/codemirror.js', array(), '', false );
 	wp_enqueue_script( 'codemirror-mode-js', get_template_directory_uri() . '/assets/js/vendor/codemirror/mode/xml/xml.js', array(), '', false );
