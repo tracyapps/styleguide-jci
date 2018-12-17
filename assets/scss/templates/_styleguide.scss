@@ -5,15 +5,16 @@
 		margin: 0;
 		padding: 0;
 		min-height: calc( 100vh - 1px );
-		width: 100%;
-		grid-template-columns: $left_side_nav_width_open 1fr 240px;
+		max-width: 100%;
+		grid-template-columns: 230px 1fr 240px;
 		grid-template-rows: 3rem 1fr 3rem;
 		grid-template-areas:
 				"sidenav header header"
 				"sidenav content content"
 				"footer footer footer";
 
-		&.single-api_doc {
+		&.single-api_doc,
+		&.single-component {
 			grid-template-areas:
 					"sidenav header header"
 					"sidenav content aside"
@@ -33,6 +34,10 @@
 
 		main.site-content {
 			grid-area: content;
+		}
+
+		aside.site-aside {
+			grid-area: aside;
 		}
 
 		footer.site-footer {
@@ -323,8 +328,8 @@
 		background: $white;
 
 		#main {
-			width: 100%;
 			padding: 0;
+			max-width: calc( 100vw - 450px );
 		}
 
 		table {
@@ -457,6 +462,11 @@
 	}
 
 
+	pre,
+	code {
+		max-width: 100%;
+		overflow-y: auto;
+	}
 
 	.example-container {
 		display: grid;

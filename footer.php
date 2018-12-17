@@ -8,7 +8,7 @@
 		</nav>
 	</div> <!-- end #inner-footer -->
 </footer> <!-- end .footer -->
-
+<aside class="site-aside"> </aside>
 
 
 <svg height="0" width="0" viewBox="0 0 0 0" aria-hidden="true">
