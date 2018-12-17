@@ -13,8 +13,7 @@
 				"sidenav content content"
 				"footer footer footer";
 
-		&.single-api_doc,
-		&.single-component {
+		&.single-api_doc {
 			grid-template-areas:
 					"sidenav header header"
 					"sidenav content aside"
@@ -329,7 +328,7 @@
 
 		#main {
 			padding: 0;
-			max-width: calc( 100vw - 450px );
+			width: 100%;
 		}
 
 		table {
@@ -337,6 +336,8 @@
 			background: rgba( $offwhite, 0.4 );
 			border-collapse: collapse;
 			width: 100%;
+			max-width: 100%;
+			overflow-x: scroll;
 
 			td,
 			th {
@@ -349,6 +350,15 @@
 				}
 			}
 		}
+		pre {
+			max-width: calc( 100vw - 500px - 4rem );
+			overflow-x: auto;
+			border: 1px solid rgba( $light-blue, 0.3 );
+			background: rgba( $offwhite, 0.4 );
+			padding: 5px;
+		}
+
+
 	}
 
 	footer.site-footer {

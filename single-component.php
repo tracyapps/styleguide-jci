@@ -8,6 +8,8 @@
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+				<?php echo do_shortcode('[ez-toc]') ?>
+
 					<section class="component component-intro">
 						<h2>Introduction</h2>
 						<?php the_field( 'intro' ); ?>

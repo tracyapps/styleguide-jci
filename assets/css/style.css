@@ -1612,7 +1612,7 @@ header.grid-header {
   grid-template-columns: 230px 1fr 240px;
   grid-template-rows: 3rem 1fr 3rem;
   grid-template-areas: "sidenav header header" "sidenav content content" "footer footer footer"; }
-  .styleguide body.single-api_doc, .styleguide body.single-component {
+  .styleguide body.single-api_doc {
     grid-template-areas: "sidenav header header" "sidenav content aside" "footer footer footer"; }
   .styleguide body.admin-bar {
     min-height: calc( 100vh - 32px - 1px); }
@@ -1822,12 +1822,14 @@ header.grid-header {
   background: #fff; }
   .styleguide main.site-content #main {
     padding: 0;
-    max-width: calc( 100vw - 450px); }
+    width: 100%; }
   .styleguide main.site-content table {
     border: 1px solid rgba(0, 194, 245, 0.3);
     background: rgba(244, 245, 248, 0.4);
     border-collapse: collapse;
-    width: 100%; }
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll; }
     .styleguide main.site-content table td,
     .styleguide main.site-content table th {
       padding: 0.5em 1em;
@@ -1836,6 +1838,12 @@ header.grid-header {
       .styleguide main.site-content table td:last-child,
       .styleguide main.site-content table th:last-child {
         border-right: none; }
+  .styleguide main.site-content pre {
+    max-width: calc( 100vw - 500px - 4rem);
+    overflow-x: auto;
+    border: 1px solid rgba(0, 194, 245, 0.3);
+    background: rgba(244, 245, 248, 0.4);
+    padding: 5px; }
 
 .styleguide footer.site-footer {
   background: #50525d;
