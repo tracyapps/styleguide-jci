@@ -128,3 +128,15 @@ function required_active_nav_class( $classes, $item ) {
 }
 
 add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );
+
+// Add the category class to nav items
+function start_add_category_nav_class( $classes, $item ){
+	if( 'category' == $item->object ){
+		$classes[] = 'menu-category-' . $item->object_id;
+		if( in_category( $item->object_id ) || is_category( $item->object_id ) ) {
+			$classes[] = ' active_category';
+		}
+	}
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'start_add_category_nav_class', 10, 2 );

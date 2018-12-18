@@ -201,7 +201,8 @@
 			}
 
 			.current-menu-item,
-			.current_page_item {
+			.current_page_item,
+			.active_category {
 				> a,
 				> a:hover,
 				> span.nav_item_text_wrap a,
@@ -350,7 +351,7 @@
 				}
 			}
 		}
-		pre {
+		pre:not([class*="CodeMirror"]) {
 			max-width: calc( 100vw - 500px - 4rem );
 			overflow-x: auto;
 			border: 1px solid rgba( $light-blue, 0.3 );

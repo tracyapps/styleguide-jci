@@ -1582,7 +1582,11 @@ header.grid-header {
     .styleguide .styleguide_sidenav ul .current_page_item > a,
     .styleguide .styleguide_sidenav ul .current_page_item > a:hover,
     .styleguide .styleguide_sidenav ul .current_page_item > span.nav_item_text_wrap a,
-    .styleguide .styleguide_sidenav ul .current_page_item > span.nav_item_text_wrap a:hover {
+    .styleguide .styleguide_sidenav ul .current_page_item > span.nav_item_text_wrap a:hover,
+    .styleguide .styleguide_sidenav ul .active_category > a,
+    .styleguide .styleguide_sidenav ul .active_category > a:hover,
+    .styleguide .styleguide_sidenav ul .active_category > span.nav_item_text_wrap a,
+    .styleguide .styleguide_sidenav ul .active_category > span.nav_item_text_wrap a:hover {
       background: #0075b6;
       background: linear-gradient(to bottom, #0075b6 0%, #0075b6 94%, #00c2f5 94%);
       border-bottom: 1px solid #00c2f5;
@@ -1673,7 +1677,7 @@ header.grid-header {
       .styleguide main.site-content table:not(.standard-table) td:last-child,
       .styleguide main.site-content table:not(.standard-table) th:last-child {
         border-right: none; }
-  .styleguide main.site-content pre {
+  .styleguide main.site-content pre:not([class*="CodeMirror"]) {
     max-width: calc( 100vw - 500px - 4rem);
     overflow-x: auto;
     border: 1px solid rgba(0, 194, 245, 0.3);
