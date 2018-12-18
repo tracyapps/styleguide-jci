@@ -29,7 +29,7 @@
 	var adjustCookie = function() {
 		var tags = [];
 		$('.page-tree .hide').each(function() {
-			var tag = $(this).parent( '.page_item_has_children' ).data('node');
+			var tag = $(this).parent( '.page_item_has_children, .menu-item-has-children' ).data('node');
 			tags.push(tag.replace('#', ''));
 		});
 

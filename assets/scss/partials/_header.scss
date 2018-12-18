@@ -3,16 +3,23 @@
  */
 header.page-header {
 	&.navbar-fixed {
+		height: 56px;
+
 		.nav-wrapper {
 			display: flex;
 			justify-content: space-between;
+
+			i {
+				height: auto;
+				line-height: 1;
+			}
 		}
 		nav {
 			background: $white;
 			color: $dark;
 			height: 2.8rem;
 			line-height: 2.8;
-
+			
 			a {
 				color: $dark;
 			}
@@ -25,7 +32,7 @@ header.page-header {
 				height: 2.8rem;
 				line-height: 2.8;
 				margin: 0;
-
+				
 				span {
 					visibility: hidden;
 					width: 0;
@@ -39,7 +46,7 @@ header.page-header {
 			flex: 1;
 			display: flex;
 			justify-content: flex-end;
-
+			
 			.small-icon {
 				width: 28px;
 				height: 28px;
@@ -51,12 +58,12 @@ header.page-header {
 			flex: 1;
 			justify-content: flex-end;
 			border-right: 1px solid $light-grey;
-
+			
 			.search-closed {
 				opacity: 1;
 				transition: all 300ms ease-in-out;
 				width: 3rem;
-
+				
 				&.hidden {
 					opacity: 0;
 					width: 0;
@@ -67,7 +74,7 @@ header.page-header {
 				width: 0px;
 				overflow: hidden;
 				transition: all 300ms ease-in-out;
-
+				
 				&.visible {
 					width: auto;
 					flex: 1;
@@ -76,23 +83,23 @@ header.page-header {
 					background: $offwhite;
 					padding: 0;
 					transition: all 300ms ease-in-out;
-
+					
 					input {
 						background: transparent;
 						padding: 0 1rem;
 						width: 100%;
-
+						
 						&:hover {
 							background: $white;
 						}
 					}
-					.input-field input[type=search] ~ .mdi-navigation-close,
+					.input-field input[type=search] ~ .mdi-navigation-close, 
 					.input-field input[type=search] ~ .material-icons {
 						font-size: 1.3rem;
 						line-height: 2;
 					}
 				}
-
+				
 				input[type="search"] {
 					display: block;
 				}
@@ -108,23 +115,24 @@ header.page-header {
 .section-header {
 	display: flex;
 	justify-content: space-between;
-	height: $sectionheader_height;
-
+	height: auto;
+	min-height: $sectionheader_height;
+	
 	.page-title {
 		padding: 0.25rem 1rem;
 		margin-bottom: 2rem;
-
+		
 		h1 {
 			font-size: 1.3rem;
 			margin: 0;
 			padding: 0;
-
+			
 			svg {
 				color: $purple;
 				transform: scale(1.9);
 				transform-origin: bottom right;
 				margin: 0 10px 0 25px;
-
+				
 				&.color_configuration {
 					color: $color_configuration;
 				}
@@ -151,7 +159,7 @@ header.page-header {
 	}
 	.page-breadcrumbs {
 		padding-left: 4rem;
-
+		
 		color: darken( $light-grey, 20 );
 		a {
 			color: darken( $light-grey, 45 );

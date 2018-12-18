@@ -19,6 +19,7 @@ $grey-blue: #225564;
 $grape: #8d1394;
 $purple: #673ab7;
 $pink: #db0a8d;
+$red: #db2c48;
 $yellow: #f0cb45;
 $orange: #F5A623;
 
@@ -77,9 +78,19 @@ $default_link_color: $blue;
 $default_link_color_hover: $dark-blue;
 $secondary_link_color: $orange;
 $secondary_link_color_hover: darken( $orange, 10 );
+$confirm_color: $green;
+$confirm_color_text: $white;
+$muted_color: darken( $light-grey, 15 );
+$muted_color_text: $white;
+$warning_color: $red;
 
 $table_even_background: $white;
 $table_odd_background: $transparent-purple;
+
+$default-background-color: 	$offwhite;
+$default-text-color:       	$dark;
+$default-link-color:       	$blue;
+$default-link-color-hover: 	$dark-blue;
 
 $light_theme_background: $offwhite;
 $light_theme_text: $dark;
@@ -148,6 +159,8 @@ $tablet-landscape-up:  $breakpoint-medium;
 // fonts
 $font_body_text: 'Poppins', sans-serif;
 $font_body_text_weight: 300;
+$font_table_text: 'Roboto', sans-serif;
+$font_table_text_weight: 300;
 
 $header-font: $font_body_text;
 $body-font: $font_body_text;
@@ -169,7 +182,6 @@ $h3_font_size: $font_basefont_size * 1.5;
 $h4_font_size: $font_basefont_size * 1.4;
 $h5_font_size: $font_basefont_size * 1.2;
 $h6_font_size: $font_basefont_size * 1.1;
-
 
 // ---------------- 04. Decorative details
 

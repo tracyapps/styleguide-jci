@@ -5,24 +5,25 @@
 ?>
 
 
+<main id="main" class="styleguide-main-column" role="main">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
+		<header class="article-header">
+			<h3 class="style-title title-link">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h3>
+		</header> <!-- end article header -->
 
-	<section class="featured-image" itemprop="articleBody">
-		<?php the_post_thumbnail( 'full' ); ?>
-	</section> <!-- end article section -->
+		<?php if ( is_post_type_archive( 'component' ) || 'post_type' == 'component' || is_category() ) { ?>
+		<section class="component component-intro">
+			<span class="styleguide_header"><h2>Introduction</h2></span>
+			<?php the_field( 'intro' ); ?>
 
-	<header class="article-header">
-		<h3 class="title">
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-		</h3>
-		<?php get_template_part( 'parts/content', 'byline' ); ?>
-	</header> <!-- end article header -->
-
-	<section class="entry-content" itemprop="articleBody">
-		<?php the_content( '<button class="tiny">' . __( 'Read more...', 'start' ) . '</button>' ); ?>
-	</section> <!-- end article section -->
-
-</article> <!-- end article -->
-
-	
+			<a class="btn btn-secondary btn-full btn-large" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">View page for <?php the_title(); ?></a>
+		</section>
+		<?php } else { ?>
+			<?php the_excerpt(); ?>
+			<a class="btn btn-secondary btn-full btn-large" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">View page for <?php the_title(); ?></a>
+		<?php } ?>
+	</article> <!-- end article -->
+</main>

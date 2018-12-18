@@ -1,0 +1,112 @@
+.tabs {
+	height: auto;
+	line-height: 1;
+	width: auto;
+	overflow: hidden;
+	margin: -4px 0 0 0;
+
+	.tab {
+		margin-bottom: 1px;
+		height: auto;
+		line-height: 2.4;
+		text-transform: none;
+
+		a,
+		a.nav-link {
+			background: transparent;
+			margin: 0 0 -2px 4px;
+			padding-top: 3px;
+			color: rgba( $dark, 0.4 );
+			border-bottom: 4px solid transparent;
+			border-radius: 3px 3px 0 0;
+			transition: all 200ms ease-in-out;
+
+			&:hover,
+			&:focus {
+				background: $white;
+				color: $dark;
+			}
+
+			&.active {
+				font-weight: 700;
+				box-shadow: none;
+				background: transparent;
+				color: $dark;
+				border-bottom: 4px solid $yellow;
+				&:focus {
+					background: none;
+				}
+			}
+		}
+	}
+
+
+	.indicator {
+		display: none;
+		background-color: $yellow;
+	}
+}
+
+
+.side-tab-table {
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100vw;
+
+	nav {
+		width: auto;
+	}
+
+	.tab-side {
+		font-size: 90%;
+		width: auto;
+		border-bottom: none;
+		display: flex;
+		flex-direction: column;
+		background: none;
+		box-shadow: none;
+		margin: 1.8rem 0 0 0;
+		padding: 0;
+		line-height: 3;
+
+		.nav-link {
+			box-shadow: none;
+			display: block;
+			color: $dark;
+			text-align: left;
+			border: 1px solid $light-grey;
+			margin-bottom: -1px;
+			margin-right: -1px;
+			padding: 0 1.3rem 0 1.1rem;
+			line-height: 3;
+			white-space: nowrap;
+
+			&:hover {
+				background: $white;
+			}
+
+			&.active {
+				color: $dark;
+				background: $white;
+				font-weight: bold;
+				@include linear-gradient(to right, $active_state_color 0%,  $active_state_color 4%, transparent 4%);
+			}
+
+			span {
+				width: 6px;
+				height: 6px;
+				display: inline-block;
+				margin: -1px -5 px 0 7px;
+				border-radius: 6px;
+
+				&.has-changes {
+					background: #f00;
+				}
+			}
+		}
+	}
+	.content_table_view {
+		flex: 1;
+	}
+}

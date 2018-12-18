@@ -1,0 +1,479 @@
+.table-header {
+	min-height: 2.5rem;
+	border-top: 1px solid rgba($light-grey, 0.5);
+
+	&.grey-bg {
+		background: $offwhite;
+		background: linear-gradient(to bottom, $white 0%, $offwhite 94%);
+	}
+
+	#top-tab-container {
+		display: flex;
+		height: auto;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+		padding: 0.5rem 1.5rem;
+		width: 100%;
+
+		&.with-side-tabs {
+			width: 100%;
+		}
+
+		&.align-right {
+			justify-content: flex-end;
+		}
+	}
+}
+
+table,
+.table,
+.mat-table {
+	font-family: $font_table_text;
+
+	tr {
+		transition: all 200ms ease-in-out;
+		background: $table_even_background;
+
+		&:hover {
+			background: $highlight;
+		}
+
+		&:nth-child(odd) {
+			background: $table_odd_background;
+
+			&:hover {
+				background: $highlight;
+			}
+
+		}
+	}
+	thead {
+		tr,
+		tr:nth-child(odd) {
+			background: $table_even_background;
+		}
+
+		th {
+			font-size: 90%;
+			text-align: left;
+		}
+	}
+	tbody {
+		.mat-column-actionsColumn {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+
+	.anchorlink,
+	.removeline.anchorlink,
+	a {
+		font-family: $font_table_text;
+		color: $blue;
+		display: block;
+		font-weight: 300;
+		border-bottom: none;
+		cursor: pointer;
+
+		svg {
+			//color: $blue;
+			cursor: pointer;
+			margin: 0.5em;
+		}
+	}
+
+	.mat-form-field-infix {
+		display: flex;
+		line-height: 1;
+
+		input[ng-reflect-is-disabled="false"] {
+			padding: 2px;
+			line-height: 1;
+			margin: 7px 0 3px 0;
+		}
+
+		.btn-confirm {
+			padding: 0 4px;
+			margin: 4px -.65em 4px 2px;
+			display: flex;
+			align-items: center;
+
+			svg,
+			.fa,
+			.svg-inline--fa {
+				margin: 0;
+			}
+		}
+	}
+
+
+	.mat-form-field-flex {
+		padding: 0.15rem;
+	}
+
+	tr {
+		&.mat-footer-row,
+		&.mat-row,
+		&.mat-header-row {
+			height: auto;
+		}
+	}
+	td {
+		padding: 0.5rem;
+		border-bottom: 1px solid rgba($light-grey, 0.5);
+
+		&.mat-cell,
+		&.mat-footer-cell,
+		&.mat-header-cell {
+			padding: 0.5rem;
+			border-bottom: 1px solid rgba($light-grey, 0.5);
+		}
+	}
+	thead {
+		th {
+			padding: 0.5rem 0.5rem;
+			height: auto;
+			line-height: 2.25;
+			border-left: 1px solid rgba($light-grey, 0.75);
+			border-bottom: 1px solid rgba($light-grey, 0.95);
+
+			.mat-sort-header-button {
+				border: none;
+				box-shadow: none;
+
+				&:hover,
+				&:focus,
+				&:target {
+					background: inherit;
+				}
+
+				&:focus {
+					border: 1px dotted $medium-grey;
+				}
+			}
+		}
+	}
+
+
+	&.grid-table {
+		width: 100%;
+		display: block;
+
+		tbody,
+		thead,
+		tfoot {
+			width: 100%;
+			display: block;
+		}
+
+		tr {
+			width: 100%;
+			display: flex;
+
+			transition: background 200ms ease-in-out;
+			background: $table_even_background;
+
+			&:hover {
+				background: $highlight;
+			}
+
+			&:nth-child(odd) {
+				background: $table_odd_background;
+
+				&:hover {
+					background: $highlight;
+				}
+			}
+
+			td,
+			th {
+				padding: 0.5rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				flex: 1;
+
+				&.mat-column-actionsColumn,
+				&.actionsColumn {
+					flex: none;
+					width: 90px;
+					font-size: 80%;
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+					border-left: none;
+				}
+
+				&.mat-column-select,
+				&.selectColumn {
+					flex: none;
+					width: 35px;
+				}
+
+				&.larger-column {
+					flex-grow: 2;
+				}
+				&.largest-column {
+					flex-grow: 3;
+				}
+				&.smaller-column {
+					flex-shrink: 2;
+				}
+			}
+
+		}
+
+		thead,
+		tfoot {
+			tr,
+			tr:nth-child(odd) {
+				background: none !important;
+				&:hover {
+					background: none !important;
+				}
+			}
+		}
+
+		&.entity-detail-relationships-tab {
+			tr {
+				width: 100%;
+				display: grid;
+				grid-template-columns: 250px 1fr 1fr 18px;
+				grid-template-areas: "column-1 column-2 column-3 column-action-row";
+
+				transition: background 200ms ease-in-out;
+				background: $table_even_background;
+
+				&:hover {
+					background: $highlight;
+				}
+
+				&:nth-child(odd) {
+					background: $table_odd_background;
+
+					&:hover {
+						background: $highlight;
+					}
+				}
+
+				&.parent-row {
+					border-top: 1px solid $light-grey;
+					grid-template-columns: 100%;
+					grid-template-areas: "child-table";
+					background: none !important;
+
+					&:hover {
+						background: none !important;
+					}
+
+					tr {
+						border-left: 5px solid $light-grey;
+					}
+				}
+
+				td,
+				th {
+					padding: 0.5rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					&.child-table-container {
+						padding: 0;
+					}
+				}
+
+				.grid-col-1 {
+					grid-area: column-1;
+				}
+				.grid-col-2 {
+					border-left: 1px dashed rgba( $light-grey, 0.75 );
+					padding-left: 10px;
+					grid-area: column-2;
+				}
+				.grid-col-3 {
+					grid-area: column-3;
+				}
+				.grid-action-row {
+					grid-area: column-action-row;
+				}
+
+				.grid-span-2 {
+					grid-column: span 2;
+				}
+				.grid-span-3 {
+					grid-column: span 3;
+				}
+				.parent-row,
+				.grid-span-all {
+					grid-column: 1 / -1;
+				}
+			}
+
+			.child-table {
+				width: 99%;
+				margin-right: -2px;
+				max-width: 99%;
+				overflow: hidden;
+				display: block;
+
+				thead {
+					display: grid;
+					width: 100%;
+				}
+
+				tbody {
+					border-bottom: 1px solid $light-grey;
+					transition: background 200ms ease-in-out;
+					background: $table_even_background;
+					display: grid;
+					width: 100%;
+
+					&:hover {
+						background: $highlight;
+					}
+
+					&:nth-child(odd) {
+						background: $table_odd_background;
+
+						&:hover {
+							background: $highlight;
+						}
+					}
+					tr {
+						background: none;
+						border-bottom: none;
+
+						&:hover {
+							background: $highlight;
+						}
+
+						&:last-child {
+							.grid-col-2,
+							.grid-col-3,
+							.grid-action-row {
+								border-bottom: none;
+							}
+						}
+
+						.grid-col-2,
+						.grid-col-3,
+						.grid-action-row {
+							border-bottom: 1px solid $light-grey;
+						}
+
+
+						td {
+							padding: 0.35rem 0.5rem;
+
+							span {
+								white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+							}
+
+							&.grid-action-row {
+								padding: 0;
+							}
+						}
+					}
+					.collapsable-grid-first-row {
+						.grid-col-1 {
+							cursor: pointer;
+						}
+					}
+					.number-relationships-circle {
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+						background: $primary_color;
+						color: $white;
+						border-radius: 50%;
+						line-height: 1;
+						font-weight: 300;
+						font-size: 11px;
+						text-align: center;
+						padding: 3px 0;
+						margin: -1px 0 0 4px;
+						transition: all 200ms ease-in-out;
+						opacity: 0;
+					}
+
+					&.closed {
+						display: block;
+						overflow: hidden;
+						white-space: nowrap;
+						padding-top: 4px;
+
+						tr {
+							display: inline;
+							border-left: none;
+
+							&.collapsable-grid-first-row {
+								.grid-col-1 {
+									display: inline-block;
+									width: 255px;
+									border-left: 5px solid $light-grey;
+									border-right: 1px dotted $light-grey;
+									margin: -1.25em 0 0 0;
+									padding: 0.34em 0.5em 0.34em 0.65em;
+									line-height: 2;
+								}
+							}
+							td {
+								padding: 0.34em 0 0.5em 0.65em;
+								margin: 4px 0 0 0;
+								border: none;
+								border-left: none;
+								color: $light-grey;
+								font-style: italic;
+
+								&.grid-action-row {
+									display: none;
+								}
+							}
+
+						}
+						.number-relationships-circle {
+							opacity: 1;
+						}
+					}
+
+					&.open {
+						max-width: 100%;
+						white-space: normal;
+
+						.number-relationships-circle {
+							opacity: 0;
+						}
+					}
+
+					.svg-inline--fa {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.no-break {
+	display: flex;
+
+	a {
+		display: inline-block;
+	}
+	i {
+		padding: 0 0.5rem;
+	}
+
+	.status-toggle & {
+		justify-items: flex-start;
+	}
+}
+
+.hover-show-all {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

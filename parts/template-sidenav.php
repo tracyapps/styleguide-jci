@@ -84,7 +84,7 @@
 		</div>
 
 	</div>
-	<ul class="page-sidenav">
+	<ul class="page-tree">
 
 		<?php start_side_nav(); ?>
 

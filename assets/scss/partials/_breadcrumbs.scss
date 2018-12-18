@@ -11,19 +11,19 @@ nav[aria-label="breadcrumb"] {
 	padding: 0;
 	height: auto;
 	line-height: 1;
-	border-bottom: none;
 	margin: 0 0 0 -4px;
 	overflow: hidden;
 	background: rgba( $light-grey, 0.5 );
 	display: flex;
 	border-bottom: 1px solid rgba( $light-grey, 0.5 );
-	font-family: 'Roboto', sans-serif;
+	font-family: $font_table_text;
 }
 .breadcrumb-item {
 	flex: none;
 	color: transparent;
 	margin: 0 1rem 0 0.5rem;
 	font-size: 60%;
+	color: $medium-grey;
 	
 	strong {
 		font-weight: normal;

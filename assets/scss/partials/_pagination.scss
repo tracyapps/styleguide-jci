@@ -1,0 +1,38 @@
+.pagination {
+	li {
+		height: auto;
+
+		&.active {
+			background: $primary_color;
+		}
+
+		a {
+			font-size: 80%;
+			padding: 0.25rem 0.75rem;
+			line-height: 1;
+			cursor: pointer;
+		}
+	}
+}
+
+.number-of-items-select {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 80%;
+
+	span {
+		display: inline-block;
+		white-space: nowrap;
+		padding: 0 0.5em;
+	}
+
+	select {
+		padding: 0.25rem;
+		font-size: 80%;
+		height: auto;
+	}
+	select.form-control:not([size]):not([multiple]) {
+		height: auto;
+	}
+}

@@ -30,12 +30,12 @@ function start_top_nav() {
 	) );
 }
 
-// The Top Menu
+// The Side Menu
 function start_side_nav() {
 	wp_nav_menu( array(
 		'container' => false,
 		// Remove nav container
-		//'menu_class' => 'vertical medium-horizontal menu',
+		//'menu_class' => 'page-tree',
 		// Adding custom nav class
 		//'items_wrap' => '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-close-on-click-inside="false">%3$s</ul>',
 		'items_wrap'	=> '%3$s',
@@ -45,7 +45,7 @@ function start_side_nav() {
 		// Limit the depth of the nav
 		'fallback_cb' => false,
 		// Fallback function (see below)
-		//'walker' => new Sidebar_Menu_Walker()
+		'walker' => new Start_Walker_Nav_Menu()
 	) );
 }
 

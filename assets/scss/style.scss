@@ -12,12 +12,13 @@ CSS file.
 //@import "node_modules/bourbon/app/assets/stylesheets/bourbon";
 
 // Import variables and custom mixins
-@import "variables";
+//@import "variables";
+
 
 
 @import "node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "node_modules/scut/dist/scut";
-
+/*
 // Import your custom styles
 @import "general/general";
 @import "components/components";
@@ -28,3 +29,23 @@ CSS file.
 
 // Import your print styles
 @import "print";
+*/
+
+@import 'partials/fonts';
+@import 'variables';
+@import 'mixins';
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/header';
+@import 'partials/sidenav';
+@import 'partials/footer';
+@import 'partials/breadcrumbs';
+@import 'partials/tables';
+@import 'partials/forms';
+@import 'partials/tabs';
+@import 'partials/pagination';
+@import 'partials/grid';
+@import 'partials/drawer';
+@import 'partials/modal';
+
+@import 'styleguide';

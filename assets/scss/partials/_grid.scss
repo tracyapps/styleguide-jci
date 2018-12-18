@@ -1,0 +1,62 @@
+.grid-header {
+	padding: 1.25rem 1rem 1rem 1rem;
+	background: $white;
+	border-top: 1px solid $light-grey;
+
+	.tile-filter {
+		display: flex;
+		align-items: flex-start;
+
+		> span {
+
+		}
+		> div {
+			flex: 1;
+			padding-bottom: 1rem;
+		}
+
+
+		[type="checkbox"] {
+
+			&.filled-in:checked {
+				+ span:not(.lever):after {
+					background-color: $dark;
+					border-color: $dark;
+				}
+
+				&.color_configuration {
+					+ span:not(.lever):after {
+						background-color: $color_configuration;
+						border-color: $color_configuration;
+					}
+				}
+				&.color_tools {
+					+ span:not(.lever):after {
+						background-color: $color_tools;
+						border-color: $color_tools;
+					}
+				}
+				&.color_help_and_support {
+					+ span:not(.lever):after {
+						background-color: $color_help_and_support;
+						border-color: $color_help_and_support;
+					}
+				}
+				&.color_service_health {
+					+ span:not(.lever):after {
+						background-color: $color_service_health;
+						border-color: $color_service_health;
+					}
+				}
+				&.color_applications {
+					+ span:not(.lever):after {
+						background-color: $color_applications;
+						border-color: $color_applications;
+					}
+				}
+			}
+
+		}
+
+	}
+}

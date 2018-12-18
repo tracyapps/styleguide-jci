@@ -1,0 +1,250 @@
+.mat-dialog-container,
+.ng-trigger-dialogContainer {
+	transition: all 500ms ease-in-out;
+}
+#edit_drawer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: $white;
+	overflow: hidden;
+	height: 0;
+	z-index: -1;
+	transition: all 500ms ease-in-out;
+
+	.ng-trigger-dialogContainer & {
+		overflow: inherit;
+		z-index: 9999999 !important;
+		height: calc(
+			100vh - #{$breadcrumb_height} - #{$fixednav_height} - #{$sectionheader_height} -
+			1.2rem
+		) !important;
+	}
+
+	.drawer_button_tab {
+		margin-top: -4rem;
+		min-height: 4rem;
+		background: $white;
+		padding: 1em 2em;
+		margin-right: 1em;
+		float: right;
+	}
+
+	.drawer-container {
+		display: grid;
+		width: 100%;
+		grid-template-columns: 2fr 1fr 2fr;
+		padding: 0.5rem 1rem;
+		align-items: stretch;
+
+
+		.header-row {
+			padding: 3rem 1rem 1rem 1rem;
+		}
+
+		.centered-content {
+			text-align: center;
+		}
+
+
+		.entity-table {
+			table {
+				@include linear-gradient(132deg, rgba( lighten( $purple, 10 ), 0.2 ) 0%, rgba( $purple, 0.25 ) 100%);
+				border-radius: 3px;
+				padding: 3px;
+				display: block;
+				height: 100%;
+
+				thead,
+				tbody,
+				tfoot {
+					display: block;
+					width: 100%;
+				}
+
+				thead tr,
+				tbody tr,
+				tfoot tr {
+					width: 100%;
+					display: grid;
+					grid-template-columns: 2fr 1fr 30px;
+				}
+
+				tbody {
+					background: $white;
+					max-height: 20vh;
+					width: 100%;
+					overflow-x: hidden;
+				}
+				tfoot {
+					background: $white;
+					border-top: 1px solid rgba( $purple, 0.25 );
+
+					td {
+						grid-column: span 3;
+						padding: 0;
+						font-size: 90%;
+
+					}
+				}
+			}
+
+			&.disabled {
+				table {
+					@include linear-gradient(132deg, rgba( $light-grey, 0.20 ) 0%, rgba( $light-grey, 0.35 ) 100%);
+					padding: 7px;
+					display: flex;
+					flex-direction: column;
+
+					thead,
+					tfoot {
+						background: $white;
+						display: block;
+						border: none;
+						height: 20%;
+					}
+					tbody {
+						flex: 1;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+
+						tr {
+							border: none !important;
+						}
+
+						td {
+							background: $white;
+							grid-column: span 3;
+							text-align: center;
+
+						}
+					}
+				}
+			}
+
+			&.column-three {
+				table {
+					@include linear-gradient(132deg, rgba(  $dark-blue , 0.25 ) 0%, rgba( lighten( $dark-blue, 20 ), 0.15 ) 100%);
+				}
+
+				&.disabled {
+					table {
+						@include linear-gradient(132deg, rgba( $light-grey, 0.45 ) 0%, rgba( $light-grey, 0.25 ) 100%);
+					}
+				}
+			}
+
+			.delete-action-column {
+				text-align: right;
+				font-size: 80%;
+
+				a {
+					padding: 0 0.25em;
+					color: $light-grey;
+					transition: all 200ms ease-in-out;
+					cursor: pointer;
+
+					&:focus,
+					&:target,
+					&:hover {
+						color: $pink;
+					}
+				}
+			}
+		}
+
+		.relationship-mapping {
+			align-self: center;
+
+			> span {
+				display: block;
+				@include linear-gradient(132deg, rgba( $purple, 0.25 ) 0%, rgba( $dark-blue, 0.25 ) 100%);
+				padding: 5px 1em;
+				position: relative;
+				margin-right: 2em;
+
+				&:after,
+				&:before {
+					left: 100%;
+					top: 50%;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+				}
+
+				&:after {
+					border-color: rgba(0, 0, 0, 0);
+					border-left-color: rgba( $dark-blue, 0.25 );
+					border-width: 2em;
+					margin-top: -2em;
+				}
+
+				&:before {
+					border-color: rgba(194, 236, 245, 0);
+					border-left-color: transparent;
+					border-width: 36px;
+					margin-top: -36px;
+				}
+			}
+			select {
+				display: inline-block;
+				background: rgba( $white, 0.5 );
+				font-family: "Poppins", sans-serif;
+			}
+
+			&.disabled {
+				span {
+					@include linear-gradient(132deg, rgba( $light-grey, 0.35 ) 0%, rgba( $light-grey, 0.45 ) 100%);
+
+					&:after {
+						border-color: rgba(0, 0, 0, 0);
+						border-left-color: rgba( $light-grey, 0.45 );
+						border-width: 2em;
+						margin-top: -2em;
+					}
+				}
+			}
+		}
+	}
+
+	.add-another-separator {
+		display: block;
+		text-align: right;
+		padding: 1em;
+		border-bottom: 1px dotted $light-grey;
+		margin-bottom: 4em;
+
+		.btn {
+			margin-bottom: -3em;
+		}
+	}
+}
+
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	opacity: 0;
+	z-index: -1;
+	background: rgba($dark, 0.75);
+	transition: opacity 450ms ease-in-out;
+
+	.ng-star-inserted & {
+		z-index: 9999;
+		opacity: 1;
+	}
+}
+html.drawer_open {
+	.overlay {
+		z-index: 9999;
+		opacity: 1;
+	}
+}

@@ -8,14 +8,14 @@
 
 				<header>
 					<?php start_the_archive_title( '<h1 class="page-title">', '</h1>', 'smaller'); ?>
-					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+
 				</header>
 
 				<?php if ( have_posts() ) :
-					echo '<section class="archive-grid">';
+					echo '<section class="archive-list">';
 					while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'parts/loop', 'component-grid' ); ?>
+						<?php get_template_part( 'parts/loop', 'archive-list' ); ?>
 
 
 				<?php endwhile; ?>

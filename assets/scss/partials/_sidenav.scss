@@ -6,13 +6,13 @@
 	background: $dark_theme_background;
 	color: $dark_theme_text;
 	overflow: inherit;
-
+	
 	&.sidenav > ul > li > a {
 		padding: 1rem;
 		height: auto;
-		text-transform: uppercase;
+		text-transform: uppercase;	
 	}
-
+	
 	a {
 		color: $white;
 		font-size: 0.8rem;
@@ -22,7 +22,7 @@
 		align-items: center;
 		width: 100%;
 		position: relative;
-
+		
 		svg {
 			transform: scale(1.8);
 			margin: 0 7px 0 0;
@@ -44,12 +44,12 @@
 			}
 		}
 	}
-
+	
 	li {
 		position: relative;
 		display: block;
 	}
-
+	
 	body:not(.side_menu_open) & {
 		.branding-container {
 			#johnson,
@@ -75,7 +75,7 @@
 					width: $left_side_nav_width_closed;
 					transition: all 200ms ease-in-out;
 					padding: 0 1rem;
-
+					
 					span:first-of-type {
 						opacity: 0;
 						width: 0;
@@ -83,7 +83,7 @@
 						overflow: hidden;
 						transition: opacity 200ms ease-in-out;
 					}
-
+				
 					.children_indicator {
 						display: none;
 					}
@@ -91,7 +91,7 @@
 			}
 			.has_children {
 				position: relative;
-
+				
 				.collapsible-body.child-pages {
 					position: absolute;
 					right: calc( #{- $left_side_nav_width_open} * 0.8 );
@@ -99,13 +99,13 @@
 					width: calc( #{$left_side_nav_width_open} * 0.8 );
 					background: darken( $dark_theme_background, 5 );
 					padding-left: 0;
-
+					
 				}
 			}
 		}
 		li.active {
 			@include linear-gradient(to right, $grey-blue 0%, $grey-blue 78%, darken( $dark_theme_background, 5 ) 78%);
-
+			
 			&.color_dashboard {
 				@include linear-gradient(to right, $color_dashboard 0%, $color_dashboard 78%, darken( $dark_theme_background, 5 ) 78%);
 			}
@@ -126,7 +126,7 @@
 			}
 		}
 	}
-
+	
 	li.active {
 		@include linear-gradient(to right, $grey-blue 0%, $grey-blue 3%, darken( $dark_theme_background, 5 ) 3%);
 		&.color_dashboard {
@@ -155,18 +155,18 @@
 			top: 13px;
 		}
 	}
-
+	
 	.branding-container {
 		display: flex;
 		align-items: center;
 		width: 90%;
 		margin: 0 auto 0.75rem auto;
-
+	
 		.logo {
 			border-right: 1px solid $white;
 			width: 44%;
 			margin: 0.5rem 0;
-
+			
 			svg {
 				width: 80%;
 				height: auto;
@@ -180,7 +180,7 @@
 			padding: 1rem 0.75rem;
 		}
 	}
-
+	
 	.collapsible {
 		font-size: 0.7rem;
 		font-weight: 500;
@@ -195,18 +195,18 @@
 	.collapsible-body {
 		background: transparent;
 		padding: 0 0.5rem 0 1rem;
-
+		
 		li {
 			line-height: 1;
 		}
 		a {
 			padding: 0.7rem 1.1rem;
 			height: auto;
-
+			
 			&[href="#"] {
 				color: $medium-grey;
 			}
-
+			
 			svg {
 				transform: scale(1.1);
 			}

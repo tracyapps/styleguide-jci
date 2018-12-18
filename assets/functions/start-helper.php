@@ -61,7 +61,7 @@ function start_get_the_archive_title( $span_class = '' ) {
 			$type =__( 'Day: ' );
 			$name = get_the_date( _x( 'F j, Y', 'daily archives date format' ) );
 		} elseif ( is_post_type_archive() ) {
-			$type = __( 'Archives: ' );
+			$type = __( '' );
 			$name = post_type_archive_title( '', false );
 		} elseif ( is_tax() ) {
 			$tax = get_taxonomy( get_queried_object()->taxonomy );
@@ -94,7 +94,7 @@ function start_get_the_archive_title( $span_class = '' ) {
 			$title = _x( 'Chats', 'post format archive title' );
 		}
 	} else {
-		$title = __( 'Archives' );
+		$title = __( '' );
 	}
 
 	/**
