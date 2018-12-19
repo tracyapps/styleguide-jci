@@ -5,7 +5,7 @@
 		return jQuery(n).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
 	};
 
-	$('#accordion_search_bar').on('change keyup paste click', function () {
+	$('#accordion_search_bar').on('change keyup paste click blur', function () {
 		searchTerm = $(this).val();
 		$('#accordion .page_item').each(function () {
 			panelContainerId = '#' + $(this).attr('id');
