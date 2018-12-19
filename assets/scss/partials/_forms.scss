@@ -16,9 +16,26 @@ input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
 	height: auto;
-	font-size: inherit;
-	margin: 0;
-	font-family: 'Poppins', sans-serif;
+	padding: 0.5rem 1rem;
+	outline: none;
+	border: 1px solid rgba( $default-text-color, 0.2 );
+	border-radius: 3px;
+	background: $white;
+	font-size: $font_basefont_size;
+	font-family: $font_body_text;
+	margin-left: 1rem;
+	box-shadow: none;
+	-webkit-appearance: none;
+
+	&:hover {
+		border: 1px solid $primary-color;
+	}
+
+	&:focus {
+		outline: none;
+		border: 1px dotted $secondary-color;
+		background: $default-background-color;
+	}
 }
 
 .standard-table .mat-form-field-appearance-outline,

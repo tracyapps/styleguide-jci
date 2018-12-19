@@ -336,10 +336,7 @@ input[type="submit"] {
   .btn.btn-primary.btn-secondary,
   a.btn.btn-primary.btn-secondary,
   input[type="submit"].btn-secondary {
-    background-color: #fff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23d3d4d9' stroke-width='4.3' stroke-opacity='0.2'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
-    border: 1px solid rgba(211, 212, 217, 0.4);
-    color: #818492;
+    background: #00c2f5;
     box-shadow: none; }
     button.btn-secondary:hover,
     .btn.btn-secondary:hover,
@@ -347,8 +344,7 @@ input[type="submit"] {
     .btn.btn-primary.btn-secondary:hover,
     a.btn.btn-primary.btn-secondary:hover,
     input[type="submit"].btn-secondary:hover {
-      background-color: rgba(0, 194, 245, 0.1);
-      border: 1px solid rgba(211, 212, 217, 0.75); }
+      background: #00718f; }
   button.disabled,
   .btn.disabled,
   a.btn.disabled,
@@ -1475,9 +1471,46 @@ input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   height: auto;
-  font-size: inherit;
-  margin: 0;
-  font-family: 'Poppins', sans-serif; }
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid rgba(52, 52, 71, 0.2);
+  border-radius: 3px;
+  background: #fff;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin-left: 1rem;
+  box-shadow: none;
+  -webkit-appearance: none; }
+  input:not([type]):hover,
+  input[type=text]:not(.browser-default):hover,
+  input[type=password]:not(.browser-default):hover,
+  input[type=email]:not(.browser-default):hover,
+  input[type=url]:not(.browser-default):hover,
+  input[type=time]:not(.browser-default):hover,
+  input[type=date]:not(.browser-default):hover,
+  input[type=datetime]:not(.browser-default):hover,
+  input[type=datetime-local]:not(.browser-default):hover,
+  input[type=tel]:not(.browser-default):hover,
+  input[type=number]:not(.browser-default):hover,
+  input[type=search]:not(.browser-default):hover,
+  textarea.materialize-textarea:hover {
+    border: 1px solid #673ab7; }
+  input:not([type]):focus,
+  input[type=text]:not(.browser-default):focus,
+  input[type=password]:not(.browser-default):focus,
+  input[type=email]:not(.browser-default):focus,
+  input[type=url]:not(.browser-default):focus,
+  input[type=time]:not(.browser-default):focus,
+  input[type=date]:not(.browser-default):focus,
+  input[type=datetime]:not(.browser-default):focus,
+  input[type=datetime-local]:not(.browser-default):focus,
+  input[type=tel]:not(.browser-default):focus,
+  input[type=number]:not(.browser-default):focus,
+  input[type=search]:not(.browser-default):focus,
+  textarea.materialize-textarea:focus {
+    outline: none;
+    border: 1px dotted #225564;
+    background: #f4f5f8; }
 
 .standard-table .mat-form-field-appearance-outline .mat-form-field-outline-end,
 .standard-table .mat-form-field-appearance-outline .mat-form-field-outline-start,
@@ -2412,6 +2445,16 @@ html.drawer_open .overlay {
     transition: background-color 300ms ease-in-out; }
     .styleguide .style-title.title-link:hover {
       background-color: rgba(0, 194, 245, 0.1); }
+  .styleguide .style-title.two-col {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .styleguide .style-title.two-col a {
+      -ms-flex: 1;
+      flex: 1; }
+    .styleguide .style-title.two-col span.btn {
+      font-size: 14px; }
 
 .styleguide .section-palette {
   display: grid;
@@ -2426,3 +2469,6 @@ html.drawer_open .overlay {
   .styleguide .section-palette .accent-colors {
     width: 100%;
     margin: 0; }
+
+.styleguide .padding {
+  padding: 0 30px; }
