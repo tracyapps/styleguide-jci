@@ -64,11 +64,7 @@
 			var oneThingClosed = $(this).parent( '.page_item_has_children, .menu-item-has-children' ).data('node');
 			thingsThatWereClosed.push( oneThingClosed.replace( '#', '' ) );
 		});
-		console.log('closed: ');
-		console.log(thingsThatWereClosed);
 	};
-
-	console.log('first load: ');
 	updateTheList();
 	$('#accordion_search_bar')
 		.focus( function() {
