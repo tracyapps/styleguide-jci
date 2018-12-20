@@ -24,6 +24,18 @@ input[type="submit"] {
 		@include button(transparent, $secondary_link_color);
 		background-color: transparent;
 		box-shadow: none;
+
+		&:hover,
+		&:target,
+		&:focus,
+		&.active {
+			color: darken( $secondary_link_color, 15 );
+		}
+
+		&.disabled {
+			background: transparent;
+			color: $light-grey;
+		}
 	}
 
 	&.blue-button {
@@ -36,7 +48,10 @@ input[type="submit"] {
 	&.btn-confirm,
 	&.btn-save {
 		@include button($confirm_color, $confirm_color_text);
-		&:hover {
+		&:hover,
+		&:target,
+		&:focus,
+		&.active {
 			background-color: darken($confirm_color, 5);
 		}
 	}
