@@ -696,6 +696,10 @@
 
 			span.btn {
 				font-size: $font_basefont_size;
+
+				a {
+					color: $white;
+				}
 			}
 
 			nav.shortcut_links {

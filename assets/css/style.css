@@ -2555,6 +2555,8 @@ html.drawer_open .overlay {
       flex: 1; }
     .styleguide .style-title.two-col span.btn {
       font-size: 14px; }
+      .styleguide .style-title.two-col span.btn a {
+        color: #fff; }
     .styleguide .style-title.two-col nav.shortcut_links {
       font-size: 14px;
       display: -ms-flexbox;

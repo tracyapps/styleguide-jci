@@ -11,7 +11,7 @@
 		<header class="article-header">
 			<h3 class="style-title title-link two-col">
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-				<span class="btn btn-small btn-secondary">View page &raquo;</span>
+				<span class="btn btn-small btn-secondary"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">View page &raquo;</a></span>
 			</h3>
 		</header> <!-- end article header -->
 
