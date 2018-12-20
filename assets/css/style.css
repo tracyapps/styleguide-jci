@@ -2480,6 +2480,10 @@ label {
 .input-field.valid .helper-text {
   color: #66c200; }
 
+.select2-container {
+  width: 100% !important;
+  max-width: 100% !important; }
+
 input:not([type]) .full-width,
 input[type=text]:not(.browser-default) .full-width,
 input[type=password]:not(.browser-default) .full-width,
@@ -2494,7 +2498,8 @@ input[type=number]:not(.browser-default) .full-width,
 input[type=search]:not(.browser-default) .full-width,
 textarea.materialize-textarea .full-width {
   display: block;
-  width: 100%; }
+  width: 100%;
+  max-width: 100%; }
   input:not([type]) .full-width + .select2-container,
   input[type=text]:not(.browser-default) .full-width + .select2-container,
   input[type=password]:not(.browser-default) .full-width + .select2-container,
@@ -2508,7 +2513,8 @@ textarea.materialize-textarea .full-width {
   input[type=number]:not(.browser-default) .full-width + .select2-container,
   input[type=search]:not(.browser-default) .full-width + .select2-container,
   textarea.materialize-textarea .full-width + .select2-container {
-    width: 100% !important; }
+    width: 100% !important;
+    max-width: 100%; }
 
 .standard-table .mat-form-field-appearance-outline .mat-form-field-outline-end,
 .standard-table .mat-form-field-appearance-outline .mat-form-field-outline-start,

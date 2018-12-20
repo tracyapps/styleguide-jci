@@ -152,6 +152,10 @@ qsa2(".codemirror_style").forEach(function (editorEl) {
 		$(visible_panel).addClass('active');
 	});
 
+	$(document).ready(function() {
+		$('.search-dropdown').select2();
+	});
+
 })(jQuery);
 jQuery(document).ready( function($) {
 

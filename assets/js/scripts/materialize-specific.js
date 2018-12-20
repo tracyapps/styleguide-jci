@@ -13,4 +13,8 @@
 		$(visible_panel).addClass('active');
 	});
 
+	$(document).ready(function() {
+		$('.search-dropdown').select2();
+	});
+
 })(jQuery);

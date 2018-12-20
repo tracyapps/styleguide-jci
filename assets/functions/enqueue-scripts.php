@@ -26,6 +26,8 @@ function site_scripts() {
 	wp_enqueue_style( 'codemirror-theme', get_template_directory_uri() . '/assets/js/vendor/codemirror/theme/monokai.css', array(), '', 'all' );
 	// materialize stylesheet
 	//wp_enqueue_style( 'materalize-css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css', array(), '', 'all' );
+	// select 2 styles
+	wp_enqueue_style( 'select-2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', array(), '', 'all');
 	// Register main stylesheet
 	wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
 }

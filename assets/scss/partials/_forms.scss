@@ -921,6 +921,10 @@ label {
 		}
 	}
 }
+.select2-container {
+	width: 100% !important;
+	max-width: 100% !important;
+}
 
 input:not([type]),
 input[type=text]:not(.browser-default),
@@ -939,9 +943,11 @@ textarea.materialize-textarea {
 	.full-width {
 		display: block;
 		width: 100%;
+		max-width: 100%;
 
 		+ .select2-container {
 			width: 100% !important;
+			max-width: 100%;
 		}
 	}
 }
