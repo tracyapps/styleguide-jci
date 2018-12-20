@@ -9,7 +9,15 @@
 	</div> <!-- end #inner-footer -->
 </footer> <!-- end .footer -->
 
+<script>
+	jQuery(document).ready(function($) {
 
+		$(window).load(function(){
+			$('#preloader').fadeOut('slow',function(){$(this).remove();});
+		});
+
+	});
+</script>
 <?php wp_footer(); ?>
 </body>
 </html> <!-- end page -->
