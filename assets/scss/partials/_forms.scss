@@ -2,6 +2,41 @@
  **** form styles ****
  */
 
+// global
+
+select:focus {
+	outline: $select-focus;
+}
+
+button:focus {
+	outline: none;
+	background-color: $button-background-focus;
+}
+
+label {
+	font-size: $label-font-size;
+	color: $input-border-color;
+}
+
+/* Remove default checkbox */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Text Inputs + Textarea
+   ========================================================================== */
+
+/* Style Placeholders */
+
+::placeholder {
+	color: $placeholder-text-color;
+}
+
+/* Text inputs */
+
 input:not([type]),
 input[type=text]:not(.browser-default),
 input[type=password]:not(.browser-default),
@@ -15,26 +50,899 @@ input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
-	height: auto;
-	padding: 0.5rem 1rem;
-	outline: none;
-	border: 1px solid rgba( $default-text-color, 0.2 );
-	border-radius: 3px;
-	background: $white;
-	font-size: $font_basefont_size;
-	font-family: $font_body_text;
-	margin-left: 1rem;
-	box-shadow: none;
-	-webkit-appearance: none;
 
-	&:hover {
-		border: 1px solid $primary-color;
+	// General Styles
+	background-color: transparent;
+	border: none;
+	border-bottom: $input-border;
+	border-radius: 0;
+	outline: none;
+	height: auto;
+	width: 100%;
+	font-size: $input-font-size;
+	margin: $input-margin;
+	padding: $input-padding;
+	box-shadow: none;
+	box-sizing: content-box;
+	transition: box-shadow .3s, border .3s;
+
+	// Disabled input style
+	&:disabled,
+	&[readonly="readonly"] {
+		color: $input-disabled-color;
+		border-bottom: $input-disabled-border;
 	}
 
-	&:focus {
+	// Disabled label style
+	&:disabled+label,
+	&[readonly="readonly"]+label {
+		color: $input-disabled-color;
+	}
+
+	// Focused input style
+	&:focus:not([readonly]) {
+		border-bottom: 1px solid $input-focus-color;
+		box-shadow: 0 1px 0 0 $input-focus-color;
+	}
+
+	// Focused label style
+	&:focus:not([readonly])+label {
+		color: $input-focus-color;
+	}
+
+	// Hide helper text on data message
+	&.valid ~ .helper-text[data-success],
+	&:focus.valid ~ .helper-text[data-success],
+	&.invalid ~ .helper-text[data-error],
+	&:focus.invalid ~ .helper-text[data-error] {
+		@extend %hidden-text;
+	}
+
+	// Valid Input Style
+	&.valid,
+	&:focus.valid {
+		@extend %valid-input-style;
+	}
+
+	// Custom Success Message
+	&.valid ~ .helper-text:after,
+	&:focus.valid ~ .helper-text:after {
+		@extend %custom-success-message;
+	}
+	&:focus.valid ~ label {
+		color: $input-success-color;
+	}
+
+	// Invalid Input Style
+	&.invalid,
+	&:focus.invalid {
+		@extend %invalid-input-style;
+	}
+
+	// Custom Error message
+	&.invalid ~ .helper-text:after,
+	&:focus.invalid ~ .helper-text:after {
+		@extend %custom-error-message;
+	}
+	&:focus.invalid ~ label {
+		color: $input-error-color;
+	}
+
+	// Full width label when using validate for error messages
+	&.validate + label {
+		width: 100%;
+	}
+
+	// Form Message Shared Styles
+	& + label:after {
+		@extend %input-after-style;
+	}
+}
+
+
+/* Validation Sass Placeholders */
+%valid-input-style {
+	border-bottom: 1px solid $input-success-color;
+	box-shadow: 0 1px 0 0 $input-success-color;
+}
+%invalid-input-style {
+	border-bottom: $input-invalid-border;
+	box-shadow: 0 1px 0 0 $input-error-color;
+}
+%hidden-text {
+	color: transparent;
+	user-select: none;
+	pointer-events: none;
+}
+%custom-success-message {
+	content: attr(data-success);
+	color: $input-success-color;
+}
+%custom-error-message {
+	content: attr(data-error);
+	color: $input-error-color;
+}
+%input-after-style {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0;
+	transition: .2s opacity ease-out, .2s color ease-out;
+}
+
+
+// Styling for input field wrapper
+.input-field {
+	// Inline styles
+	&.inline {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 5px;
+
+		input,
+		.select-dropdown {
+			margin-bottom: 1rem;
+		}
+	}
+
+	// Gutter spacing
+	&.col {
+		label {
+			left: $gutter-width / 2;
+		}
+
+		.prefix ~ label,
+		.prefix ~ .validate ~ label {
+			width: calc(100% - 3rem - #{$gutter-width});
+		}
+	}
+
+	position: relative;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	& > label {
+		color: $input-border-color;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 1rem;
+		cursor: text;
+		transition: transform .2s ease-out, color .2s ease-out;
+		transform-origin: 0% 100%;
+		text-align: initial;
+		transform: translateY(12px);
+
+		&:not(.label-icon).active {
+			transform: translateY(-14px) scale(.8);
+			transform-origin: 0 0;
+		}
+	}
+
+	// Autofill + date + time inputs
+	& > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
+	& > input[type=date]:not(.browser-default) + label,
+	& > input[type=time]:not(.browser-default) + label {
+		transform: translateY(-14px) scale(.8);
+		transform-origin: 0 0;
+	}
+
+	.helper-text {
+		&::after {
+			opacity: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		position: relative;
+		min-height: 18px;
+		display: block;
+		font-size: 12px;
+		color: rgba(0,0,0,.54);
+	}
+
+	// Prefix Icons
+	.prefix {
+		position: absolute;
+		width: $input-height;
+		font-size: $input-icon-size;
+		transition: color .2s;
+		top: calc(#{$input-height} - #{$input-icon-size}) / 2;
+
+		&.active { color: $input-focus-color; }
+	}
+
+	.prefix ~ input,
+	.prefix ~ textarea,
+	.prefix ~ label,
+	.prefix ~ .validate ~ label,
+	.prefix ~ .helper-text,
+	.prefix ~ .autocomplete-content {
+		margin-left: 3rem;
+		width: 92%;
+		width: calc(100% - 3rem);
+	}
+
+	.prefix ~ label { margin-left: 3rem; }
+
+}
+
+
+/* Search Field */
+
+.input-field input[type=search] {
+	display: block;
+	line-height: inherit;
+	transition: .3s background-color;
+
+	.nav-wrapper & {
+		height: inherit;
+		padding-left: 4rem;
+		width: calc(100% - 4rem);
+		border: 0;
+		box-shadow: none;
+	}
+
+	&:focus:not(.browser-default) {
+		background-color: $input-background;
+		border: 0;
+		box-shadow: none;
+		color: #444;
+
+		& + label i,
+		& ~ .mdi-navigation-close,
+		& ~ .material-icons {
+			color: #444;
+		}
+	}
+
+	& + .label-icon {
+		transform: none;
+		left: 1rem;
+	}
+
+	& ~ .mdi-navigation-close,
+	& ~ .material-icons {
+		position: absolute;
+		top: 0;
+		right: 1rem;
+		color: transparent;
+		cursor: pointer;
+		font-size: $input-icon-size;
+		transition: .3s color;
+	}
+}
+
+
+/* Textarea */
+
+// Default textarea
+textarea {
+	width: 100%;
+	height: $input-height;
+	background-color: transparent;
+
+	&.materialize-textarea {
+		line-height: normal;
+		overflow-y: hidden; /* prevents scroll bar flash */
+		padding: .8rem 0 .8rem 0; /* prevents text jump on Enter keypress */
+		resize: none;
+		min-height: $input-height;
+		box-sizing: border-box;
+	}
+}
+
+// For textarea autoresize
+.hiddendiv {
+	visibility: hidden;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+	padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+
+	// Reduces repaints
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+
+/* Autocomplete */
+.autocomplete-content {
+	li {
+		.highlight { color: #444; }
+
+		img {
+			height: $dropdown-item-height - 10;
+			width: $dropdown-item-height - 10;
+			margin: 5px 15px;
+		}
+	}
+}
+
+/* Character Counter */
+.character-counter {
+	min-height: 18px;
+}
+
+/* Radio Buttons
+   ========================================================================== */
+
+// Remove default Radio Buttons
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+[type="radio"]:not(:checked) + span,
+[type="radio"]:checked + span {
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	font-size: 1rem;
+	transition: .28s ease;
+	user-select: none;
+}
+
+[type="radio"] + span:before,
+[type="radio"] + span:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 4px;
+	width: 16px;
+	height: 16px;
+	z-index: 0;
+	transition: .28s ease;
+}
+
+/* Unchecked styles */
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after,
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+	border-radius: 50%;
+}
+
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after {
+	border: 2px solid $radio-empty-color;
+}
+
+[type="radio"]:not(:checked) + span:after {
+	transform: scale(0);
+}
+
+/* Checked styles */
+[type="radio"]:checked + span:before {
+	border: 2px solid transparent;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+	border: $radio-border;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+	background-color: $radio-fill-color;
+}
+
+[type="radio"]:checked + span:after {
+	transform: scale(1.02);
+}
+
+/* Radio With gap */
+[type="radio"].with-gap:checked + span:after {
+	transform: scale(.5);
+}
+
+/* Focused styles */
+[type="radio"].tabbed:focus + span:before {
+	box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+}
+
+/* Disabled Radio With gap */
+[type="radio"].with-gap:disabled:checked + span:before {
+	border: 2px solid $input-disabled-color;
+}
+
+[type="radio"].with-gap:disabled:checked + span:after {
+	border: none;
+	background-color: $input-disabled-color;
+}
+
+/* Disabled style */
+[type="radio"]:disabled:not(:checked) + span:before,
+[type="radio"]:disabled:checked + span:before {
+	background-color: transparent;
+	border-color: $input-disabled-color;
+}
+
+[type="radio"]:disabled + span {
+	color: $input-disabled-color;
+}
+
+[type="radio"]:disabled:not(:checked) + span:before {
+	border-color: $input-disabled-color;
+}
+
+[type="radio"]:disabled:checked + span:after {
+	background-color: $input-disabled-color;
+	border-color: $input-disabled-solid-color;
+}
+
+/* Checkboxes
+   ========================================================================== */
+
+/* Remove default checkbox */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+// Checkbox Styles
+[type="checkbox"] {
+	// Text Label Style
+	+ span:not(.lever) {
+		position: relative;
+		padding-left: 35px;
+		cursor: pointer;
+		display: inline-block;
+		height: 25px;
+		line-height: 25px;
+		font-size: 1rem;
+		user-select: none;
+	}
+
+	/* checkbox aspect */
+	+ span:not(.lever):before,
+	&:not(.filled-in) + span:not(.lever):after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 18px;
+		height: 18px;
+		z-index: 0;
+		border: 2px solid $radio-empty-color;
+		border-radius: 1px;
+		margin-top: 3px;
+		transition: .2s;
+	}
+
+	&:not(.filled-in) + span:not(.lever):after {
+		border: 0;
+		transform: scale(0);
+	}
+
+	&:not(:checked):disabled + span:not(.lever):before {
+		border: none;
+		background-color: $input-disabled-color;
+	}
+
+	// Focused styles
+	&.tabbed:focus + span:not(.lever):after {
+		transform: scale(1);
+		border: 0;
+		border-radius: 50%;
+		box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+		background-color: rgba(0,0,0,.1);
+	}
+}
+
+[type="checkbox"]:checked {
+	+ span:not(.lever):before {
+		top: -4px;
+		left: -5px;
+		width: 12px;
+		height: 22px;
+		border-top: 2px solid transparent;
+		border-left: 2px solid transparent;
+		border-right: $radio-border;
+		border-bottom: $radio-border;
+		transform: rotate(40deg);
+		backface-visibility: hidden;
+		transform-origin: 100% 100%;
+	}
+
+	&:disabled + span:before {
+		border-right: 2px solid $input-disabled-color;
+		border-bottom: 2px solid $input-disabled-color;
+	}
+}
+
+/* Indeterminate checkbox */
+[type="checkbox"]:indeterminate {
+	+ span:not(.lever):before {
+		top: -11px;
+		left: -12px;
+		width: 10px;
+		height: 22px;
+		border-top: none;
+		border-left: none;
+		border-right: $radio-border;
+		border-bottom: none;
+		transform: rotate(90deg);
+		backface-visibility: hidden;
+		transform-origin: 100% 100%;
+	}
+
+	// Disabled indeterminate
+	&:disabled + span:not(.lever):before {
+		border-right: 2px solid $input-disabled-color;
+		background-color: transparent;
+	}
+}
+
+// Filled in Style
+[type="checkbox"].filled-in {
+	// General
+	+ span:not(.lever):after {
+		border-radius: 2px;
+	}
+
+	+ span:not(.lever):before,
+	+ span:not(.lever):after {
+		content: '';
+		left: 0;
+		position: absolute;
+		/* .1s delay is for check animation */
+		transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+		z-index: 1;
+	}
+
+	// Unchecked style
+	&:not(:checked) + span:not(.lever):before {
+		width: 0;
+		height: 0;
+		border: 3px solid transparent;
+		left: 6px;
+		top: 10px;
+		transform: rotateZ(37deg);
+		transform-origin: 100% 100%;
+	}
+
+	&:not(:checked) + span:not(.lever):after {
+		height: 20px;
+		width: 20px;
+		background-color: transparent;
+		border: 2px solid $radio-empty-color;
+		top: 0px;
+		z-index: 0;
+	}
+
+	// Checked style
+	&:checked {
+		+ span:not(.lever):before {
+			top: 0;
+			left: 1px;
+			width: 8px;
+			height: 13px;
+			border-top: 2px solid transparent;
+			border-left: 2px solid transparent;
+			border-right: 2px solid $input-background;
+			border-bottom: 2px solid $input-background;
+			transform: rotateZ(37deg);
+			transform-origin: 100% 100%;
+		}
+
+		+ span:not(.lever):after {
+			top: 0;
+			width: 20px;
+			height: 20px;
+			border: 2px solid $secondary-color;
+			background-color: $secondary-color;
+			z-index: 0;
+		}
+	}
+
+	// Focused styles
+	&.tabbed:focus + span:not(.lever):after {
+		border-radius: 2px;
+		border-color: $radio-empty-color;
+		background-color: rgba(0,0,0,.1);
+	}
+
+	&.tabbed:checked:focus + span:not(.lever):after {
+		border-radius: 2px;
+		background-color: $secondary-color;
+		border-color: $secondary-color;
+	}
+
+	// Disabled style
+	&:disabled:not(:checked) + span:not(.lever):before {
+		background-color: transparent;
+		border: 2px solid transparent;
+	}
+
+	&:disabled:not(:checked) + span:not(.lever):after {
+		border-color: transparent;
+		background-color: $input-disabled-solid-color;
+	}
+
+	&:disabled:checked + span:not(.lever):before {
+		background-color: transparent;
+	}
+
+	&:disabled:checked + span:not(.lever):after {
+		background-color: $input-disabled-solid-color;
+		border-color: $input-disabled-solid-color;
+	}
+}
+
+
+/* Select Field
+   ========================================================================== */
+
+select { display: none; }
+select.browser-default { display: block; }
+
+select {
+	background-color: $select-background;
+	width: 100%;
+	padding: $select-padding;
+	border: $select-border;
+	border-radius: $select-radius;
+	height: $input-height;
+}
+
+.select-label {
+	position: absolute;
+}
+
+.select-wrapper {
+	&.valid .helper-text[data-success],
+	&.invalid ~ .helper-text[data-error] {
+		@extend %hidden-text;
+	}
+
+	&.valid {
+		& > input.select-dropdown {
+			@extend %valid-input-style;
+		}
+
+		& ~ .helper-text:after {
+			@extend %custom-success-message;
+		}
+	}
+
+	&.invalid {
+		& > input.select-dropdown,
+		& > input.select-dropdown:focus {
+			@extend %invalid-input-style;
+		}
+
+		& ~ .helper-text:after {
+			@extend %custom-error-message;
+		}
+	}
+
+	&.valid + label,
+	&.invalid + label {
+		width: 100%;
+		pointer-events: none;
+	}
+
+	& + label:after {
+		@extend %input-after-style;
+	}
+
+	position: relative;
+
+	input.select-dropdown {
+		&:focus {
+			border-bottom: 1px solid $input-focus-color;
+		}
+		position: relative;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		border-bottom: $input-border;
 		outline: none;
-		border: 1px dotted $secondary-color;
-		background: $default-background-color;
+		height: $input-height;
+		line-height: $input-height;
+		width: 100%;
+		font-size: $input-font-size;
+		margin: $input-margin;
+		padding: 0;
+		display: block;
+		user-select:none;
+		z-index: 1;
+	}
+
+	.caret {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		z-index: 0;
+		fill: rgba(0,0,0,.87);
+	}
+
+	& + label {
+		position: absolute;
+		top: -26px;
+		font-size: $label-font-size;
+	}
+}
+
+// Disabled styles
+select:disabled {
+	color: $input-disabled-color;
+}
+
+.select-wrapper.disabled {
+	+ label {
+		color: $input-disabled-color;
+	}
+	.caret {
+		fill: $input-disabled-color;
+	}
+}
+
+.select-wrapper input.select-dropdown:disabled {
+	color: $input-disabled-color;
+	cursor: default;
+	user-select: none;
+}
+
+.select-wrapper i {
+	color: $select-disabled-color;
+}
+
+.select-dropdown li.disabled,
+.select-dropdown li.disabled > span,
+.select-dropdown li.optgroup {
+	color: $select-disabled-color;
+	background-color: transparent;
+}
+
+body.keyboard-focused {
+	.select-dropdown.dropdown-content li:focus {
+		background-color: $select-option-focus;
+	}
+}
+
+.select-dropdown.dropdown-content {
+	li {
+		&:hover {
+			background-color: $select-option-hover;
+		}
+
+		&.selected {
+			background-color: $select-option-selected;
+		}
+	}
+}
+
+// Prefix Icons
+.prefix ~ .select-wrapper {
+	margin-left: 3rem;
+	width: 92%;
+	width: calc(100% - 3rem);
+}
+
+.prefix ~ label { margin-left: 3rem; }
+
+// Icons
+.select-dropdown li {
+	img {
+		height: $dropdown-item-height - 10;
+		width: $dropdown-item-height - 10;
+		margin: 5px 15px;
+		float: right;
+	}
+}
+
+// Optgroup styles
+.select-dropdown li.optgroup {
+	border-top: 1px solid $dropdown-hover-bg-color;
+
+	&.selected > span {
+		color: rgba(0, 0, 0, .7);
+	}
+
+	& > span {
+		color: rgba(0, 0, 0, .4);
+	}
+
+	& ~ li.optgroup-option {
+		padding-left: 1rem;
+	}
+}
+
+
+
+// select 2
+
+.select2-container--default {
+	.select2-search--dropdown {
+		.select2-search__field {
+			padding: 0.25rem 0;
+			line-height: 1.4;
+		}
+	}
+
+	.select2-results__option--highlighted[aria-selected] {
+		background: $primary_color;
+	}
+}
+
+
+
+
+
+
+// overrides and globals
+
+label {
+	line-height: 1.2;
+}
+.required {
+	color: $pink;
+	font-weight: bold;
+}
+
+.input-field {
+	&.error {
+		input {
+			border-bottom: 2px solid $warning_color;
+		}
+
+		.helper-text {
+			display: block;
+			background: $warning_color;
+			color: $white;
+			padding: 2px 5px;
+		}
+	}
+	&.valid {
+		input {
+			border-bottom: 1px solid $confirm_color;
+		}
+		.helper-text {
+			color: $confirm_color;
+		}
+	}
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+
+	.full-width {
+		display: block;
+		width: 100%;
+
+		+ .select2-container {
+			width: 100% !important;
+		}
 	}
 }
 
@@ -82,8 +990,8 @@ textarea.materialize-textarea {
 	transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
 }
 
-
-.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
 	margin-top: 1px;
 	margin-left: 1px;
 	width: 18px;

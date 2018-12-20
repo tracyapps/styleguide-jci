@@ -12,4 +12,5 @@
 		$('.tab-content .tab-pane').removeClass('active');
 		$(visible_panel).addClass('active');
 	});
+
 })(jQuery);

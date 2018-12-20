@@ -151,6 +151,7 @@ qsa2(".codemirror_style").forEach(function (editorEl) {
 		$('.tab-content .tab-pane').removeClass('active');
 		$(visible_panel).addClass('active');
 	});
+
 })(jQuery);
 jQuery(document).ready( function($) {
 

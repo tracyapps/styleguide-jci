@@ -194,29 +194,49 @@ $pagefooter_height: 3rem;
 
 // ---------------- 05. Form layout options
 
-$label-color: $dark;
-$label-font-size: 1.8rem;
+$label-font-size: $font_basefont_size;
+$input-font-size: $font_basefont_size;
 
-$input-padding-y: 1.2rem;
-$input-padding-x: 1.2rem;
+$placeholder-text-color: $medium-grey;
 
-$input-border-color: #ccc;
-$input-bg-color: #f6f6f6;
-$input-color: #333;
+$select-focus: $primary-color;
 
-$input-focus-border-color: #bbb;
-$input-focus-bg-color: $white;
-$input-focus-color: $dark;
+$input-background: $default-background-color;
+$radio-empty-color: $default-background-color;
+$select-background: $default-background-color;
 
-$input-error-color: #f00;
-$input-required-color: #f00;
-$input-accent-color: #09f;
+$input-focus-color: $primary-color;
+$input-error-color: $warning_color;
+$input-success-color: $confirm_color;
+$input-disabled-color: $muted_color;
+$input-disabled-solid-color: $muted_color;
+$select-disabled-color: $muted_color;
 
-$gf-input-margin-y: 2.2rem;
-$gf-input-margin-x: 2rem;
-$gf-multi-input-margin-y: 0.8rem;
+$radio-fill-color: $primary-color;
 
-$gf-primary-label-margin: 0.6rem;
-$gf-secondary-label-margin: 0.4rem;
+$input-border: 1px solid $medium-grey;
+$input-border-color: $medium-grey;
+$input-disabled-border: $muted_color;
+$input-invalid-border: $warning_color;
 
-$gf-input-min-width: 18rem;
+$radio-border: 1px solid $medium-grey;
+$select-border: 1px solid $medium-grey;
+
+$input-margin: 1.25rem 0 0 0;
+$input-padding: 0.25rem;
+$input-height: 3rem;
+$input-icon-size: 12px;
+
+$select-padding: 0;
+
+$select-radius: 4px;
+
+$dropdown-item-height: 1.4rem;
+$dropdown-hover-bg-color: $transparent-purple;
+$select-option-focus: $white;
+$select-option-hover: $transparent-purple;
+$select-option-selected: $white;
+
+$button-background-focus: $primary-color;
+$select-focus: $primary-color;
+

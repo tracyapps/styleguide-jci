@@ -670,6 +670,7 @@
 		text-shadow: none;
 		position: sticky;
 		top: 0;
+		z-index: 9999999;
 		border-bottom: 1px solid $light-grey;
 		border-top: 2px solid $light-blue;
 		a,
@@ -747,6 +748,37 @@
 		.content-side {
 			border: 1px solid $light-grey;
 			min-height: 10rem;
+		}
+	}
+
+	// modal mockup
+	.styleguide_modal_overlay {
+		position: relative;
+		width: 100%;
+		min-height: 300px;
+		background: rgba( 0, 0, 0, 0.5 );
+		display: flex;
+
+		.modal {
+			position: absolute;
+			top: 13%;
+			display: block;
+			max-height: 70%;
+		}
+	}
+	.styleguide_modal_overlay_lg {
+		position: relative;
+		width: 100%;
+		min-height: 500px;
+		background: rgba( 0, 0, 0, 0.5 );
+		display: flex;
+
+		.modal {
+			position: absolute;
+			top: 8%;
+			display: block;
+			max-height: 80%;
+			width: 75%;
 		}
 	}
 }
