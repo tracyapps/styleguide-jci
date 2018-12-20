@@ -7,13 +7,24 @@
 			<main id="main" class="styleguide-main-column" role="main">
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<h1 class="style-title"><?php the_title(); ?></h1>
-					<section class="component component-intro">
+					<h1 class="style-title two-col">
+						<span class="the_title"><?php the_title(); ?></span>
+						<nav class="shortcut_links">
+							<a href="#intro_section">Intro</a>
+							<?php if ( have_rows( 'design_section' ) ): ?>
+								<a href="#design_section">Design</a>
+							<?php endif;?>
+							<?php if ( have_rows( 'code_section' ) ): ?>
+								<a href="#code_section">Code</a>
+							<?php endif;?>
+						</nav>
+					</h1>
+					<section class="component component-intro" id="intro_section">
 						<span class="styleguide_header"><h2>Introduction</h2></span>
 						<?php the_field( 'intro' ); ?>
 					</section>
 					<?php if ( have_rows( 'design_section' ) ): ?>
-						<section class="component component-design">
+						<section class="component component-design" id="design_section">
 							<span class="styleguide_header"><h2>Design</h2></span>
 							<?php while ( have_rows( 'design_section' ) ) : the_row(); ?>
 								<?php if ( get_row_layout() == 'text_block_section' ) : ?>
@@ -59,7 +70,7 @@
 						</section>
 					<?php endif; /* ********** end design section ********** */ ?>
 					<?php if ( have_rows( 'code_section' ) ): ?>
-						<section class="component component-code">
+						<section class="component component-code" id="code_section">
 							<span class="styleguide_header"><h2>Code</h2></span>
 							<div id="tab_code" class="col s12">
 								<?php while ( have_rows( 'code_section' ) ) : the_row(); ?>

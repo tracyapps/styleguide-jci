@@ -43,10 +43,7 @@
 			grid-area: footer;
 		}
 	}
-	.main-content {
-		padding: 1rem;
-		min-height: 50vh;
-	}
+
 
 	header.page-header {
 		background: $white;
@@ -390,9 +387,6 @@
 		}
 	}
 
-
-
-
 	pre,
 	code {
 		max-width: 100%;
@@ -412,6 +406,7 @@
 	.CodeMirror {
 		height: auto;
 		min-height: 2rem;
+		margin-bottom: 3rem;
 	}
 
 	.archive-grid {
@@ -485,6 +480,8 @@
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23d3d4d9' stroke-width='4.3' stroke-opacity='0.3'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
 		border: 1px solid rgba( $light-blue, 0.25 );
 		padding: 10px;
+		margin-bottom: 2rem;
+
 		.example-item {
 			padding: 5px 2rem 1rem 2rem;
 			background: $white;
@@ -658,13 +655,16 @@
 	}
 	.styleguide-main-column {
 		position: relative;
+
+		section.component {
+			padding-top: 3rem;
+		}
 	}
 	.style-title {
 		font-size: $h1_font_size;
 		display: block;
 		background-color: #fff;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23d3d4d9' stroke-width='4.3' stroke-opacity='0.3'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
-
 		border-radius: 4px;
 		padding: 0.5em;
 		text-shadow: none;
@@ -697,6 +697,17 @@
 			span.btn {
 				font-size: $font_basefont_size;
 			}
+
+			nav.shortcut_links {
+				font-size: $font_basefont_size;
+				display: flex;
+				align-items: center;
+				font-weight: 300;
+
+				a {
+					margin: 0 0.5rem;
+				}
+			}
 		}
 	}
 	// color palette
@@ -721,6 +732,18 @@
 
 	.padding {
 		padding: 0 $gutter-width;
+	}
+
+	.styleguide-specific-padding-all {
+		padding: $gutter-width;
+	}
+
+	// table stuff
+	.side-tab-table {
+		.content-side {
+			border: 1px solid $light-grey;
+			min-height: 10rem;
+		}
 	}
 }
 div#preloader {

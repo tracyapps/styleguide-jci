@@ -26,6 +26,9 @@ CSS file.
 @import "print";
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,500|Roboto:300,300i,500");
+html {
+  scroll-behavior: smooth; }
+
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -70,6 +73,9 @@ body {
     body .sidenav-overlay:hover {
       opacity: 1 !important;
       cursor: pointer; }
+
+* {
+  box-sizing: border-box; }
 
 h1,
 h2,
@@ -900,7 +906,6 @@ nav[aria-label="breadcrumb"] {
       padding: 0; }
 
 .table-header {
-  min-height: 2.5rem;
   border-top: 1px solid rgba(211, 212, 217, 0.5); }
   .table-header.grey-bg {
     background: #f4f5f8;
@@ -914,7 +919,7 @@ nav[aria-label="breadcrumb"] {
     -ms-flex-align: center;
     align-items: center;
     overflow: hidden;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.5rem 0 1.5rem;
     width: 100%; }
     .table-header #top-tab-container.with-side-tabs {
       width: 100%; }
@@ -1553,42 +1558,121 @@ textarea.materialize-textarea {
   width: 18px;
   height: 18px; }
 
-.tabs {
-  height: auto;
+#top-tab-container {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 3.2rem;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  padding-right: 1.5rem;
+  width: 100%; }
+  #top-tab-container.with-side-tabs {
+    width: 100%; }
+  #top-tab-container.align-right {
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+
+.tabs,
+ul.tabs {
+  list-style: none;
+  padding: 0;
+  height: 100%;
   line-height: 1;
   width: auto;
   overflow: hidden;
-  margin: -4px 0 0 0; }
-  .tabs .tab {
-    margin-bottom: 1px;
+  margin: -4px 0 0 0;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin-bottom: -2px; }
+  .tabs .tab a,
+  .tabs .tab.disabled a,
+  .tabs .tab.disabled a:hover,
+  ul.tabs .tab a,
+  ul.tabs .tab.disabled a,
+  ul.tabs .tab.disabled a:hover {
+    color: #d3d4d9; }
+  .tabs .tab,
+  .tabs li.tab,
+  ul.tabs .tab,
+  ul.tabs li.tab {
+    margin: 0 0 1px 0;
+    padding: 0;
     height: auto;
-    line-height: 2.4;
-    text-transform: none; }
+    line-height: 3;
+    text-transform: none;
+    display: inline-block;
+    text-align: center; }
     .tabs .tab a,
-    .tabs .tab a.nav-link {
+    .tabs .tab a.nav-link,
+    .tabs li.tab a,
+    .tabs li.tab a.nav-link,
+    ul.tabs .tab a,
+    ul.tabs .tab a.nav-link,
+    ul.tabs li.tab a,
+    ul.tabs li.tab a.nav-link {
       background: transparent;
+      text-decoration: none;
       margin: 0 0 -2px 4px;
-      padding-top: 3px;
       color: rgba(52, 52, 71, 0.4);
       border-bottom: 4px solid transparent;
       border-radius: 3px 3px 0 0;
-      transition: all 200ms ease-in-out; }
+      transition: all 200ms ease-in-out;
+      width: 100%;
+      height: 100%;
+      padding: 3px 24px 5px 24px;
+      font-size: 14px;
+      text-overflow: ellipsis;
+      overflow: hidden; }
       .tabs .tab a:hover, .tabs .tab a:focus,
       .tabs .tab a.nav-link:hover,
-      .tabs .tab a.nav-link:focus {
+      .tabs .tab a.nav-link:focus,
+      .tabs li.tab a:hover,
+      .tabs li.tab a:focus,
+      .tabs li.tab a.nav-link:hover,
+      .tabs li.tab a.nav-link:focus,
+      ul.tabs .tab a:hover,
+      ul.tabs .tab a:focus,
+      ul.tabs .tab a.nav-link:hover,
+      ul.tabs .tab a.nav-link:focus,
+      ul.tabs li.tab a:hover,
+      ul.tabs li.tab a:focus,
+      ul.tabs li.tab a.nav-link:hover,
+      ul.tabs li.tab a.nav-link:focus {
         background: #fff;
         color: #343447; }
       .tabs .tab a.active,
-      .tabs .tab a.nav-link.active {
+      .tabs .tab a.nav-link.active,
+      .tabs li.tab a.active,
+      .tabs li.tab a.nav-link.active,
+      ul.tabs .tab a.active,
+      ul.tabs .tab a.nav-link.active,
+      ul.tabs li.tab a.active,
+      ul.tabs li.tab a.nav-link.active {
         font-weight: 700;
         box-shadow: none;
+        outline: none;
         background: transparent;
         color: #343447;
         border-bottom: 4px solid #f0cb45; }
         .tabs .tab a.active:focus,
-        .tabs .tab a.nav-link.active:focus {
+        .tabs .tab a.nav-link.active:focus,
+        .tabs li.tab a.active:focus,
+        .tabs li.tab a.nav-link.active:focus,
+        ul.tabs .tab a.active:focus,
+        ul.tabs .tab a.nav-link.active:focus,
+        ul.tabs li.tab a.active:focus,
+        ul.tabs li.tab a.nav-link.active:focus {
           background: none; }
-  .tabs .indicator {
+  .tabs .indicator,
+  ul.tabs .indicator {
     display: none;
     background-color: #f0cb45; }
 
@@ -1613,6 +1697,10 @@ textarea.materialize-textarea {
     margin: 1.8rem 0 0 0;
     padding: 0;
     line-height: 3; }
+    .side-tab-table .tab-side ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
     .side-tab-table .tab-side .nav-link {
       box-shadow: none;
       display: block;
@@ -1621,6 +1709,7 @@ textarea.materialize-textarea {
       border: 1px solid #d3d4d9;
       margin-bottom: -1px;
       margin-right: -1px;
+      text-decoration: none;
       padding: 0 1.3rem 0 1.1rem;
       line-height: 3;
       white-space: nowrap; }
@@ -1640,6 +1729,17 @@ textarea.materialize-textarea {
         border-radius: 6px; }
         .side-tab-table .tab-side .nav-link span.has-changes {
           background: #f00; }
+  .side-tab-table .content-side {
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden; }
+    .side-tab-table .content-side .tab-content {
+      height: 100%;
+      width: 100%; }
+      .side-tab-table .content-side .tab-content > .tab-pane {
+        display: none; }
+        .side-tab-table .content-side .tab-content > .tab-pane.active {
+          display: inherit; }
   .side-tab-table .content_table_view {
     -ms-flex: 1;
     flex: 1; }
@@ -1916,10 +2016,6 @@ html.drawer_open .overlay {
   .styleguide body footer.site-footer {
     grid-area: footer; }
 
-.styleguide .main-content {
-  padding: 1rem;
-  min-height: 50vh; }
-
 .styleguide header.page-header {
   background: #fff; }
   .styleguide header.page-header .nav-wrapper {
@@ -2176,7 +2272,8 @@ html.drawer_open .overlay {
 
 .styleguide .CodeMirror {
   height: auto;
-  min-height: 2rem; }
+  min-height: 2rem;
+  margin-bottom: 3rem; }
 
 .styleguide .archive-grid {
   display: grid;
@@ -2228,7 +2325,8 @@ html.drawer_open .overlay {
   background-color: #f4f5f8;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23d3d4d9' stroke-width='4.3' stroke-opacity='0.3'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   border: 1px solid rgba(0, 194, 245, 0.25);
-  padding: 10px; }
+  padding: 10px;
+  margin-bottom: 2rem; }
   .styleguide .block-container .example-item {
     padding: 5px 2rem 1rem 2rem;
     background: #fff;
@@ -2423,6 +2521,8 @@ html.drawer_open .overlay {
 
 .styleguide .styleguide-main-column {
   position: relative; }
+  .styleguide .styleguide-main-column section.component {
+    padding-top: 3rem; }
 
 .styleguide .style-title {
   font-size: 23.8px;
@@ -2455,6 +2555,15 @@ html.drawer_open .overlay {
       flex: 1; }
     .styleguide .style-title.two-col span.btn {
       font-size: 14px; }
+    .styleguide .style-title.two-col nav.shortcut_links {
+      font-size: 14px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      font-weight: 300; }
+      .styleguide .style-title.two-col nav.shortcut_links a {
+        margin: 0 0.5rem; }
 
 .styleguide .section-palette {
   display: grid;
@@ -2472,6 +2581,13 @@ html.drawer_open .overlay {
 
 .styleguide .padding {
   padding: 0 30px; }
+
+.styleguide .styleguide-specific-padding-all {
+  padding: 30px; }
+
+.styleguide .side-tab-table .content-side {
+  border: 1px solid #d3d4d9;
+  min-height: 10rem; }
 
 div#preloader {
   position: fixed;
