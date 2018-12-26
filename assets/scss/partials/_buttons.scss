@@ -28,6 +28,7 @@ input[type="submit"] {
 		&:hover,
 		&:target,
 		&:focus,
+		&:active,
 		&.active {
 			color: darken( $secondary_link_color, 15 );
 		}
@@ -51,6 +52,7 @@ input[type="submit"] {
 		&:hover,
 		&:target,
 		&:focus,
+		&:active,
 		&.active {
 			background-color: darken($confirm_color, 5);
 		}

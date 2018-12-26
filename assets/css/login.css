@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,500|Roboto:300,300i,500");
+* {
+  box-sizing: border-box; }
+
+a {
+  transition: all 200ms ease-in-out; }
+
+body.login {
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #343447;
+  font-weight: 300;
+  margin-top: -1px; }
+  body.login h1 a {
+    background-image: url(../images/login-logo.png);
+    background-size: contain;
+    height: 80px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.7;
+    transition: all 200ms ease-in-out; }
+    body.login h1 a:hover {
+      opacity: 1; }
+  body.login form {
+    box-shadow: none;
+    font-weight: 300; }
+
+#login {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 90%;
+  max-width: 450px; }
+  #login h1 {
+    margin-top: auto; }
+  #login form {
+    margin: 2rem 0 -2rem 0; }
+  #login #nav {
+    text-align: right;
+    margin-bottom: 3rem;
+    font-size: 80%; }
+  #login #backtoblog {
+    margin-top: auto; }
+
+.wp-core-ui .button-primary {
+  text-decoration: none;
+  height: auto;
+  background-color: #673ab7;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  line-height: 1.1;
+  padding: 0.55em 1.1em 0.45em 1.1em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-align: center;
+  letter-spacing: .5px;
+  font-weight: 300;
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  border: none;
+  text-shadow: none;
+  line-height: 1; }
+  .wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:target, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:active, .wp-core-ui .button-primary.active {
+    background-color: #46287d;
+    border: none; }

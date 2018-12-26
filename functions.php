@@ -51,13 +51,13 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
 // Adds site styles to the WordPress editor
-// require_once(get_template_directory().'/assets/functions/editor-styles.php');
+require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
 // Customize the WordPress login menu
-//require_once(get_template_directory().'/assets/functions/login.php');
+require_once(get_template_directory().'/assets/functions/login.php');
 
 // Customize the WordPress admin
-//require_once(get_template_directory().'/assets/functions/admin.php');
+// require_once(get_template_directory().'/assets/functions/admin.php');
 
 // Shortcodes
 require_once(get_template_directory().'/assets/functions/shortcodes.php');

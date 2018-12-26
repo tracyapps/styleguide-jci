@@ -42,7 +42,7 @@ add_action( 'wp_dashboard_setup', 'start_custom_dashboard_widgets' );
 /************* CUSTOMIZE ADMIN *******************/
 // Custom Backend Footer
 function start_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="#" target="_blank">Your Site Name</a></span>.', 'start' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://tapps.design" target="_blank">tracy apps</a></span>.', 'start' );
 }
 
 // adding it to the admin area

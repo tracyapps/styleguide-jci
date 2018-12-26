@@ -19,6 +19,13 @@
 					"sidenav content aside"
 					"footer footer footer";
 		}
+
+		&.page-template-template-full-width {
+			grid-template-areas:
+					"header header header"
+					"content content content"
+					"footer footer footer";
+		}
 		&.admin-bar {
 			min-height: calc( 100vh - 32px - 1px );
 		}

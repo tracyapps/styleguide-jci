@@ -256,3 +256,14 @@ function start_get_first_image() {
 	}
 	return $first_img;
 }
+
+function is_block_editor() {
+	if ( ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) ) {
+		return true;
+	}
+	$screen = get_current_screen();
+	if ( method_exists( $screen, 'is_block_editor' ) && $screen->is_block_editor() ) {
+		return true;
+	}
+	return false;
+}

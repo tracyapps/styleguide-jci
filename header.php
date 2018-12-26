@@ -42,21 +42,37 @@
 	});
 </script>
 
-<header class="page-header" role="menubar">
+<?php if ( is_page_template( 'template-full-width.php' ) ) { ?>
 
-	<nav class="documentation-sections">
-		<ul>
-			<?php start_top_nav(); ?>
-		</ul>
-	</nav>
+	<header class="page-header" role="menubar">
 
-</header>
+		<nav class="documentation-sections">
+			<ul>
+				<?php start_top_nav(); ?>
+			</ul>
+		</nav>
 
-<?php
-if ( 'api_doc' == get_post_type() ) {
-	get_template_part( 'parts/template', 'documentation-sidenav-tree' );
-} else {
-	get_template_part( 'parts/template', 'sidenav' );
-}
- ?>
+	</header>
+
+<?php } else{ ?>
+
+	<header class="page-header" role="menubar">
+
+		<nav class="documentation-sections">
+			<ul>
+				<?php start_top_nav(); ?>
+			</ul>
+		</nav>
+
+	</header>
+
+	<?php
+	if ( 'api_doc' == get_post_type() ) {
+		get_template_part( 'parts/template', 'documentation-sidenav-tree' );
+	} else {
+		get_template_part( 'parts/template', 'sidenav' );
+	}
+	 ?>
+
+<?php } // end if is not template full width ?>
 <main class="site-content">
