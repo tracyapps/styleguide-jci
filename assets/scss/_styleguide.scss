@@ -84,6 +84,13 @@
 
 			li {
 				display: inline-block;
+
+				&.current-menu-item {
+					a {
+						background: $white;
+						color: darken( $medium-grey, 20 );
+					}
+				}
 			}
 		}
 
@@ -106,9 +113,11 @@
 	}
 
 	.api_doc-template-default,
-	.post-type-archive-api_doc {
+	.post-type-archive-api_doc,
+	.single-api_doc,
+	.page-template-template-documentation-landing {
 		nav.documentation-sections {
-			.menu-item-object-api_doc {
+			.api_docs_tab {
 				a,
 				a:hover	{
 					background: $white;
@@ -119,9 +128,10 @@
 	}
 
 	.component-template-default,
-	.post-type-archive-component {
+	.post-type-archive-component,
+	.page-template-template-styleguide-landing {
 		nav.documentation-sections {
-			.menu-item-object-component {
+			.styleguide_tab {
 				a,
 				a:hover	{
 					background: $white;
@@ -541,13 +551,13 @@
 			text-shadow: none;
 		}
 		h2 {
-			font-size: $h2_font_size;
+			font-size: 2.1rem;
 			font-weight: 300;
 			text-transform: uppercase;
 			border-bottom: 1px solid $active_state_color;
 		}
 		h3 {
-			font-size: $h3_font_size;
+			font-size: 1.8rem;
 		}
 		h4 {
 			font-size: $h4_font_size;
@@ -787,6 +797,52 @@
 			max-height: 80%;
 			width: 75%;
 		}
+	}
+
+	.purple-blue-gradient {
+		position: relative;
+
+		&:before {
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			@include linear-gradient(132deg,  $purple 0%, $light-blue 100%);
+		}
+	}
+	.smaller-cover {
+		min-height: 200px;
+	}
+
+	.three-columns-with-background-colors-on-sides {
+		.wp-block-column {
+			&:first-child {
+				//background: $purple;
+				//@include linear-gradient(132deg, darken( $purple, 16 ) 0%,  $purple 100%);
+				background: $light-blue;
+				@include linear-gradient(90deg,  $light-blue 0%, $white 90%);
+			}
+			&:last-child {
+				background: $light-blue;
+				@include linear-gradient(90deg,  $white 10%, $light-blue 100%);
+				margin-right: 0;
+			}
+		}
+	}
+
+	.intro-container {
+		max-width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 125%;
+	}
+
+	h2.intro-container {
+		font-size: 3rem;
 	}
 }
 div#preloader {

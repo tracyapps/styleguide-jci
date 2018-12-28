@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Styleguide Section Page
+*/
+?>
+
 <?php get_header(); ?>
 
 <div id="content">

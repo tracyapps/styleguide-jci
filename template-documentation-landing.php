@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Documentation Section Page
+*/
+?>
+
 <?php get_header(); ?>
 
 <div id="content">

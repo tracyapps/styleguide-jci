@@ -1638,7 +1638,7 @@ textarea.materialize-textarea {
   margin: 1.25rem 0 0 0;
   padding: 0.25rem;
   box-shadow: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   transition: box-shadow .3s, border .3s; }
   input:not([type]):disabled, input:not([type])[readonly="readonly"],
   input[type=text]:not(.browser-default):disabled,
@@ -3165,6 +3165,9 @@ html.drawer_open .overlay {
     padding: 0; }
     .styleguide nav.documentation-sections ul li {
       display: inline-block; }
+      .styleguide nav.documentation-sections ul li.current-menu-item a {
+        background: #fff;
+        color: #50525d; }
   .styleguide nav.documentation-sections a {
     padding: 0.25rem 1rem;
     border-radius: 4px 4px 0 0;
@@ -3178,17 +3181,23 @@ html.drawer_open .overlay {
       background: #fff;
       color: #50525d; }
 
-.styleguide .api_doc-template-default nav.documentation-sections .menu-item-object-api_doc a,
-.styleguide .api_doc-template-default nav.documentation-sections .menu-item-object-api_doc a:hover,
-.styleguide .post-type-archive-api_doc nav.documentation-sections .menu-item-object-api_doc a,
-.styleguide .post-type-archive-api_doc nav.documentation-sections .menu-item-object-api_doc a:hover {
+.styleguide .api_doc-template-default nav.documentation-sections .api_docs_tab a,
+.styleguide .api_doc-template-default nav.documentation-sections .api_docs_tab a:hover,
+.styleguide .post-type-archive-api_doc nav.documentation-sections .api_docs_tab a,
+.styleguide .post-type-archive-api_doc nav.documentation-sections .api_docs_tab a:hover,
+.styleguide .single-api_doc nav.documentation-sections .api_docs_tab a,
+.styleguide .single-api_doc nav.documentation-sections .api_docs_tab a:hover,
+.styleguide .page-template-template-documentation-landing nav.documentation-sections .api_docs_tab a,
+.styleguide .page-template-template-documentation-landing nav.documentation-sections .api_docs_tab a:hover {
   background: #fff;
   color: #50525d; }
 
-.styleguide .component-template-default nav.documentation-sections .menu-item-object-component a,
-.styleguide .component-template-default nav.documentation-sections .menu-item-object-component a:hover,
-.styleguide .post-type-archive-component nav.documentation-sections .menu-item-object-component a,
-.styleguide .post-type-archive-component nav.documentation-sections .menu-item-object-component a:hover {
+.styleguide .component-template-default nav.documentation-sections .styleguide_tab a,
+.styleguide .component-template-default nav.documentation-sections .styleguide_tab a:hover,
+.styleguide .post-type-archive-component nav.documentation-sections .styleguide_tab a,
+.styleguide .post-type-archive-component nav.documentation-sections .styleguide_tab a:hover,
+.styleguide .page-template-template-styleguide-landing nav.documentation-sections .styleguide_tab a,
+.styleguide .page-template-template-styleguide-landing nav.documentation-sections .styleguide_tab a:hover {
   background: #fff;
   color: #50525d; }
 
@@ -3506,7 +3515,7 @@ html.drawer_open .overlay {
 .styleguide .styleguide_header h2,
 .styleguide .styleguide_link h2,
 .styleguide .styleguide_style_block h2 {
-  font-size: 19.6px;
+  font-size: 2.1rem;
   font-weight: 300;
   text-transform: uppercase;
   border-bottom: 1px solid #f0cb45; }
@@ -3514,7 +3523,7 @@ html.drawer_open .overlay {
 .styleguide .styleguide_header h3,
 .styleguide .styleguide_link h3,
 .styleguide .styleguide_style_block h3 {
-  font-size: 21px; }
+  font-size: 1.8rem; }
 
 .styleguide .styleguide_header h4,
 .styleguide .styleguide_link h4,
@@ -3742,6 +3751,43 @@ html.drawer_open .overlay {
     display: block;
     max-height: 80%;
     width: 75%; }
+
+.styleguide .purple-blue-gradient {
+  position: relative; }
+  .styleguide .purple-blue-gradient:before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #673ab7;
+    background: linear-gradient(132deg, #673ab7 0%, #00c2f5 100%); }
+
+.styleguide .smaller-cover {
+  min-height: 200px; }
+
+.styleguide .three-columns-with-background-colors-on-sides .wp-block-column:first-child {
+  background: #00c2f5;
+  background: #00c2f5;
+  background: linear-gradient(90deg, #00c2f5 0%, #fff 90%); }
+
+.styleguide .three-columns-with-background-colors-on-sides .wp-block-column:last-child {
+  background: #00c2f5;
+  background: #fff;
+  background: linear-gradient(90deg, #fff 10%, #00c2f5 100%);
+  margin-right: 0; }
+
+.styleguide .intro-container {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 125%; }
+
+.styleguide h2.intro-container {
+  font-size: 3rem; }
 
 div#preloader {
   position: fixed;

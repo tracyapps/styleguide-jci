@@ -67,7 +67,7 @@
 	</header>
 
 	<?php
-	if ( 'api_doc' == get_post_type() ) {
+	if ( 'api_doc' == get_post_type() || is_page_template( 'template-documentation-landing.php' ) ) {
 		get_template_part( 'parts/template', 'documentation-sidenav-tree' );
 	} else {
 		get_template_part( 'parts/template', 'sidenav' );
