@@ -1,7 +1,0 @@
-- name: Overview
-  href: xref:apolloChangeFeedOverview.md
-- name: Get Change Feed Notifications
-  href: xref:getChangeFeedNotifications.md
-- name: Subscribe to Change Feed Notifications
-  href: xref:subscribeChangeFeed.md
-
