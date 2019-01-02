@@ -65,6 +65,32 @@
 											<?php } /*  end full or grid conditional */ ?>
 										<?php endwhile; ?>
 									<?php endif; ?>
+								<?php elseif ( get_row_layout() == 'live_examples' ) : ?>
+									<?php if ( have_rows( 'example' ) ) : ?>
+										<?php while ( have_rows( 'example' ) ) : the_row(); ?>
+											<?php if( get_sub_field( 'layout' ) == 'full' ){ ?>
+												<div class="block-container">
+													<div class="example-item">
+														<span class="styleguide_header"><h3><?php the_sub_field( 'example_title_full' ); ?></h3></span>
+														<?php the_sub_field( 'example_full_html' ); ?>
+														<?php the_sub_field( 'example_full_scss' ); ?>
+													</div>
+												</div>
+											<?php } else { ?>
+												<?php if ( have_rows( 'example_group' ) ) : ?>
+													<div class="grid-container">
+														<?php while ( have_rows( 'example_group' ) ) : the_row(); ?>
+														<div class="example-item">
+															<span class="styleguide_header"><h3><?php the_sub_field( 'example_title_grid' ); ?></h3></span>
+															<?php the_sub_field( 'example_grid_html' ); ?>
+															<?php the_sub_field( 'example_grid_scss' ); ?>
+														</div>
+														<?php endwhile; ?>
+													</div>
+												<?php endif; /*  end example grid */ ?>
+											<?php } ?>
+										<?php endwhile; ?>
+									<?php endif; ?>
 								<?php endif; ?>
 							<?php endwhile; ?>
 						</section>

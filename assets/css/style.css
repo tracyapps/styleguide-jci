@@ -1570,6 +1570,72 @@ table,
         .mat-table.grid-table.entity-detail-relationships-tab .child-table tbody .svg-inline--fa {
           margin-right: 5px; }
 
+.table-footer {
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 75%;
+  height: 2rem;
+  overflow: hidden;
+  background: white;
+  border-top: 1px solid #fcfcfc;
+  padding: 0.25rem 0 0.25rem 0.25rem;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .table-footer .previous-versions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -ms-flex-align: center;
+    align-items: center; }
+    .table-footer .previous-versions a.toggle-versions-drawer-button {
+      border-right: 1px solid rgba(211, 212, 217, 0.4);
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center; }
+      .table-footer .previous-versions a.toggle-versions-drawer-button span.button {
+        padding: 0 3px;
+        font-size: 1rem; }
+      .table-footer .previous-versions a.toggle-versions-drawer-button .text-wrap {
+        width: 60px;
+        display: block;
+        float: right;
+        line-height: 1;
+        background: #fff;
+        padding: 8px 6px; }
+      .table-footer .previous-versions a.toggle-versions-drawer-button svg {
+        margin-right: 0;
+        color: #fff;
+        transition: all 400ms ease-in-out; }
+    .table-footer .previous-versions.open a.toggle-versions-drawer-button svg {
+      transform: rotate(180deg); }
+    .table-footer .previous-versions.open .versions-drawer {
+      max-width: 100%;
+      padding: 0.25rem 1rem 0 1rem; }
+    .table-footer .previous-versions .versions-drawer {
+      max-width: 0;
+      padding: auto 0;
+      white-space: nowrap;
+      transition: all 400ms ease-in-out; }
+      .table-footer .previous-versions .versions-drawer a {
+        color: #00b5e4; }
+      .table-footer .previous-versions .versions-drawer ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+      .table-footer .previous-versions .versions-drawer li {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        padding: 0 0.5rem;
+        border-right: 1px solid rgba(211, 212, 217, 0.3); }
+        .table-footer .previous-versions .versions-drawer li:first-child {
+          padding-left: 0; }
+        .table-footer .previous-versions .versions-drawer li:last-child {
+          border-right: none;
+          padding-right: 0; }
+
 .no-break {
   display: -ms-flexbox;
   display: flex; }
@@ -1640,6 +1706,21 @@ textarea.materialize-textarea {
   box-shadow: none;
   box-sizing: border-box;
   transition: box-shadow .3s, border .3s; }
+  table input:not([type]), table
+  input[type=text]:not(.browser-default), table
+  input[type=password]:not(.browser-default), table
+  input[type=email]:not(.browser-default), table
+  input[type=url]:not(.browser-default), table
+  input[type=time]:not(.browser-default), table
+  input[type=date]:not(.browser-default), table
+  input[type=datetime]:not(.browser-default), table
+  input[type=datetime-local]:not(.browser-default), table
+  input[type=tel]:not(.browser-default), table
+  input[type=number]:not(.browser-default), table
+  input[type=search]:not(.browser-default), table
+  textarea.materialize-textarea {
+    margin: 0;
+    padding: 0; }
   input:not([type]):disabled, input:not([type])[readonly="readonly"],
   input[type=text]:not(.browser-default):disabled,
   input[type=text]:not(.browser-default)[readonly="readonly"],
@@ -2116,8 +2197,8 @@ textarea {
   padding-left: 35px;
   cursor: pointer;
   display: inline-block;
-  height: 25px;
-  line-height: 25px;
+  height: 1rem;
+  line-height: 1;
   font-size: 1rem;
   transition: .28s ease;
   -webkit-user-select: none;
@@ -2735,9 +2816,10 @@ ul.tabs {
       margin-bottom: -1px;
       margin-right: -1px;
       text-decoration: none;
-      padding: 0 1.3rem 0 1.1rem;
+      padding: 0 2rem 0 1.1rem;
       line-height: 3;
-      white-space: nowrap; }
+      white-space: nowrap;
+      position: relative; }
       .side-tab-table .tab-side .nav-link:hover {
         background: #fff; }
       .side-tab-table .tab-side .nav-link.active {
@@ -2750,7 +2832,9 @@ ul.tabs {
         width: 6px;
         height: 6px;
         display: inline-block;
-        margin: -1px -5 px 0 7px;
+        position: absolute;
+        top: 1rem;
+        right: 5px;
         border-radius: 6px; }
         .side-tab-table .tab-side .nav-link span.has-changes {
           background: #f00; }
@@ -3469,6 +3553,9 @@ html.drawer_open .overlay {
   background-color: #393a41;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='rgba(52,52,71,0.8)' stroke-width='4.3' stroke-opacity='0.3'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E"); }
 
+.styleguide .with-side-tabs {
+  white-space: nowrap; }
+
 .styleguide h1 .ez-toc-section,
 .styleguide h2 .ez-toc-section {
   margin-top: 3rem;
@@ -3721,31 +3808,36 @@ html.drawer_open .overlay {
 .styleguide .styleguide-specific-padding-all {
   padding: 30px; }
 
-.styleguide .side-tab-table .content-side {
-  border: 1px solid #d3d4d9;
+.styleguide .example-item .side-tab-table .content-side {
   min-height: 10rem; }
 
-.styleguide .styleguide_modal_overlay {
+.styleguide .example-item .table-scroll-example-height {
+  height: 23vh; }
+  .styleguide .example-item .table-scroll-example-height tbody {
+    overflow-x: auto;
+    height: calc( 23vh - 3rem); }
+
+.styleguide .example-item .styleguide_modal_overlay {
   position: relative;
   width: 100%;
   min-height: 300px;
   background: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex; }
-  .styleguide .styleguide_modal_overlay .modal {
+  .styleguide .example-item .styleguide_modal_overlay .modal {
     position: absolute;
     top: 13%;
     display: block;
     max-height: 70%; }
 
-.styleguide .styleguide_modal_overlay_lg {
+.styleguide .example-item .styleguide_modal_overlay_lg {
   position: relative;
   width: 100%;
   min-height: 500px;
   background: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex; }
-  .styleguide .styleguide_modal_overlay_lg .modal {
+  .styleguide .example-item .styleguide_modal_overlay_lg .modal {
     position: absolute;
     top: 8%;
     display: block;

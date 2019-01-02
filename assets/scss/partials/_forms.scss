@@ -66,6 +66,11 @@ textarea.materialize-textarea {
 	box-sizing: border-box;
 	transition: box-shadow .3s, border .3s;
 
+	table & {
+		margin: 0;
+		padding: 0;
+	}
+
 	// Disabled input style
 	&:disabled,
 	&[readonly="readonly"] {
@@ -385,8 +390,8 @@ textarea {
 	padding-left: 35px;
 	cursor: pointer;
 	display: inline-block;
-	height: 25px;
-	line-height: 25px;
+	height: 1rem;
+	line-height: 1;
 	font-size: 1rem;
 	transition: .28s ease;
 	user-select: none;
