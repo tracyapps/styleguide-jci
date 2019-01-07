@@ -31,11 +31,11 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 	// Import ACF fields
-	require_once( get_template_directory() . '/assets/functions/acf-import.php' );
+	//require_once( get_template_directory() . '/assets/functions/acf-import.php' );
 	// Extend ACF fields
-	require_once( get_template_directory() . '/assets/functions/acf-helper.php' );
+	//require_once( get_template_directory() . '/assets/functions/acf-helper.php' );
 	// Site options
-	require_once( get_template_directory() . '/assets/functions/site-options.php' );
+	//require_once( get_template_directory() . '/assets/functions/site-options.php' );
 }
 
 // Related post function - no need to rely on plugins

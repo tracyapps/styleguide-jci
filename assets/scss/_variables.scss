@@ -75,6 +75,7 @@ $confirm_color: $green;
 $confirm_color_text: $white;
 $muted_color: darken( $light-grey, 15 );
 $muted_color_text: $white;
+$disabled_color: $light-grey;
 $warning_color: $red;
 
 $table_even_background: $white;
@@ -202,24 +203,25 @@ $placeholder-text-color: $medium-grey;
 $select-focus: $primary-color;
 
 $input-background: $default-background-color;
-$radio-empty-color: $default-background-color;
+$radio-empty-color: $muted_color;
 $select-background: $default-background-color;
 
 $input-focus-color: $primary-color;
 $input-error-color: $warning_color;
 $input-success-color: $confirm_color;
-$input-disabled-color: $muted_color;
-$input-disabled-solid-color: $muted_color;
-$select-disabled-color: $muted_color;
+$input-disabled-color: $disabled_color;
+$input-disabled-solid-color: $disabled_color;
+$select-disabled-color: $disabled_color;
 
 $radio-fill-color: $primary-color;
 
 $input-border: 1px solid $medium-grey;
 $input-border-color: $medium-grey;
-$input-disabled-border: $muted_color;
+$input-disabled-border: $disabled_color;
 $input-invalid-border: $warning_color;
 
-$radio-border: 1px solid $medium-grey;
+//$radio-border: 1px solid $medium-grey;
+$radio-border: $primary-color;
 $select-border: 1px solid $medium-grey;
 
 $input-margin: 1.25rem 0 0 0;
