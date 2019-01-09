@@ -23,6 +23,9 @@ label {
 		font-weight: bold;
 	}
 }
+.required-container {
+	font-weight: bold;
+}
 
 /* Remove default checkbox */
 [type="checkbox"]:not(:checked),
@@ -55,7 +58,7 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
-textarea.materialize-textarea {
+textarea {
 
 	// General Styles
 	background-color: transparent;
@@ -64,6 +67,7 @@ textarea.materialize-textarea {
 	border-radius: 0;
 	outline: none;
 	height: auto;
+	min-height: $input-height;
 	width: 100%;
 	font-size: $input-font-size;
 	margin: $input-margin;
@@ -221,15 +225,21 @@ textarea.materialize-textarea {
 		left: 0;
 		font-size: 1rem;
 		cursor: text;
+		white-space: nowrap;
 		transition: transform .2s ease-out, color .2s ease-out;
 		transform-origin: 0% 100%;
 		text-align: initial;
-		transform: translateY(12px);
+		transform: translateY(22px);
 
 		&:not(.label-icon).active {
-			transform: translateY(-14px) scale(.8);
+			transform: translateY(-4px) scale(.8);
 			transform-origin: 0 0;
 		}
+	}
+
+	textarea + label {
+		transform: translateY( 27px );
+
 	}
 
 	// Autofill + date + time inputs
@@ -238,6 +248,7 @@ textarea.materialize-textarea {
 	& > input[type=time]:not(.browser-default) + label {
 		transform: translateY(-14px) scale(.8);
 		transform-origin: 0 0;
+
 	}
 
 	.helper-text {
@@ -252,6 +263,7 @@ textarea.materialize-textarea {
 		min-height: 18px;
 		display: block;
 		font-size: 12px;
+		margin-top: 1px;
 		color: rgba(0,0,0,.54);
 	}
 
@@ -284,48 +296,6 @@ textarea.materialize-textarea {
 
 /* Search Field */
 
-.input-field input[type=search] {
-	display: block;
-	line-height: inherit;
-	transition: .3s background-color;
-
-	.nav-wrapper & {
-		height: inherit;
-		padding-left: 4rem;
-		width: calc(100% - 4rem);
-		border: 0;
-		box-shadow: none;
-	}
-
-	&:focus:not(.browser-default) {
-		background-color: $input-background;
-		border: 0;
-		box-shadow: none;
-		color: #444;
-
-		& + label i,
-		& ~ .mdi-navigation-close,
-		& ~ .material-icons {
-			color: #444;
-		}
-	}
-
-	& + .label-icon {
-		transform: none;
-		left: 1rem;
-	}
-
-	& ~ .mdi-navigation-close,
-	& ~ .material-icons {
-		position: absolute;
-		top: 0;
-		right: 1rem;
-		color: transparent;
-		cursor: pointer;
-		font-size: $input-icon-size;
-		transition: .3s color;
-	}
-}
 
 
 /* Textarea */
@@ -333,17 +303,14 @@ textarea.materialize-textarea {
 // Default textarea
 textarea {
 	width: 100%;
-	height: $input-height;
 	background-color: transparent;
-
-	&.materialize-textarea {
-		line-height: normal;
-		overflow-y: hidden; /* prevents scroll bar flash */
-		padding: .8rem 0 .8rem 0; /* prevents text jump on Enter keypress */
-		resize: none;
-		min-height: $input-height;
-		box-sizing: border-box;
-	}
+	border: none;
+	border-top: 1px solid $light-grey;
+	border-bottom: $input-border;
+	line-height: 1.3;
+	padding: .5rem;
+	min-height: 6rem;
+	box-sizing: border-box;
 }
 
 // For textarea autoresize
@@ -852,10 +819,16 @@ body.keyboard-focused {
 
 label {
 	line-height: 1.2;
+
 }
 .required {
 	color: $pink;
 	font-weight: bold;
+}
+.required-container {
+	label {
+		font-weight: bold;
+	}
 }
 
 .input-field {
@@ -897,7 +870,7 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
-textarea.materialize-textarea {
+textarea {
 
 	.full-width {
 		display: block;

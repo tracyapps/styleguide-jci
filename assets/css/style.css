@@ -1667,6 +1667,9 @@ label {
   label.required, label.required-container {
     font-weight: bold; }
 
+.required-container {
+  font-weight: bold; }
+
 /* Remove default checkbox */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
@@ -1695,13 +1698,14 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
-textarea.materialize-textarea {
+textarea {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #818492;
   border-radius: 0;
   outline: none;
   height: auto;
+  min-height: 1.75rem;
   width: 100%;
   font-size: 14px;
   margin: 1.25rem 0 0 0;
@@ -1721,7 +1725,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default), table
   input[type=number]:not(.browser-default), table
   input[type=search]:not(.browser-default), table
-  textarea.materialize-textarea {
+  textarea {
     margin: 0;
     padding: 0; }
   input:not([type]):disabled, input:not([type])[readonly="readonly"],
@@ -1747,8 +1751,8 @@ textarea.materialize-textarea {
   input[type=number]:not(.browser-default)[readonly="readonly"],
   input[type=search]:not(.browser-default):disabled,
   input[type=search]:not(.browser-default)[readonly="readonly"],
-  textarea.materialize-textarea:disabled,
-  textarea.materialize-textarea[readonly="readonly"] {
+  textarea:disabled,
+  textarea[readonly="readonly"] {
     color: #d3d4d9;
     border-bottom: #d3d4d9; }
   input:not([type]):disabled + label,
@@ -1775,8 +1779,8 @@ textarea.materialize-textarea {
   input[type=number]:not(.browser-default)[readonly="readonly"] + label,
   input[type=search]:not(.browser-default):disabled + label,
   input[type=search]:not(.browser-default)[readonly="readonly"] + label,
-  textarea.materialize-textarea:disabled + label,
-  textarea.materialize-textarea[readonly="readonly"] + label {
+  textarea:disabled + label,
+  textarea[readonly="readonly"] + label {
     color: #d3d4d9; }
   input:not([type]):focus:not([readonly]),
   input[type=text]:not(.browser-default):focus:not([readonly]),
@@ -1790,7 +1794,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default):focus:not([readonly]),
   input[type=number]:not(.browser-default):focus:not([readonly]),
   input[type=search]:not(.browser-default):focus:not([readonly]),
-  textarea.materialize-textarea:focus:not([readonly]) {
+  textarea:focus:not([readonly]) {
     border-bottom: 1px solid #673ab7;
     box-shadow: 0 1px 0 0 #673ab7; }
   input:not([type]):focus:not([readonly]) + label,
@@ -1805,7 +1809,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
   input[type=number]:not(.browser-default):focus:not([readonly]) + label,
   input[type=search]:not(.browser-default):focus:not([readonly]) + label,
-  textarea.materialize-textarea:focus:not([readonly]) + label {
+  textarea:focus:not([readonly]) + label {
     color: #673ab7; }
   input:not([type]):focus.valid ~ label,
   input[type=text]:not(.browser-default):focus.valid ~ label,
@@ -1819,7 +1823,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default):focus.valid ~ label,
   input[type=number]:not(.browser-default):focus.valid ~ label,
   input[type=search]:not(.browser-default):focus.valid ~ label,
-  textarea.materialize-textarea:focus.valid ~ label {
+  textarea:focus.valid ~ label {
     color: #66c200; }
   input:not([type]):focus.invalid ~ label,
   input[type=text]:not(.browser-default):focus.invalid ~ label,
@@ -1833,7 +1837,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default):focus.invalid ~ label,
   input[type=number]:not(.browser-default):focus.invalid ~ label,
   input[type=search]:not(.browser-default):focus.invalid ~ label,
-  textarea.materialize-textarea:focus.invalid ~ label {
+  textarea:focus.invalid ~ label {
     color: #db2c48; }
   input:not([type]).validate + label,
   input[type=text]:not(.browser-default).validate + label,
@@ -1847,7 +1851,7 @@ textarea.materialize-textarea {
   input[type=tel]:not(.browser-default).validate + label,
   input[type=number]:not(.browser-default).validate + label,
   input[type=search]:not(.browser-default).validate + label,
-  textarea.materialize-textarea.validate + label {
+  textarea.validate + label {
     width: 100%; }
 
 /* Validation Sass Placeholders */
@@ -1874,8 +1878,8 @@ input[type=number].valid:not(.browser-default),
 input[type=number].valid:not(.browser-default):focus,
 input[type=search].valid:not(.browser-default),
 input[type=search].valid:not(.browser-default):focus,
-textarea.materialize-textarea.valid,
-textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown {
+textarea.valid,
+textarea.valid:focus, .select-wrapper.valid > input.select-dropdown {
   border-bottom: 1px solid #66c200;
   box-shadow: 0 1px 0 0 #66c200; }
 
@@ -1902,8 +1906,8 @@ input[type=number].invalid:not(.browser-default),
 input[type=number].invalid:not(.browser-default):focus,
 input[type=search].invalid:not(.browser-default),
 input[type=search].invalid:not(.browser-default):focus,
-textarea.materialize-textarea.invalid,
-textarea.materialize-textarea.invalid:focus, .select-wrapper.invalid > input.select-dropdown,
+textarea.invalid,
+textarea.invalid:focus, .select-wrapper.invalid > input.select-dropdown,
 .select-wrapper.invalid > input.select-dropdown:focus {
   border-bottom: #db2c48;
   box-shadow: 0 1px 0 0 #db2c48; }
@@ -1956,10 +1960,10 @@ input[type=search]:not(.browser-default).valid ~ .helper-text[data-success],
 input[type=search]:not(.browser-default):focus.valid ~ .helper-text[data-success],
 input[type=search]:not(.browser-default).invalid ~ .helper-text[data-error],
 input[type=search]:not(.browser-default):focus.invalid ~ .helper-text[data-error],
-textarea.materialize-textarea.valid ~ .helper-text[data-success],
-textarea.materialize-textarea:focus.valid ~ .helper-text[data-success],
-textarea.materialize-textarea.invalid ~ .helper-text[data-error],
-textarea.materialize-textarea:focus.invalid ~ .helper-text[data-error], .select-wrapper.valid .helper-text[data-success],
+textarea.valid ~ .helper-text[data-success],
+textarea:focus.valid ~ .helper-text[data-success],
+textarea.invalid ~ .helper-text[data-error],
+textarea:focus.invalid ~ .helper-text[data-error], .select-wrapper.valid .helper-text[data-success],
 .select-wrapper.invalid ~ .helper-text[data-error] {
   color: transparent;
   -webkit-user-select: none;
@@ -1992,8 +1996,8 @@ input[type=number]:not(.browser-default).valid ~ .helper-text:after,
 input[type=number]:not(.browser-default):focus.valid ~ .helper-text:after,
 input[type=search]:not(.browser-default).valid ~ .helper-text:after,
 input[type=search]:not(.browser-default):focus.valid ~ .helper-text:after,
-textarea.materialize-textarea.valid ~ .helper-text:after,
-textarea.materialize-textarea:focus.valid ~ .helper-text:after, .select-wrapper.valid ~ .helper-text:after {
+textarea.valid ~ .helper-text:after,
+textarea:focus.valid ~ .helper-text:after, .select-wrapper.valid ~ .helper-text:after {
   content: attr(data-success);
   color: #66c200; }
 
@@ -2021,8 +2025,8 @@ input[type=number]:not(.browser-default).invalid ~ .helper-text:after,
 input[type=number]:not(.browser-default):focus.invalid ~ .helper-text:after,
 input[type=search]:not(.browser-default).invalid ~ .helper-text:after,
 input[type=search]:not(.browser-default):focus.invalid ~ .helper-text:after,
-textarea.materialize-textarea.invalid ~ .helper-text:after,
-textarea.materialize-textarea:focus.invalid ~ .helper-text:after, .select-wrapper.invalid ~ .helper-text:after {
+textarea.invalid ~ .helper-text:after,
+textarea:focus.invalid ~ .helper-text:after, .select-wrapper.invalid ~ .helper-text:after {
   content: attr(data-error);
   color: #db2c48; }
 
@@ -2038,7 +2042,7 @@ input[type=datetime-local]:not(.browser-default) + label:after,
 input[type=tel]:not(.browser-default) + label:after,
 input[type=number]:not(.browser-default) + label:after,
 input[type=search]:not(.browser-default) + label:after,
-textarea.materialize-textarea + label:after, .select-wrapper + label:after {
+textarea + label:after, .select-wrapper + label:after {
   display: block;
   content: "";
   position: absolute;
@@ -2070,13 +2074,16 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
     left: 0;
     font-size: 1rem;
     cursor: text;
+    white-space: nowrap;
     transition: transform .2s ease-out, color .2s ease-out;
     transform-origin: 0% 100%;
     text-align: initial;
-    transform: translateY(12px); }
+    transform: translateY(22px); }
     .input-field > label:not(.label-icon).active {
-      transform: translateY(-14px) scale(0.8);
+      transform: translateY(-4px) scale(0.8);
       transform-origin: 0 0; }
+  .input-field textarea + label {
+    transform: translateY(27px); }
   .input-field > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
   .input-field > input[type=date]:not(.browser-default) + label,
   .input-field > input[type=time]:not(.browser-default) + label {
@@ -2087,6 +2094,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
     min-height: 18px;
     display: block;
     font-size: 12px;
+    margin-top: 1px;
     color: rgba(0, 0, 0, 0.54); }
     .input-field .helper-text::after {
       opacity: 1;
@@ -2095,10 +2103,10 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
       left: 0; }
   .input-field .prefix {
     position: absolute;
-    width: 3rem;
+    width: 1.75rem;
     font-size: 12px;
     transition: color .2s;
-    top: calc(3rem - 12px)/2; }
+    top: calc(1.75rem - 12px)/2; }
     .input-field .prefix.active {
       color: #673ab7; }
   .input-field .prefix ~ input,
@@ -2114,52 +2122,17 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
     margin-left: 3rem; }
 
 /* Search Field */
-.input-field input[type=search] {
-  display: block;
-  line-height: inherit;
-  transition: .3s background-color; }
-  .nav-wrapper .input-field input[type=search] {
-    height: inherit;
-    padding-left: 4rem;
-    width: calc(100% - 4rem);
-    border: 0;
-    box-shadow: none; }
-  .input-field input[type=search]:focus:not(.browser-default) {
-    background-color: #f4f5f8;
-    border: 0;
-    box-shadow: none;
-    color: #444; }
-    .input-field input[type=search]:focus:not(.browser-default) + label i,
-    .input-field input[type=search]:focus:not(.browser-default) ~ .mdi-navigation-close,
-    .input-field input[type=search]:focus:not(.browser-default) ~ .material-icons {
-      color: #444; }
-  .input-field input[type=search] + .label-icon {
-    transform: none;
-    left: 1rem; }
-  .input-field input[type=search] ~ .mdi-navigation-close,
-  .input-field input[type=search] ~ .material-icons {
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    color: transparent;
-    cursor: pointer;
-    font-size: 12px;
-    transition: .3s color; }
-
 /* Textarea */
 textarea {
   width: 100%;
-  height: 3rem;
-  background-color: transparent; }
-  textarea.materialize-textarea {
-    line-height: normal;
-    overflow-y: hidden;
-    /* prevents scroll bar flash */
-    padding: .8rem 0 .8rem 0;
-    /* prevents text jump on Enter keypress */
-    resize: none;
-    min-height: 3rem;
-    box-sizing: border-box; }
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #d3d4d9;
+  border-bottom: 1px solid #818492;
+  line-height: 1.3;
+  padding: .5rem;
+  min-height: 6rem;
+  box-sizing: border-box; }
 
 .hiddendiv {
   visibility: hidden;
@@ -2381,7 +2354,7 @@ select {
   padding: 0;
   border: 1px solid #818492;
   border-radius: 4px;
-  height: 3rem;
+  height: 1.75rem;
   margin-bottom: 1.5rem; }
 
 .select-label {
@@ -2400,8 +2373,8 @@ select {
     border: none;
     border-bottom: 1px solid #818492;
     outline: none;
-    height: 3rem;
-    line-height: 3rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
     width: 100%;
     font-size: 14px;
     margin: 1.25rem 0 0 0;
@@ -2504,6 +2477,9 @@ label {
   color: #db0a8d;
   font-weight: bold; }
 
+.required-container label {
+  font-weight: bold; }
+
 .input-field.error input {
   border-bottom: 2px solid #db2c48; }
 
@@ -2535,7 +2511,7 @@ input[type=datetime-local]:not(.browser-default) .full-width,
 input[type=tel]:not(.browser-default) .full-width,
 input[type=number]:not(.browser-default) .full-width,
 input[type=search]:not(.browser-default) .full-width,
-textarea.materialize-textarea .full-width {
+textarea .full-width {
   display: block;
   width: 100%;
   max-width: 100%; }
@@ -2551,7 +2527,7 @@ textarea.materialize-textarea .full-width {
   input[type=tel]:not(.browser-default) .full-width + .select2-container,
   input[type=number]:not(.browser-default) .full-width + .select2-container,
   input[type=search]:not(.browser-default) .full-width + .select2-container,
-  textarea.materialize-textarea .full-width + .select2-container {
+  textarea .full-width + .select2-container {
     width: 100% !important;
     max-width: 100%; }
 
@@ -3487,6 +3463,7 @@ html.drawer_open .overlay {
       padding: 5px 2rem 1rem 2rem;
       background: #fff;
       border: 1px solid #d3d4d9;
+      min-width: 250px;
       -ms-flex: 1;
       flex: 1; }
   .styleguide .block-container {
