@@ -216,7 +216,7 @@ textarea {
 
 	position: relative;
 	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.75rem;
 
 	& > label {
 		color: $input-border-color;
@@ -229,16 +229,16 @@ textarea {
 		transition: transform .2s ease-out, color .2s ease-out;
 		transform-origin: 0% 100%;
 		text-align: initial;
-		transform: translateY(22px);
+		transform: translateY(24px);
 
 		&:not(.label-icon).active {
-			transform: translateY(-4px) scale(.8);
+			transform: translateY(4px) scale(.8);
 			transform-origin: 0 0;
 		}
 	}
 
 	textarea + label {
-		transform: translateY( 27px );
+		transform: translateY( 28px );
 
 	}
 

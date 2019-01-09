@@ -2054,7 +2054,7 @@ textarea + label:after, .select-wrapper + label:after {
 .input-field {
   position: relative;
   margin-top: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1.75rem; }
   .input-field.inline {
     display: inline-block;
     vertical-align: middle;
@@ -2078,12 +2078,12 @@ textarea + label:after, .select-wrapper + label:after {
     transition: transform .2s ease-out, color .2s ease-out;
     transform-origin: 0% 100%;
     text-align: initial;
-    transform: translateY(22px); }
+    transform: translateY(24px); }
     .input-field > label:not(.label-icon).active {
-      transform: translateY(-4px) scale(0.8);
+      transform: translateY(4px) scale(0.8);
       transform-origin: 0 0; }
   .input-field textarea + label {
-    transform: translateY(27px); }
+    transform: translateY(28px); }
   .input-field > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
   .input-field > input[type=date]:not(.browser-default) + label,
   .input-field > input[type=time]:not(.browser-default) + label {
@@ -3053,9 +3053,6 @@ html.drawer_open .overlay {
     border-bottom: 1px solid rgba(103, 58, 183, 0.5); }
   .modal .modal-content {
     padding: 0.5rem 24px 4rem 24px; }
-    .modal .modal-content p {
-      padding: 0.85rem 0;
-      margin-bottom: 0.5rem; }
     .modal .modal-content.two-col {
       display: -ms-flexbox;
       display: flex;
