@@ -2837,7 +2837,8 @@ ul.tabs {
 .ng-trigger-dialogContainer {
   transition: all 500ms ease-in-out; }
 
-#edit_drawer {
+#edit_drawer,
+.drawer {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -2847,29 +2848,36 @@ ul.tabs {
   height: 0;
   z-index: -1;
   transition: all 500ms ease-in-out; }
-  .ng-trigger-dialogContainer #edit_drawer {
+  .ng-trigger-dialogContainer #edit_drawer, #edit_drawer.open, .ng-trigger-dialogContainer
+  .drawer,
+  .drawer.open {
     overflow: inherit;
     z-index: 9999999 !important;
     height: calc( 100vh - 2.1rem - 2.8rem - 5rem - 1.2rem) !important; }
-  #edit_drawer .drawer_button_tab {
+  #edit_drawer .drawer_button_tab,
+  .drawer .drawer_button_tab {
     margin-top: -4rem;
     min-height: 4rem;
     background: #fff;
     padding: 1em 2em;
     margin-right: 1em;
     float: right; }
-  #edit_drawer .drawer-container {
+  #edit_drawer .drawer-container,
+  .drawer .drawer-container {
     display: grid;
     width: 100%;
     grid-template-columns: 2fr 1fr 2fr;
     padding: 0.5rem 1rem;
     -ms-flex-align: stretch;
     align-items: stretch; }
-    #edit_drawer .drawer-container .header-row {
+    #edit_drawer .drawer-container .header-row,
+    .drawer .drawer-container .header-row {
       padding: 3rem 1rem 1rem 1rem; }
-    #edit_drawer .drawer-container .centered-content {
+    #edit_drawer .drawer-container .centered-content,
+    .drawer .drawer-container .centered-content {
       text-align: center; }
-    #edit_drawer .drawer-container .entity-table table {
+    #edit_drawer .drawer-container .entity-table table,
+    .drawer .drawer-container .entity-table table {
       background: rgba(130, 89, 203, 0.2);
       background: linear-gradient(132deg, rgba(130, 89, 203, 0.2) 0%, rgba(103, 58, 183, 0.25) 100%);
       border-radius: 3px;
@@ -2878,28 +2886,38 @@ ul.tabs {
       height: 100%; }
       #edit_drawer .drawer-container .entity-table table thead,
       #edit_drawer .drawer-container .entity-table table tbody,
-      #edit_drawer .drawer-container .entity-table table tfoot {
+      #edit_drawer .drawer-container .entity-table table tfoot,
+      .drawer .drawer-container .entity-table table thead,
+      .drawer .drawer-container .entity-table table tbody,
+      .drawer .drawer-container .entity-table table tfoot {
         display: block;
         width: 100%; }
       #edit_drawer .drawer-container .entity-table table thead tr,
       #edit_drawer .drawer-container .entity-table table tbody tr,
-      #edit_drawer .drawer-container .entity-table table tfoot tr {
+      #edit_drawer .drawer-container .entity-table table tfoot tr,
+      .drawer .drawer-container .entity-table table thead tr,
+      .drawer .drawer-container .entity-table table tbody tr,
+      .drawer .drawer-container .entity-table table tfoot tr {
         width: 100%;
         display: grid;
         grid-template-columns: 2fr 1fr 30px; }
-      #edit_drawer .drawer-container .entity-table table tbody {
+      #edit_drawer .drawer-container .entity-table table tbody,
+      .drawer .drawer-container .entity-table table tbody {
         background: #fff;
         max-height: 20vh;
         width: 100%;
         overflow-x: hidden; }
-      #edit_drawer .drawer-container .entity-table table tfoot {
+      #edit_drawer .drawer-container .entity-table table tfoot,
+      .drawer .drawer-container .entity-table table tfoot {
         background: #fff;
         border-top: 1px solid rgba(103, 58, 183, 0.25); }
-        #edit_drawer .drawer-container .entity-table table tfoot td {
+        #edit_drawer .drawer-container .entity-table table tfoot td,
+        .drawer .drawer-container .entity-table table tfoot td {
           grid-column: span 3;
           padding: 0;
           font-size: 90%; }
-    #edit_drawer .drawer-container .entity-table.disabled table {
+    #edit_drawer .drawer-container .entity-table.disabled table,
+    .drawer .drawer-container .entity-table.disabled table {
       background: rgba(211, 212, 217, 0.2);
       background: linear-gradient(132deg, rgba(211, 212, 217, 0.2) 0%, rgba(211, 212, 217, 0.35) 100%);
       padding: 7px;
@@ -2908,12 +2926,15 @@ ul.tabs {
       -ms-flex-direction: column;
       flex-direction: column; }
       #edit_drawer .drawer-container .entity-table.disabled table thead,
-      #edit_drawer .drawer-container .entity-table.disabled table tfoot {
+      #edit_drawer .drawer-container .entity-table.disabled table tfoot,
+      .drawer .drawer-container .entity-table.disabled table thead,
+      .drawer .drawer-container .entity-table.disabled table tfoot {
         background: #fff;
         display: block;
         border: none;
         height: 20%; }
-      #edit_drawer .drawer-container .entity-table.disabled table tbody {
+      #edit_drawer .drawer-container .entity-table.disabled table tbody,
+      .drawer .drawer-container .entity-table.disabled table tbody {
         -ms-flex: 1;
         flex: 1;
         display: -ms-flexbox;
@@ -2922,39 +2943,52 @@ ul.tabs {
         flex-direction: column;
         -ms-flex-pack: center;
         justify-content: center; }
-        #edit_drawer .drawer-container .entity-table.disabled table tbody tr {
+        #edit_drawer .drawer-container .entity-table.disabled table tbody tr,
+        .drawer .drawer-container .entity-table.disabled table tbody tr {
           border: none !important; }
-        #edit_drawer .drawer-container .entity-table.disabled table tbody td {
+        #edit_drawer .drawer-container .entity-table.disabled table tbody td,
+        .drawer .drawer-container .entity-table.disabled table tbody td {
           background: #fff;
           grid-column: span 3;
           text-align: center; }
-    #edit_drawer .drawer-container .entity-table.column-three table {
+    #edit_drawer .drawer-container .entity-table.column-three table,
+    .drawer .drawer-container .entity-table.column-three table {
       background: rgba(0, 117, 182, 0.25);
       background: linear-gradient(132deg, rgba(0, 117, 182, 0.25) 0%, rgba(29, 174, 255, 0.15) 100%); }
-    #edit_drawer .drawer-container .entity-table.column-three.disabled table {
+    #edit_drawer .drawer-container .entity-table.column-three.disabled table,
+    .drawer .drawer-container .entity-table.column-three.disabled table {
       background: rgba(211, 212, 217, 0.45);
       background: linear-gradient(132deg, rgba(211, 212, 217, 0.45) 0%, rgba(211, 212, 217, 0.25) 100%); }
-    #edit_drawer .drawer-container .entity-table .delete-action-column {
+    #edit_drawer .drawer-container .entity-table .delete-action-column,
+    .drawer .drawer-container .entity-table .delete-action-column {
       text-align: right;
       font-size: 80%; }
-      #edit_drawer .drawer-container .entity-table .delete-action-column a {
+      #edit_drawer .drawer-container .entity-table .delete-action-column a,
+      .drawer .drawer-container .entity-table .delete-action-column a {
         padding: 0 0.25em;
         color: #d3d4d9;
         transition: all 200ms ease-in-out;
         cursor: pointer; }
-        #edit_drawer .drawer-container .entity-table .delete-action-column a:focus, #edit_drawer .drawer-container .entity-table .delete-action-column a:target, #edit_drawer .drawer-container .entity-table .delete-action-column a:hover {
+        #edit_drawer .drawer-container .entity-table .delete-action-column a:focus, #edit_drawer .drawer-container .entity-table .delete-action-column a:target, #edit_drawer .drawer-container .entity-table .delete-action-column a:hover,
+        .drawer .drawer-container .entity-table .delete-action-column a:focus,
+        .drawer .drawer-container .entity-table .delete-action-column a:target,
+        .drawer .drawer-container .entity-table .delete-action-column a:hover {
           color: #db0a8d; }
-    #edit_drawer .drawer-container .relationship-mapping {
+    #edit_drawer .drawer-container .relationship-mapping,
+    .drawer .drawer-container .relationship-mapping {
       -ms-flex-item-align: center;
       align-self: center; }
-      #edit_drawer .drawer-container .relationship-mapping > span {
+      #edit_drawer .drawer-container .relationship-mapping > span,
+      .drawer .drawer-container .relationship-mapping > span {
         display: block;
         background: rgba(103, 58, 183, 0.25);
         background: linear-gradient(132deg, rgba(103, 58, 183, 0.25) 0%, rgba(0, 117, 182, 0.25) 100%);
         padding: 5px 1em;
         position: relative;
         margin-right: 2em; }
-        #edit_drawer .drawer-container .relationship-mapping > span:after, #edit_drawer .drawer-container .relationship-mapping > span:before {
+        #edit_drawer .drawer-container .relationship-mapping > span:after, #edit_drawer .drawer-container .relationship-mapping > span:before,
+        .drawer .drawer-container .relationship-mapping > span:after,
+        .drawer .drawer-container .relationship-mapping > span:before {
           left: 100%;
           top: 50%;
           border: solid transparent;
@@ -2963,35 +2997,42 @@ ul.tabs {
           width: 0;
           position: absolute;
           pointer-events: none; }
-        #edit_drawer .drawer-container .relationship-mapping > span:after {
+        #edit_drawer .drawer-container .relationship-mapping > span:after,
+        .drawer .drawer-container .relationship-mapping > span:after {
           border-color: transparent;
           border-left-color: rgba(0, 117, 182, 0.25);
           border-width: 2em;
           margin-top: -2em; }
-        #edit_drawer .drawer-container .relationship-mapping > span:before {
+        #edit_drawer .drawer-container .relationship-mapping > span:before,
+        .drawer .drawer-container .relationship-mapping > span:before {
           border-color: rgba(194, 236, 245, 0);
           border-left-color: transparent;
           border-width: 36px;
           margin-top: -36px; }
-      #edit_drawer .drawer-container .relationship-mapping select {
+      #edit_drawer .drawer-container .relationship-mapping select,
+      .drawer .drawer-container .relationship-mapping select {
         display: inline-block;
         background: rgba(255, 255, 255, 0.5);
         font-family: "Poppins", sans-serif; }
-      #edit_drawer .drawer-container .relationship-mapping.disabled span {
+      #edit_drawer .drawer-container .relationship-mapping.disabled span,
+      .drawer .drawer-container .relationship-mapping.disabled span {
         background: rgba(211, 212, 217, 0.35);
         background: linear-gradient(132deg, rgba(211, 212, 217, 0.35) 0%, rgba(211, 212, 217, 0.45) 100%); }
-        #edit_drawer .drawer-container .relationship-mapping.disabled span:after {
+        #edit_drawer .drawer-container .relationship-mapping.disabled span:after,
+        .drawer .drawer-container .relationship-mapping.disabled span:after {
           border-color: transparent;
           border-left-color: rgba(211, 212, 217, 0.45);
           border-width: 2em;
           margin-top: -2em; }
-  #edit_drawer .add-another-separator {
+  #edit_drawer .add-another-separator,
+  .drawer .add-another-separator {
     display: block;
     text-align: right;
     padding: 1em;
     border-bottom: 1px dotted #d3d4d9;
     margin-bottom: 4em; }
-    #edit_drawer .add-another-separator .btn {
+    #edit_drawer .add-another-separator .btn,
+    .drawer .add-another-separator .btn {
       margin-bottom: -3em; }
 
 .overlay {
@@ -3780,6 +3821,21 @@ html.drawer_open .overlay {
     display: block;
     max-height: 80%;
     width: 75%; }
+
+.styleguide .example-item .styleguide_drawer_overlay {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background: rgba(0, 0, 0, 0.5);
+  display: -ms-flexbox;
+  display: flex; }
+  .styleguide .example-item .styleguide_drawer_overlay .drawer.open,
+  .styleguide .example-item .styleguide_drawer_overlay #edit_drawer.open {
+    height: 80% !important; }
+    .styleguide .example-item .styleguide_drawer_overlay .drawer.open .drawer-container,
+    .styleguide .example-item .styleguide_drawer_overlay #edit_drawer.open .drawer-container {
+      height: 100%;
+      overflow-y: auto; }
 
 .styleguide .entry-content div.post,
 .styleguide .entry-content div.get,

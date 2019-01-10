@@ -2,7 +2,8 @@
 .ng-trigger-dialogContainer {
 	transition: all 500ms ease-in-out;
 }
-#edit_drawer {
+#edit_drawer,
+.drawer {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -13,13 +14,19 @@
 	z-index: -1;
 	transition: all 500ms ease-in-out;
 
-	.ng-trigger-dialogContainer & {
+	.ng-trigger-dialogContainer &,
+	&.open {
 		overflow: inherit;
 		z-index: 9999999 !important;
 		height: calc(
 			100vh - #{$breadcrumb_height} - #{$fixednav_height} - #{$sectionheader_height} -
 			1.2rem
 		) !important;
+
+		.drawer-container {
+			height: 100%;
+			overflow-y: auto;
+		}
 	}
 
 	.drawer_button_tab {

@@ -838,6 +838,27 @@
 				width: 75%;
 			}
 		}
+
+		// drawer mockup
+		.styleguide_drawer_overlay {
+			position: relative;
+			width: 100%;
+			min-height: 500px;
+			background: rgba( 0, 0, 0, 0.5 );
+			display: flex;
+
+			.drawer,
+			#edit_drawer {
+				&.open {
+					height: 80% !important;
+
+					.drawer-container {
+						height: 100%;
+						overflow-y: auto;
+					}
+				}
+			}
+		}
 	}
 
 	// special api section styles
