@@ -51,7 +51,6 @@
 		}
 	}
 
-
 	header.page-header {
 		background: $white;
 
@@ -112,6 +111,7 @@
 		}
 	}
 
+	// active tab: API (developer documentation) section
 	.api_doc-template-default,
 	.post-type-archive-api_doc,
 	.single-api_doc,
@@ -127,6 +127,7 @@
 		}
 	}
 
+	// active tab: styleguide section
 	.component-template-default,
 	.post-type-archive-component,
 	.page-template-template-styleguide-landing {
@@ -410,14 +411,16 @@
 		overflow-y: auto;
 	}
 
-	/*.example-container {
+	// grid example container
+	.example-container-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
-		grid-template-rows: repeat(auto-fill, minmax(250px, 1fr) );
-		grid-gap: 30px;
+		grid-template-columns: repeat(auto-fill, minmax(275px, 1fr) );
+		grid-template-rows: repeat(auto-fill, minmax(275px, 1fr) );
+		grid-gap: 10px;
 		width: 100%;
 		margin: 2rem 0;
-	}*/
+	}
+	// flexbox example container
 	.example-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -426,12 +429,6 @@
 		.example-item {
 			min-width: 275px;
 		}
-	}
-
-	.CodeMirror {
-		height: auto;
-		min-height: 2rem;
-		margin-bottom: 3rem;
 	}
 
 	.archive-grid {
@@ -483,9 +480,8 @@
 	section.component {
 		margin: 1rem 0 5rem;
 	}
-	/*
 	// grid grid container
-	.grid-container {
+	.grid-container-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 		grid-gap: 10px;
@@ -499,7 +495,7 @@
 			background: $white;
 			border: 1px solid $light-grey;
 		}
-	}*/
+	}
 	// flexbox grid container
 	.grid-container {
 		display: flex;
@@ -533,6 +529,11 @@
 		}
 	}
 
+	.CodeMirror {
+		height: auto;
+		min-height: 2rem;
+		margin-bottom: 3rem;
+	}
 	.cm-s-monokai.CodeMirror {
 		background-color: darken( $medium-grey, 30 );
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='38.4' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='rgba(52,52,71,0.8)' stroke-width='4.3' stroke-opacity='0.3'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
@@ -839,8 +840,37 @@
 		}
 	}
 
+	// special api section styles
+	.entry-content {
 
+		div.post,
+		div.get,
+		div.put,
+		div.delete {
+			font-size: 125%;
+			background: $dark;
+			color: $white;
+			display: inline-block;
+			padding: 0.35em 0.8em;
+			border-radius: 3px;
+		}
+		div.get {
+			background: $dark-blue;
+		}
+		div.post {
+			background: $green;
+		}
+		div.put {
+			background: $orange;
+		}
+		div.delete {
+			background: $red;
+		}
+	}
 
+	// styleguide gutenberg content styles
+
+	// gradient over cover images
 	.purple-blue-gradient {
 		position: relative;
 
@@ -856,6 +886,8 @@
 			@include linear-gradient(132deg,  $purple 0%, $light-blue 100%);
 		}
 	}
+
+	// homepage tweaks
 	.smaller-cover {
 		min-height: 200px;
 	}
