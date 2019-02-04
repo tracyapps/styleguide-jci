@@ -845,75 +845,6 @@ header.page-header.navbar-fixed {
       #left-side-nav .collapsible-body a svg {
         transform: scale(1.1); }
 
-body:not(.side_menu_open) .styleguide-sidenav span {
-  display: none; }
-
-body:not(.side_menu_open) .styleguide-sidenav li.current_page {
-  background: #673ab7;
-  background: linear-gradient(to right, #673ab7 0%, #673ab7 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+2).current_page {
-  background: #00c2f5;
-  background: linear-gradient(to right, #00c2f5 0%, #00c2f5 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+3).current_page {
-  background: #66c200;
-  background: linear-gradient(to right, #66c200 0%, #66c200 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+4).current_page {
-  background: #F5A623;
-  background: linear-gradient(to right, #F5A623 0%, #F5A623 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+5).current_page {
-  background: #db0a8d;
-  background: linear-gradient(to right, #db0a8d 0%, #db0a8d 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+6).current_page {
-  background: #26a69a;
-  background: linear-gradient(to right, #26a69a 0%, #26a69a 78%, #292938 78%); }
-
-body:not(.side_menu_open) .styleguide-sidenav li:nth-child(7n+7).current_page {
-  background: #8d1394;
-  background: linear-gradient(to right, #8d1394 0%, #8d1394 78%, #292938 78%); }
-
-.styleguide-sidenav li.current_page {
-  background: #673ab7;
-  background: linear-gradient(to right, #673ab7 0%, #673ab7 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+2).current_page {
-  background: #00c2f5;
-  background: linear-gradient(to right, #00c2f5 0%, #00c2f5 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+3).current_page {
-  background: #66c200;
-  background: linear-gradient(to right, #66c200 0%, #66c200 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+4).current_page {
-  background: #F5A623;
-  background: linear-gradient(to right, #F5A623 0%, #F5A623 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+5).current_page {
-  background: #db0a8d;
-  background: linear-gradient(to right, #db0a8d 0%, #db0a8d 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+6).current_page {
-  background: #26a69a;
-  background: linear-gradient(to right, #26a69a 0%, #26a69a 3%, #292938 3%); }
-
-.styleguide-sidenav li:nth-child(7n+7).current_page {
-  background: #8d1394;
-  background: linear-gradient(to right, #8d1394 0%, #8d1394 3%, #292938 3%); }
-
-#left-side-nav .styleguide-sidenav li.back_to_prototype {
-  position: absolute;
-  bottom: 5rem; }
-  #left-side-nav .styleguide-sidenav li.back_to_prototype a {
-    color: #818492; }
-    #left-side-nav .styleguide-sidenav li.back_to_prototype a svg {
-      transform: scale(1.1); }
-    #left-side-nav .styleguide-sidenav li.back_to_prototype a:hover {
-      background: none; }
-
 /*
  ***** page footer & footer nav ****
  */
@@ -2854,6 +2785,11 @@ ul.tabs {
     overflow: inherit;
     z-index: 9999999 !important;
     height: calc( 100vh - 2.1rem - 2.8rem - 5rem - 1.2rem) !important; }
+    .ng-trigger-dialogContainer #edit_drawer .drawer-container, #edit_drawer.open .drawer-container, .ng-trigger-dialogContainer
+    .drawer .drawer-container,
+    .drawer.open .drawer-container {
+      height: 100%;
+      overflow-y: auto; }
   #edit_drawer .drawer_button_tab,
   .drawer .drawer_button_tab {
     margin-top: -4rem;
@@ -3786,15 +3722,19 @@ html.drawer_open .overlay {
 .styleguide .styleguide-specific-padding-all {
   padding: 30px; }
 
+.styleguide body:not(.side_menu_open) .example-item .side-tab-table .content-side,
 .styleguide .example-item .side-tab-table .content-side {
   min-height: 10rem; }
 
+.styleguide body:not(.side_menu_open) .example-item .table-scroll-example-height,
 .styleguide .example-item .table-scroll-example-height {
   height: 23vh; }
+  .styleguide body:not(.side_menu_open) .example-item .table-scroll-example-height tbody,
   .styleguide .example-item .table-scroll-example-height tbody {
     overflow-x: auto;
     height: calc( 23vh - 3rem); }
 
+.styleguide body:not(.side_menu_open) .example-item .styleguide_modal_overlay,
 .styleguide .example-item .styleguide_modal_overlay {
   position: relative;
   width: 100%;
@@ -3802,12 +3742,14 @@ html.drawer_open .overlay {
   background: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex; }
+  .styleguide body:not(.side_menu_open) .example-item .styleguide_modal_overlay .modal,
   .styleguide .example-item .styleguide_modal_overlay .modal {
     position: absolute;
     top: 13%;
     display: block;
     max-height: 70%; }
 
+.styleguide body:not(.side_menu_open) .example-item .styleguide_modal_overlay_lg,
 .styleguide .example-item .styleguide_modal_overlay_lg {
   position: relative;
   width: 100%;
@@ -3815,6 +3757,7 @@ html.drawer_open .overlay {
   background: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex; }
+  .styleguide body:not(.side_menu_open) .example-item .styleguide_modal_overlay_lg .modal,
   .styleguide .example-item .styleguide_modal_overlay_lg .modal {
     position: absolute;
     top: 8%;
@@ -3822,6 +3765,7 @@ html.drawer_open .overlay {
     max-height: 80%;
     width: 75%; }
 
+.styleguide body:not(.side_menu_open) .example-item .styleguide_drawer_overlay,
 .styleguide .example-item .styleguide_drawer_overlay {
   position: relative;
   width: 100%;
@@ -3829,13 +3773,267 @@ html.drawer_open .overlay {
   background: rgba(0, 0, 0, 0.5);
   display: -ms-flexbox;
   display: flex; }
+  .styleguide body:not(.side_menu_open) .example-item .styleguide_drawer_overlay .drawer.open,
+  .styleguide body:not(.side_menu_open) .example-item .styleguide_drawer_overlay #edit_drawer.open,
   .styleguide .example-item .styleguide_drawer_overlay .drawer.open,
   .styleguide .example-item .styleguide_drawer_overlay #edit_drawer.open {
     height: 80% !important; }
+    .styleguide body:not(.side_menu_open) .example-item .styleguide_drawer_overlay .drawer.open .drawer-container,
+    .styleguide body:not(.side_menu_open) .example-item .styleguide_drawer_overlay #edit_drawer.open .drawer-container,
     .styleguide .example-item .styleguide_drawer_overlay .drawer.open .drawer-container,
     .styleguide .example-item .styleguide_drawer_overlay #edit_drawer.open .drawer-container {
       height: 100%;
       overflow-y: auto; }
+
+.styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed,
+.styleguide .example-item header.page-header.navbar-fixed {
+  height: 56px; }
+  .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed .nav-wrapper,
+  .styleguide .example-item header.page-header.navbar-fixed .nav-wrapper {
+    display: block; }
+  .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed nav,
+  .styleguide .example-item header.page-header.navbar-fixed nav {
+    background: #fff;
+    color: #343447;
+    height: 2.8rem;
+    line-height: 2.8; }
+    .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed nav a,
+    .styleguide .example-item header.page-header.navbar-fixed nav a {
+      color: #343447;
+      position: absolute; }
+      .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed nav a#hide_side_nav,
+      .styleguide .example-item header.page-header.navbar-fixed nav a#hide_side_nav {
+        display: none; }
+      .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed nav a#show_hide_left_side_nav,
+      .styleguide .example-item header.page-header.navbar-fixed nav a#show_hide_left_side_nav {
+        display: inline-block;
+        opacity: 1; }
+    .styleguide body:not(.side_menu_open) .example-item header.page-header.navbar-fixed nav li,
+    .styleguide .example-item header.page-header.navbar-fixed nav li {
+      position: relative; }
+
+.styleguide body:not(.side_menu_open) .example-item .side_menu_open header.page-header.navbar-fixed nav a#hide_side_nav,
+.styleguide .example-item .side_menu_open header.page-header.navbar-fixed nav a#hide_side_nav {
+  display: inline-block;
+  opacity: 1; }
+
+.styleguide body:not(.side_menu_open) .example-item .side_menu_open header.page-header.navbar-fixed nav a#show_hide_left_side_nav,
+.styleguide .example-item .side_menu_open header.page-header.navbar-fixed nav a#show_hide_left_side_nav {
+  display: none; }
+
+.styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container,
+.styleguide .example-item #side_nav_example_for_styleguide_container {
+  overflow: hidden;
+  background: #f4f5f8;
+  min-height: 850px;
+  position: relative;
+  padding-left: calc( 230px - (230px * 0.75));
+  transform: translateX(0%);
+  transition: all 300ms ease-in-out; }
+  .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav,
+  .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 850px;
+    transition: all 300ms ease-in-out; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav ul a:hover,
+    .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav ul a:hover {
+      background: rgba(103, 58, 183, 0.15); }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav ul.collapsible,
+    .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav ul.collapsible {
+      padding: 0; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a,
+    .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a {
+      padding: 1rem;
+      height: auto;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 0.8rem;
+      line-height: 1.3;
+      padding: 1rem;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      position: relative; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a svg,
+      .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a svg {
+        transform: scale(1.8);
+        margin: 0 7px 0 0;
+        width: 2rem; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a span,
+      .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a span {
+        display: block;
+        -ms-flex: 1;
+        flex: 1;
+        opacity: 1; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a .children_indicator,
+      .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a .children_indicator {
+        display: block;
+        position: absolute;
+        right: 6px;
+        top: 11px;
+        transition: all 200ms ease-in-out; }
+        .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a .children_indicator svg,
+        .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav > ul > li > a .children_indicator svg {
+          width: auto; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container .sidenav li,
+    .styleguide .example-item #side_nav_example_for_styleguide_container .sidenav li {
+      position: relative;
+      display: block; }
+  .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open,
+  .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open {
+    padding-left: 230px; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container #johnson,
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container #controls,
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container .dv_text,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container #johnson,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container #controls,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container .dv_text {
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      opacity: 1;
+      transition: opacity 200ms ease-in-out; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container svg,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav .branding-container svg {
+      margin-left: 4px;
+      margin-top: 0;
+      margin-bottom: 0;
+      transform: scale(1);
+      transition: all 200ms ease-in-out;
+      display: block; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a {
+      margin-left: 0;
+      width: 100%;
+      display: -ms-flexbox;
+      display: flex; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a span,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a span {
+        display: block;
+        opacity: 1;
+        height: auto; }
+        .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a span:first-of-type,
+        .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li .collapsible-header a span:first-of-type {
+          line-height: 3.5; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active,
+    .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active {
+      background: #225564;
+      background: linear-gradient(to right, #225564 0%, #225564 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_dashboard,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_dashboard {
+        background: #673ab7;
+        background: linear-gradient(to right, #673ab7 0%, #673ab7 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_configuration,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_configuration {
+        background: #66c200;
+        background: linear-gradient(to right, #66c200 0%, #66c200 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_tools,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_tools {
+        background: #26a69a;
+        background: linear-gradient(to right, #26a69a 0%, #26a69a 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_help_and_support,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_help_and_support {
+        background: #00c2f5;
+        background: linear-gradient(to right, #00c2f5 0%, #00c2f5 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_service_health,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_service_health {
+        background: #8d1394;
+        background: linear-gradient(to right, #8d1394 0%, #8d1394 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_applications,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active.color_applications {
+        background: #F5A623;
+        background: linear-gradient(to right, #F5A623 0%, #F5A623 3%, #292938 3%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active .children_indicator,
+      .styleguide .example-item #side_nav_example_for_styleguide_container.side_menu_open #left-side-nav > ul > li.active .children_indicator {
+        transform: rotate(90deg);
+        transform-origin: center;
+        right: 10px;
+        top: 13px; }
+  .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav,
+  .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav {
+    transform: translateX(-75%);
+    transition: all 300ms ease-in-out; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container #johnson,
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container #controls,
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container .dv_text,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container #johnson,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container #controls,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container .dv_text {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 200ms ease-in-out; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container svg,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav .branding-container svg {
+      margin: 0 -122px 0 126px;
+      transform: scale(1.1);
+      transition: all 200ms ease-in-out; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a,
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a {
+      margin-left: calc( 230px - calc( 230px - (230px * 0.75)) - 5px);
+      width: calc( 230px - (230px * 0.75));
+      transition: all 200ms ease-in-out;
+      padding: 0 1rem; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a span:first-of-type,
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a span:first-of-type,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a span:first-of-type,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a span:first-of-type {
+        opacity: 0;
+        width: 0;
+        height: 3rem;
+        overflow: hidden;
+        transition: opacity 200ms ease-in-out; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a .children_indicator,
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a .children_indicator,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li > a .children_indicator,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul > li .collapsible-header a .children_indicator {
+        display: none; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul .has_children,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul .has_children {
+      position: relative; }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul .has_children .collapsible-body.child-pages,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav > ul .has_children .collapsible-body.child-pages {
+        position: absolute;
+        right: calc( -230px * 0.8);
+        top: 0;
+        width: calc( 230px * 0.8);
+        background: #292938;
+        padding-left: 0; }
+    .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active,
+    .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active {
+      background: #225564;
+      background: linear-gradient(to right, #225564 0%, #225564 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_dashboard,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_dashboard {
+        background: #673ab7;
+        background: linear-gradient(to right, #673ab7 0%, #673ab7 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_configuration,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_configuration {
+        background: #66c200;
+        background: linear-gradient(to right, #66c200 0%, #66c200 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_tools,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_tools {
+        background: #26a69a;
+        background: linear-gradient(to right, #26a69a 0%, #26a69a 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_help_and_support,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_help_and_support {
+        background: #00c2f5;
+        background: linear-gradient(to right, #00c2f5 0%, #00c2f5 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_service_health,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_service_health {
+        background: #8d1394;
+        background: linear-gradient(to right, #8d1394 0%, #8d1394 78%, #292938 78%); }
+      .styleguide body:not(.side_menu_open) .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_applications,
+      .styleguide .example-item #side_nav_example_for_styleguide_container:not(.side_menu_open) #left-side-nav li.active.color_applications {
+        background: #F5A623;
+        background: linear-gradient(to right, #F5A623 0%, #F5A623 78%, #292938 78%); }
 
 .styleguide .entry-content div.post,
 .styleguide .entry-content div.get,

@@ -44,7 +44,6 @@
 			}
 		}
 	}
-	
 	li {
 		position: relative;
 		display: block;
@@ -214,78 +213,3 @@
 	}
 }
 
-
-.styleguide-sidenav {
-	body:not(.side_menu_open) & {
-		span {
-			display: none;
-		}
-
-		li {
-			&.current_page {
-				@include linear-gradient(to right, $purple 0%, $purple 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+2).current_page {
-				@include linear-gradient(to right, $light-blue 0%, $light-blue 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+3).current_page {
-				@include linear-gradient(to right, $green 0%, $green 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+4).current_page {
-				@include linear-gradient(to right, $orange 0%, $orange 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+5).current_page {
-				@include linear-gradient(to right, $pink 0%, $pink 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+6).current_page {
-				@include linear-gradient(to right, $teal 0%, $teal 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-			&:nth-child(7n+7).current_page {
-				@include linear-gradient(to right, $grape 0%, $grape 78%, darken( $dark_theme_background, 5 ) 78%);
-			}
-		}
-	}
-
-	li {
-		&.current_page {
-			@include linear-gradient(to right, $purple 0%, $purple 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+2).current_page {
-			@include linear-gradient(to right, $light-blue 0%, $light-blue 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+3).current_page {
-			@include linear-gradient(to right, $green 0%, $green 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+4).current_page {
-			@include linear-gradient(to right, $orange 0%, $orange 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+5).current_page {
-			@include linear-gradient(to right, $pink 0%, $pink 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+6).current_page {
-			@include linear-gradient(to right, $teal 0%, $teal 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-		&:nth-child(7n+7).current_page {
-			@include linear-gradient(to right, $grape 0%, $grape 3%, darken( $dark_theme_background, 5 ) 3%);
-		}
-
-		#left-side-nav & {
-			&.back_to_prototype {
-				position: absolute;
-				bottom: 5rem;
-
-				a {
-					color: $medium-grey;
-					svg {
-						transform: scale( 1.1 );
-					}
-
-					&:hover {
-						background: none;
-					}
-				}
-			}
-		}
-
-	}
-}

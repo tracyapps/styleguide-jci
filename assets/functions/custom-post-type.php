@@ -86,6 +86,7 @@ function start_custom_post_types() {
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
 		'show_in_rest'		  => true,
+		'rest_base'           => 'api_doc',
 		'menu_position'       => 7,
 		'menu_icon'           => 'dashicons-hammer',
 		'rewrite'             => array( 'slug' => 'api' ),

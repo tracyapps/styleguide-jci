@@ -11,6 +11,7 @@ function site_scripts() {
 	wp_enqueue_script( 'codemirror-mode-css', get_template_directory_uri() . '/assets/js/vendor/codemirror/mode/css/css.js', array(), '', false );
 	// materalize js
 	wp_enqueue_script( 'materialize-js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array(), '', true );
+	wp_enqueue_script( 'materialize-js-styleguidemodifiedsidenav', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/83206/styleguidemodifiedsidenav.js', array(), '', true );
 	// select 2
 	wp_enqueue_script( 'select-2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js', array( 'jquery' ), '', true);
 	// bootstrap js

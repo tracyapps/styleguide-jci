@@ -790,6 +790,7 @@
 		padding: $gutter-width;
 	}
 
+	body:not(.side_menu_open) .example-item,
 	.example-item {
 		// table stuff
 		.side-tab-table {
@@ -859,7 +860,289 @@
 				}
 			}
 		}
+
+		// header bar (used on side nav example)
+		header.page-header {
+			&.navbar-fixed {
+				height: 56px;
+
+				.nav-wrapper {
+					display: block;
+				}
+				nav {
+					background: $white;
+					color: $dark;
+					height: 2.8rem;
+					line-height: 2.8;
+
+					a {
+						color: $dark;
+						position: absolute;
+
+						&#hide_side_nav {
+							display: none;
+						}
+
+						&#show_hide_left_side_nav {
+							display: inline-block;
+							opacity: 1;
+						}
+					}
+					li {
+						position: relative;
+					}
+
+				}
+			}
+		}
+
+		.side_menu_open {
+			header.page-header {
+				&.navbar-fixed {
+					nav {
+						a#hide_side_nav {
+							display: inline-block;
+							opacity: 1;
+						}
+						a#show_hide_left_side_nav {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+		// side nav example
+		#side_nav_example_for_styleguide_container {
+			overflow: hidden;
+			background: $default-background-color;
+			min-height: 850px;
+			position: relative;
+			padding-left: $left_side_nav_width_closed;
+			transform: translateX(0%);
+			transition: all 300ms ease-in-out;
+
+			.sidenav {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-height: 850px;
+				transition: all 300ms ease-in-out;
+				ul {
+					a {
+						&:hover {
+							background: rgba( $purple, 0.15 );
+						}
+					}
+				}
+
+				ul.collapsible {
+					padding: 0;
+				}
+
+				> ul > li > a {
+					padding: 1rem;
+					height: auto;
+					text-transform: uppercase;
+					color: $white;
+					font-size: 0.8rem;
+					line-height: 1.3;
+					padding: 1rem;
+					display: flex;
+					align-items: center;
+					width: 100%;
+					position: relative;
+
+					svg {
+						transform: scale(1.8);
+						margin: 0 7px 0 0;
+						width: 2rem;
+					}
+					span {
+						display: block;
+						flex: 1;
+						opacity: 1;
+					}
+					.children_indicator {
+						display: block;
+						position: absolute;
+						right: 6px;
+						top: 11px;
+						transition: all 200ms ease-in-out;
+
+						svg {
+							width: auto;
+						}
+					}
+				}
+
+				li {
+					position: relative;
+					display: block;
+				}
+			}
+			&.side_menu_open {
+				padding-left: $left_side_nav_width_open;
+
+				#left-side-nav {
+					.branding-container {
+						#johnson,
+						#controls,
+						.dv_text {
+							width: auto;
+							height: auto;
+							overflow: hidden;
+							opacity: 1;
+							transition: opacity 200ms ease-in-out;
+						}
+						svg {
+							margin-left: 4px;
+							margin-top: 0;
+							margin-bottom: 0;
+							transform: scale(1);
+							transition: all 200ms ease-in-out;
+							display: block;
+						}
+					}
+
+					> ul > li {
+						.collapsible-header {
+							a {
+								margin-left: 0;
+								width: 100%;
+								display: flex;
+
+								span {
+									display: block;
+									opacity: 1;
+									height: auto;
+
+									&:first-of-type {
+										line-height: 3.5;
+									}
+								}
+
+
+							}
+						}
+
+						&.active {
+							@include linear-gradient(to right, $grey-blue 0%, $grey-blue 3%, darken( $dark_theme_background, 5 ) 3%);
+							&.color_dashboard {
+								@include linear-gradient(to right, $color_dashboard 0%, $color_dashboard 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+							&.color_configuration {
+								@include linear-gradient(to right, $color_configuration 0%, $color_configuration 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+							&.color_tools {
+								@include linear-gradient(to right, $color_tools 0%, $color_tools 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+							&.color_help_and_support {
+								@include linear-gradient(to right, $color_help_and_support 0%, $color_help_and_support 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+							&.color_service_health {
+								@include linear-gradient(to right, $color_service_health 0%, $color_service_health 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+							&.color_applications {
+								@include linear-gradient(to right, $color_applications 0%, $color_applications 3%, darken( $dark_theme_background, 5 ) 3%);
+							}
+
+							.children_indicator {
+								transform: rotate(90deg);
+								transform-origin: center;
+								right: 10px;
+								top: 13px;
+							}
+						}
+					}
+				}
+			}
+
+			&:not(.side_menu_open) {
+				#left-side-nav {
+					transform: translateX(-75%);
+					transition: all 300ms ease-in-out;
+
+					.branding-container {
+						#johnson,
+						#controls,
+						.dv_text {
+							width: 0;
+							height: 0;
+							overflow: hidden;
+							opacity: 0;
+							transition: opacity 200ms ease-in-out;
+						}
+						svg {
+							margin: 0 -122px 0 126px;
+							transform: scale(1.1);
+							transition: all 200ms ease-in-out;
+						}
+					}
+					> ul {
+						> li {
+							> a,
+							.collapsible-header a {
+								margin-left: calc( #{$left_side_nav_width_open} - #{$left_side_nav_width_closed} - 5px );
+								width: $left_side_nav_width_closed;
+								transition: all 200ms ease-in-out;
+								padding: 0 1rem;
+
+								span:first-of-type {
+									opacity: 0;
+									width: 0;
+									height: 3rem;
+									overflow: hidden;
+									transition: opacity 200ms ease-in-out;
+								}
+
+								.children_indicator {
+									display: none;
+								}
+							}
+						}
+						.has_children {
+							position: relative;
+
+							.collapsible-body.child-pages {
+								position: absolute;
+								right: calc( #{- $left_side_nav_width_open} * 0.8 );
+								top: 0;
+								width: calc( #{$left_side_nav_width_open} * 0.8 );
+								background: darken( $dark_theme_background, 5 );
+								padding-left: 0;
+
+							}
+						}
+					}
+					li.active {
+						@include linear-gradient(to right, $grey-blue 0%, $grey-blue 78%, darken( $dark_theme_background, 5 ) 78%);
+
+						&.color_dashboard {
+							@include linear-gradient(to right, $color_dashboard 0%, $color_dashboard 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+						&.color_configuration {
+							@include linear-gradient(to right, $color_configuration 0%, $color_configuration 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+						&.color_tools {
+							@include linear-gradient(to right, $color_tools 0%, $color_tools 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+						&.color_help_and_support {
+							@include linear-gradient(to right, $color_help_and_support 0%, $color_help_and_support 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+						&.color_service_health {
+							@include linear-gradient(to right, $color_service_health 0%, $color_service_health 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+						&.color_applications {
+							@include linear-gradient(to right, $color_applications 0%, $color_applications 78%, darken( $dark_theme_background, 5 ) 78%);
+						}
+					}
+				}
+			}
+		}
+
 	}
+
 
 	// special api section styles
 	.entry-content {

@@ -17,4 +17,15 @@
 		$('.search-dropdown').select2();
 	});
 
+	$('.dropdown-trigger').dropdown();
+	$('.collapsible').collapsible();
+	$('#left-side-nav').styleguidemodifiedsidenav();
+
+	$('#show_hide_left_side_nav').click( function() {
+		$('#side_nav_example_for_styleguide_container').addClass('side_menu_open');
+	});
+
+	$('#hide_side_nav').click( function() {
+		$('#side_nav_example_for_styleguide_container').removeClass('side_menu_open');
+	});
 })(jQuery);
