@@ -7,6 +7,9 @@
 			<main id="main" class="styleguide-main-column" role="main">
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'parts/include-styles' ); ?>
+
 					<h1 class="style-title two-col">
 						<span class="the_title"><?php the_title(); ?></span>
 						<nav class="shortcut_links">
@@ -115,6 +118,8 @@
 						</section>
 					<?php endif; /* ********** end code section ********** */ ?>
 
+
+				<?php get_template_part( 'parts/include-scripts' ); ?>
 
 				<?php endwhile; // end if there is anything
 				else : ?>

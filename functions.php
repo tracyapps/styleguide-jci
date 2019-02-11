@@ -31,7 +31,7 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 	// Import ACF fields
-	//require_once( get_template_directory() . '/assets/functions/acf-import.php' );
+	require_once( get_template_directory() . '/assets/functions/acf-import.php' );
 	// Extend ACF fields
 	//require_once( get_template_directory() . '/assets/functions/acf-helper.php' );
 	// Site options
@@ -50,6 +50,10 @@ if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 // Use this as a template for custom post types
 require_once(get_template_directory().'/assets/functions/custom-post-type.php');
 
+// Global Styles pages
+require_once( get_template_directory() . '/assets/functions/styleguide-global-settings.php' );
+require_once( get_template_directory() . '/assets/functions/styleguide-settings-helper.php' );
+
 // Adds site styles to the WordPress editor
 require_once(get_template_directory().'/assets/functions/editor-styles.php');
 
@@ -57,7 +61,7 @@ require_once(get_template_directory().'/assets/functions/editor-styles.php');
 require_once(get_template_directory().'/assets/functions/login.php');
 
 // Customize the WordPress admin
-// require_once(get_template_directory().'/assets/functions/admin.php');
+require_once(get_template_directory().'/assets/functions/admin.php');
 
 // Shortcodes
 require_once(get_template_directory().'/assets/functions/shortcodes.php');

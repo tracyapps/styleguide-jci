@@ -21,7 +21,7 @@ function start_start() {
 	add_action( 'widgets_init', 'start_register_sidebars' );
 
 	// cleaning up excerpt
-	add_filter( 'excerpt_more', 'start_excerpt_more' );
+	//add_filter( 'excerpt_more', 'start_excerpt_more' );
 
 } /* end joints start */
 

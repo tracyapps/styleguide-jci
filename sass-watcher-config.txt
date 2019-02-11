@@ -1,0 +1,1 @@
+devmode=1\nsassdir=assets/scss/user_defined\nsassfile=user_defined_styles.scss\ncssdir=assets/css/user_defined/user_defined_styles.css\nvarfilename=_theme-settings.scss\n

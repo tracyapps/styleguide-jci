@@ -195,21 +195,3 @@ function start_show_cpt_archives( $query )
 }
 
 add_filter( 'pre_get_posts', 'start_show_cpt_archives' );
-
-
-/*
- * for git sync. adding CPT "api docs" and draft (if needed)
- */
-add_filter('start_gitsync_allowed_post_types', function ($supported_post_types) {
-	return array_merge($supported_post_types, array(
-		// add your custom post types here
-		'api_doc'
-	));
-});
-
-add_filter('start_gitsync_allowed_post_statuses', function ($supported_post_statuses) {
-	return array_merge($supported_post_statuses, array(
-		// additional statuses available: https://codex.wordpress.org/Post_Status
-		'draft'
-	));
-});

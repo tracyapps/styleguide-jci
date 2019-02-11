@@ -8,68 +8,6 @@ body {
 	background: $default-background-color;
 	font-weight: 300;
 	transition: all 250ms ease-in-out;
-	//margin-left: $left_side_nav_width_closed;
-
-	&.side_menu_open {
-		margin-left: $left_side_nav_width_open;
-
-		.navbar-fixed {
-			nav {
-				width: calc( 100vw - #{$left_side_nav_width_open} );
-			}
-			a#hide_side_nav {
-				opacity: 1;
-			}
-			a#show_hide_left_side_nav {
-				opacity: 0;
-				margin-right: -3rem;
-			}
-		}
-
-		.sidenav-overlay {
-			height: 42px;
-			width: 270px;
-
-			&:hover {
-				opacity: 1 !important;
-				cursor: pointer;
-			}
-
-		}
-	}
-	a#hide_side_nav {
-		position: absolute;
-		opacity: 0;
-		transition: opacity 200ms ease-in-out;
-	}
-
-	a#show_hide_left_side_nav {
-		opacity: 1;
-		margin: 0;
-		transition: opacity 200ms ease-in-out;
-	}
-	.navbar-fixed {
-		nav {
-			width: calc( 100vw - #{$left_side_nav_width_closed} );
-		}
-	}
-
-	.sidenav-overlay {
-		background: rgba( $purple, 0.15 );
-		opacity: 0 !important;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 42px;
-		width: 0;
-		transition: opacity 200ms ease-in-out;
-
-		&:hover {
-			opacity: 1 !important;
-			cursor: pointer;
-		}
-
-	}
 
 }
 
@@ -78,13 +16,13 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.2;
-}
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+	 line-height: 1.2;
+ }
 h1 {
 	font-size: $h1_font_size;
 }

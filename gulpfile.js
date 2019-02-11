@@ -98,7 +98,7 @@ gulp.task( 'browsersync', function () {
 
 	browserSync.init( files, {
 		// Replace with URL of your local site
-		proxy: "http://styleguide.local",
+		proxy: "http://jci-styleguide.local",
 	} );
 
 	gulp.watch( './assets/scss/**/*.scss', ['styles'] );
