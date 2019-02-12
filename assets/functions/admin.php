@@ -37,7 +37,7 @@ function start_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-add_action( 'wp_dashboard_setup', 'start_custom_dashboard_widgets' );
+//add_action( 'wp_dashboard_setup', 'start_custom_dashboard_widgets' );
 
 /*
  * remove unused menu items in admin
@@ -50,7 +50,7 @@ function start_remove_menus() {
 	remove_menu_page( 'upload.php' );                 //Media
 	//remove_menu_page( 'edit.php?post_type=page' );    //Pages
 	remove_menu_page( 'edit-comments.php' );          //Comments
-	remove_menu_page( 'themes.php' );                 //Appearance
+	//remove_menu_page( 'themes.php' );                 //Appearance
 	remove_menu_page( 'plugins.php' );                //Plugins
 	//remove_menu_page( 'users.php' );                  //Users
 	//remove_menu_page( 'tools.php' );                  //Tools

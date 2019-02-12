@@ -1138,4 +1138,77 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
 
+	// category settings (for side nav)
+	acf_add_local_field_group(array(
+		'key' => 'group_5c630d96e4112',
+		'title' => 'Category settings',
+		'fields' => array(
+			array(
+				'key' => 'field_5c630dc095ccf',
+				'label' => 'Display in Main Nav?',
+				'name' => 'display_in_main_nav',
+				'type' => 'true_false',
+				'instructions' => 'If this is set to true, this category--and all components within it--will display on the left side nav',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'message' => 'true',
+				'default_value' => 0,
+				'ui' => 0,
+				'ui_on_text' => '',
+				'ui_off_text' => '',
+			),
+			array(
+				'key' => 'field_5c630e2995cd0',
+				'label' => 'Menu order',
+				'name' => 'menu_order',
+				'type' => 'number',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5c630dc095ccf',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '50',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'category',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
 endif;

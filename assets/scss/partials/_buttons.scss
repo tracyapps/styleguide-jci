@@ -61,22 +61,49 @@ input[type="submit"] {
 	&.btn-cancel,
 	&.btn-discard {
 		@include button($muted_color, $muted_color_text);
-		&:hover {
-			background-color: darken($orange, 30);
+		&:hover,
+		&:target,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: darken($warning_color, 10);
 		}
 	}
 
 	&.btn-secondary {
 		background: $light-blue;
 		box-shadow: none;
-		&:hover {
+		&:hover,
+		&:target,
+		&:focus,
+		&:active,
+		&.active {
 			background: darken( $light-blue, 20 );
+		}
+	}
+
+	&.btn-warn {
+		background: $warning_color;
+		&:hover,
+		&:target,
+		&:focus,
+		&:active,
+		&.active {
+			background: darken( $warning_color, 15 );
 		}
 	}
 
 	&.disabled {
 		background: $light-grey;
 		box-shadow: none;
+		&:hover,
+		&:target,
+		&:focus,
+		&:active,
+		&.active {
+			background: $light-grey;
+			box-shadow: none;
+		}
 	}
 
 	&.btn-full,
