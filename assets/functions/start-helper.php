@@ -19,6 +19,19 @@ function the_slug( $echo=true ){
 	return $slug;
 }
 
+/*
+ * change sort order of component archive pages.
+ */
+add_action( 'pre_get_posts', 'start_change_component_sort_order');
+function start_change_component_sort_order($query){
+	if( is_archive() ):
+		//If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+		//Set the order ASC or DESC
+		$query->set( 'order', 'ASC' );
+		//Set the orderby
+		$query->set( 'orderby', 'menu_order' );
+	endif;
+};
 
 function start_the_archive_title( $before = '', $after = '', $span_class = '' ) {
 	$title = start_get_the_archive_title( $span_class );

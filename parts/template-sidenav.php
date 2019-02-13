@@ -86,7 +86,111 @@
 	</div>
 	<ul class="page-tree">
 
-		<?php start_side_nav(); ?>
+		<?php // start_side_nav(); // the WP nav menu (manual control) ?>
+		<?php
+
+		$sidemenucategories = get_categories('taxonomy=category');
+		$sidemenucategories_sorted = array();
+
+		foreach( $sidemenucategories as $cat ) {
+			$the_order = get_field( 'menu_order', $cat );
+			$sidemenucategories_sorted[$the_order] = $cat;
+		}
+
+		//sort the list ASC
+		ksort($sidemenucategories_sorted);
+		//print_r( $sidemenucategories_sorted );
+
+		foreach( $sidemenucategories_sorted as $display_cat ) {
+
+			if( get_field( 'display_in_main_nav', 'category_' . $display_cat->term_id  )
+				&& ( 1 == $display_cat->category_count ) ) :
+			// if "display in nav" is checked, and there is only one component in the category
+			$postargs = array(
+				'category'		=>	$display_cat->term_id,
+				'post_type'		=> 'component',
+			);
+			$components_in_category = get_posts( $postargs );
+			foreach( $components_in_category as $single_component ) :
+				$component_permalink = get_permalink( $single_component->ID );
+
+				printf(
+					'<li id="page-id-%s" class="menu-item component-menu-item page-id-%s %s" data-node="#%s">
+							<span class="nav_item_text_wrap"> 
+								<a href="%s">%s</a>
+							</span> 
+						</li>',
+					intval( $single_component->ID ),
+					intval( $single_component->ID ),
+					is_single( $single_component->ID ) ? 'current-menu-item' : '',
+					intval( $single_component->ID ),
+					esc_url( $component_permalink ),
+					esc_html( $display_cat->name )
+				);
+			endforeach;
+
+			elseif( get_field( 'display_in_main_nav', 'category_' . $display_cat->term_id  )
+					&& ( 1 != $display_cat->category_count ) ) :
+			// if "display in nav" is checked, and there are multiple components in the category
+				printf(
+					'<li id="page-id-%s" class="menu-item component-menu-item page-id-%s %s menu-item-has-children" data-node="#%s">
+							<span class="nav_item_text_wrap"> 
+								<a href="%s">%s</a> 
+								<span class="open_close"><svg class="svg-inline--fa fa-chevron-down fa-w-14" aria-hidden="true" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path></svg><!-- <i class="far fa-chevron-down"></i> --></span>
+							</span> 
+						<ul class="children">',
+					intval( $display_cat->term_id ),
+					intval( $display_cat->term_id ),
+					is_category( $display_cat->term_id ) ? 'current-menu-item' : '',
+					intval( $display_cat->term_id ),
+					esc_url( get_term_link( $display_cat ) ),
+					esc_html( $display_cat->name )
+				);
+
+				$postargs = array(
+					'category'		=>	$display_cat->term_id,
+					'post_type'		=> 'component',
+					'order_by'		=> 'menu_order',
+					'order'			=> 'ASC',
+				);
+				$components_in_category = get_posts( $postargs );
+				foreach( $components_in_category as $single_component ) :
+					$component_permalink = get_permalink( $single_component->ID );
+					printf(
+						'<li id="page-id-%s" class="menu-item component-menu-item page-id-%s %s" data-node="#%s">
+							<span class="nav_item_text_wrap"> 
+								<a href="%s">%s</a>
+							</span> 
+						</li>',
+						intval( $single_component->ID ),
+						intval( $single_component->ID ),
+						is_single( $single_component->ID ) ? 'current-menu-item' : '',
+						intval( $single_component->ID ),
+						esc_url( $component_permalink ),
+						esc_html( $single_component->post_title )
+					);
+				endforeach;
+
+				echo '</ul></li>';
+
+			else :
+				//crickets
+			endif;
+		}
+
+
+
+		/*if ( $sidemenucategories->have_posts() ) {
+			// The Loop
+			while ( $sidemenucategories->have_posts() ) {
+				$sidemenucategories->the_post();
+				echo '<li>' . get_the_title() . '</li>';
+			}
+
+			wp_reset_postdata();
+		}*/
+		?>
+
 
 	</ul>
 </nav>
