@@ -86,7 +86,7 @@
 	</div>
 	<ul class="page-tree">
 
-		<?php // start_side_nav(); // the WP nav menu (manual control) ?>
+		<?php  start_side_nav(); // the WP nav menu (manual control above automatic) ?>
 		<?php
 
 		$sidemenucategories = get_categories('taxonomy=category');
