@@ -478,6 +478,17 @@
 		}
 	}
 
+	/*article.component {
+		background: $white;
+		padding: 0 10px;
+		transition: all 200ms ease-in-out;
+
+		&.in_viewport {
+			box-shadow: 1px 1px 3px rgba( $dark, 0.5 );
+			border: 1px solid $light-grey;
+			transform: scale(1.1);
+		}
+	}*/
 	section.component {
 		margin: 1rem 0 5rem;
 	}
